@@ -19,7 +19,11 @@ DATA_FILE = Path(__file__).parent / "industry_benchmarks.json"
 with open(DATA_FILE, encoding="utf-8") as f:
     DATA = json.load(f)
 
-mcp = FastMCP("ccf-benchmarks")
+mcp = FastMCP(
+    "ccf-benchmarks",
+    host="0.0.0.0",
+    port=int(os.environ.get("PORT", 8000)),
+)
 
 
 @mcp.tool()
@@ -113,8 +117,4 @@ if __name__ == "__main__":
     # Default to SSE when PORT is injected by the cloud host (e.g. Render)
     default_transport = "sse" if os.environ.get("PORT") else "stdio"
     transport = os.environ.get("MCP_TRANSPORT", default_transport)
-    if transport == "sse":
-        port = int(os.environ.get("PORT", 8000))
-        mcp.run(transport="sse", host="0.0.0.0", port=port)
-    else:
-        mcp.run()
+    mcp.run(transport=transport)
