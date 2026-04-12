@@ -113,8 +113,42 @@ def get_dataset_metadata() -> dict:
     return DATA["metadata"]
 
 
+from starlette.requests import Request
+from starlette.responses import JSONResponse
+
+
+@mcp.custom_route("/health", methods=["GET"])
+async def health_check(request: Request) -> JSONResponse:
+    """Health check endpoint — no auth required (used by Render)."""
+    return JSONResponse({"status": "ok"})
+
+
 if __name__ == "__main__":
     # Default to SSE when PORT is injected by the cloud host (e.g. Render)
     default_transport = "sse" if os.environ.get("PORT") else "stdio"
     transport = os.environ.get("MCP_TRANSPORT", default_transport)
-    mcp.run(transport=transport)
+
+    if transport == "sse":
+        import uvicorn
+        from starlette.middleware.base import BaseHTTPMiddleware
+        from starlette.responses import PlainTextResponse
+
+        class _APIKeyMiddleware(BaseHTTPMiddleware):
+            """Block requests without a valid MCP_API_KEY.
+            Accepts key via:  X-API-Key header  or  ?api_key= query param.
+            /health is always allowed so Render health checks pass.
+            """
+            async def dispatch(self, request, call_next):
+                expected = os.environ.get("MCP_API_KEY", "")
+                if expected and request.url.path != "/health":
+                    key = (request.headers.get("x-api-key")
+                           or request.query_params.get("api_key"))
+                    if key != expected:
+                        return PlainTextResponse("Unauthorized", status_code=401)
+                return await call_next(request)
+
+        app = mcp.sse_app()
+        app.add_middleware(_APIKeyMiddleware)
+        uvicorn.run(app, host=mcp.settings.host, port=mcp.settings.port)
+    else:
+        mcp.run()
