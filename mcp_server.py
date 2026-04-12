@@ -90,6 +90,46 @@ def get_company_benchmark(company: str) -> dict | None:
 
 
 @mcp.tool()
+def get_raw_kpis(sector: str = "", sub_sector: str = "", company: str = "") -> list[dict]:
+    """
+    Get absolute GHG emission figures and financial KPIs for matching companies.
+
+    Returns the raw reported values (not intensity ratios) so you can compare
+    absolute Scope 1 / 2 / 3 tonnes, revenue, and headcount side by side.
+    All filters are partial and case-insensitive. Leave all empty for all companies.
+
+    Key fields in raw_kpis:
+    - scope1_tco2e: Direct emissions (tCO2e)
+    - scope2_lb/mb_tco2e: Location-based / market-based Scope 2 (tCO2e)
+    - scope3_total_tco2e: Full value-chain emissions (tCO2e)
+    - scope3_by_category: Cat 1 purchased goods / Cat 11 use of sold products
+    - revenue_eur_million, revenue_currency_original, revenue_original_value
+    - fte: Total headcount or FTE
+    - reporting_year, notes
+    """
+    results = []
+    for e in DATA["csrd_company_data"]:
+        if sector and sector.lower() not in e["sector"].lower():
+            continue
+        if sub_sector and sub_sector.lower() not in e["sub_sector"].lower():
+            continue
+        if company and company.lower() not in e["company"].lower():
+            continue
+        results.append({
+            "company":    e["company"],
+            "sector":     e["sector"],
+            "sub_sector": e["sub_sector"],
+            "country":    e["country"],
+            "year":       e["year"],
+            "source":     e.get("source_type"),
+            "confidence": e.get("confidence"),
+            "raw_kpis":   e["raw_kpis"],
+        })
+    results.sort(key=lambda x: x["company"])
+    return results
+
+
+@mcp.tool()
 def get_eu_ets_benchmarks(product_filter: str = "") -> list[dict]:
     """
     Get EU ETS product benchmarks (tCO2e per tonne of product).

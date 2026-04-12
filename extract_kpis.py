@@ -63,7 +63,7 @@ REPORTS = [
         "file":       "Rubis_2024_CSRD.pdf",
         "company":    "Rubis",
         "sector":     "Energy",
-        "sub_sector": "Oil & Gas (Refining & Marketing)",
+        "sub_sector": "Oil & Gas",
         "country":    "France",
         "year":       2024,
         "sust_start": 75,
@@ -133,7 +133,7 @@ REPORTS = [
         "file":       "Nordex_2024_CSRD.pdf",
         "company":    "Nordex",
         "sector":     "Manufacturing",
-        "sub_sector": "Industrial Machinery & Equipment (Wind)",
+        "sub_sector": "Industrial Machinery & Equipment",
         "country":    "Germany",
         "year":       2024,
         "sust_start": 91,
@@ -173,7 +173,7 @@ REPORTS = [
         "file":       "Air_Liquide_2024_CSRD.pdf",
         "company":    "Air Liquide",
         "sector":     "Manufacturing",
-        "sub_sector": "Chemical Industry (Industrial Gases)",
+        "sub_sector": "Chemical Industry",
         "country":    "France",
         "year":       2023,
         "sust_start": 279,
@@ -183,7 +183,7 @@ REPORTS = [
         "file":       "Lenzing_2024_CSRD.pdf",
         "company":    "Lenzing",
         "sector":     "Manufacturing",
-        "sub_sector": "Chemical Industry (Fibers)",
+        "sub_sector": "Chemical Industry",
         "country":    "Austria",
         "year":       2023,
         "sust_start": 100,
@@ -561,6 +561,26 @@ REPORTS = [
     },
 ]
 
+# ---------------------------------------------------------------------------
+# SUB-SECTOR NORMALIZATION
+# ---------------------------------------------------------------------------
+
+# Canonical sub_sector names. Any variant that appears in REPORTS or in the
+# JSON (e.g. hand-edited specialisations) is mapped to the canonical form here
+# so that sector filtering in the MCP server works consistently.
+SUB_SECTOR_ALIASES: dict[str, str] = {
+    "Chemical Industry (Industrial Gases)":    "Chemical Industry",
+    "Chemical Industry (Fibers)":              "Chemical Industry",
+    "Chemical Industry (Cat 11 S3)":           "Chemical Industry",
+    "Industrial Machinery & Equipment (Wind)": "Industrial Machinery & Equipment",
+    "Oil & Gas (Refining & Marketing)":        "Oil & Gas",
+}
+
+
+def normalize_sub_sector(sub_sector: str) -> str:
+    return SUB_SECTOR_ALIASES.get(sub_sector, sub_sector)
+
+
 EXTRACTION_PROMPT = """\
 You are a sustainability data analyst. Extract the following KPIs from this \
 CSRD sustainability report. Focus on pages {sust_start}–{sust_end} where the \
@@ -716,9 +736,16 @@ def delete_file(client: genai.Client, uploaded_file: types.File) -> None:
 def compute_intensities(kpis: dict) -> dict:
     """Calculate tCO2e/EUR M and tCO2e/FTE intensity metrics."""
     s1  = kpis.get("scope1_tco2e")
-    s2  = (kpis.get("scope2_mb_tco2e")
-           or kpis.get("scope2_lb_tco2e")
-           or kpis.get("scope2_tco2e"))
+    # Prefer market-based; fall back to location-based then undifferentiated.
+    # Use explicit None checks so that 0 (e.g. 100 % renewable via RECs) is
+    # treated as a valid value and not silently skipped by a falsy `or` chain.
+    s2  = (
+        kpis.get("scope2_mb_tco2e")
+        if kpis.get("scope2_mb_tco2e") is not None
+        else kpis.get("scope2_lb_tco2e")
+        if kpis.get("scope2_lb_tco2e") is not None
+        else kpis.get("scope2_tco2e")
+    )
     s3  = kpis.get("scope3_total_tco2e")
     rev = kpis.get("revenue_eur_million")
     fte = kpis.get("fte")
@@ -764,7 +791,7 @@ def build_benchmark_entry(report: dict, kpis: dict, intensities: dict) -> dict:
         "source_type": "csrd_report",
         "company":    report["company"],
         "sector":     report["sector"],
-        "sub_sector": report["sub_sector"],
+        "sub_sector": normalize_sub_sector(report["sub_sector"]),
         "country":    report["country"],
         "year":       report["year"],
         "raw_kpis": {
@@ -772,6 +799,7 @@ def build_benchmark_entry(report: dict, kpis: dict, intensities: dict) -> dict:
             "scope2_lb_tco2e":           kpis.get("scope2_lb_tco2e"),
             "scope2_mb_tco2e":           kpis.get("scope2_mb_tco2e"),
             "scope3_total_tco2e":        kpis.get("scope3_total_tco2e"),
+            "scope3_by_category":        kpis.get("scope3_by_category"),
             "revenue_eur_million":       kpis.get("revenue_eur_million"),
             "revenue_currency_original": kpis.get("revenue_currency_original"),
             "revenue_original_value":    kpis.get("revenue_original_value"),
@@ -811,6 +839,79 @@ def update_benchmarks_json(new_entries: list, dry_run: bool, silent: bool = Fals
 
 
 # ---------------------------------------------------------------------------
+# MIGRATION
+# ---------------------------------------------------------------------------
+
+def migrate_benchmarks(dry_run: bool = False) -> None:
+    """Re-apply script rules to all existing entries without calling Gemini.
+
+    Applies:
+      - sub_sector normalisation via SUB_SECTOR_ALIASES
+      - scope3_by_category added to raw_kpis (null if not captured)
+      - reporting_year added to raw_kpis if missing
+      - intensities rebuilt from raw_kpis via compute_intensities()
+      - confidence recalculated
+    """
+    with open(BENCHMARKS, "r", encoding="utf-8") as f:
+        db = json.load(f)
+
+    entries = db.get("csrd_company_data", [])
+    change_log: list[str] = []
+
+    for entry in entries:
+        company = entry["company"]
+        raw     = entry.setdefault("raw_kpis", {})
+        log: list[str] = []
+
+        # 1. Normalize sub_sector
+        old_sub = entry["sub_sector"]
+        new_sub = normalize_sub_sector(old_sub)
+        if new_sub != old_sub:
+            entry["sub_sector"] = new_sub
+            log.append(f"sub_sector: '{old_sub}' → '{new_sub}'")
+
+        # 2. Ensure scope3_by_category in raw_kpis
+        if "scope3_by_category" not in raw:
+            raw["scope3_by_category"] = None
+            log.append("raw_kpis: added scope3_by_category=null")
+
+        # 3. Ensure reporting_year in raw_kpis
+        if "reporting_year" not in raw:
+            raw["reporting_year"] = None
+            log.append("raw_kpis: added reporting_year=null")
+
+        # 4. Rebuild intensities from raw_kpis
+        new_intensities = compute_intensities(raw)
+        if entry.get("intensities") != new_intensities:
+            entry["intensities"] = new_intensities
+            log.append("intensities: rebuilt from raw_kpis")
+
+        # 5. Recalculate confidence
+        new_conf = "high" if new_intensities.get("intensity_s12_per_eur_m") else "low"
+        if entry.get("confidence") != new_conf:
+            log.append(f"confidence: '{entry.get('confidence')}' → '{new_conf}'")
+            entry["confidence"] = new_conf
+
+        if log:
+            change_log.append(f"  {company}: " + "; ".join(log))
+
+    if change_log:
+        print(f"\n[migrate] {len(change_log)} entries updated:")
+        for line in change_log:
+            print(line)
+    else:
+        print("[migrate] No changes needed.")
+
+    if dry_run:
+        print("\n[dry-run] JSON not written.")
+        return
+
+    with open(BENCHMARKS, "w", encoding="utf-8") as f:
+        json.dump(db, f, indent=2, ensure_ascii=False)
+    print(f"\n[migrate] Written → {BENCHMARKS}")
+
+
+# ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
 
@@ -818,7 +919,12 @@ def main():
     parser = argparse.ArgumentParser(description="Extract CSRD KPIs using Gemini 2.5 Flash")
     parser.add_argument("--dry-run",  action="store_true", help="Print results without writing JSON")
     parser.add_argument("--company",  default=None,        help="Run only this company (substring match)")
+    parser.add_argument("--migrate",  action="store_true", help="Apply script rules to existing JSON entries without calling Gemini")
     args = parser.parse_args()
+
+    if args.migrate:
+        migrate_benchmarks(dry_run=args.dry_run)
+        return
 
     client = genai.Client(api_key=GOOGLE_API_KEY)
 
