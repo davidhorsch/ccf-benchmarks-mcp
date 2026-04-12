@@ -1,0 +1,6 @@
+# Data extraction pipeline dependencies
+# Run: pip install -r pipeline-requirements.txt
+google-genai
+python-dotenv
+requests
+anthropic

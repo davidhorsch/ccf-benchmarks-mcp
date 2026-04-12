@@ -2,3 +2,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# Raw CSRD PDF reports — too large for Git (500MB+), download locally via srnav_downloader.py
+csrd_reports/
