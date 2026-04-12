@@ -131,7 +131,6 @@ if __name__ == "__main__":
     if transport == "sse":
         import uvicorn
         from starlette.middleware.base import BaseHTTPMiddleware
-        from starlette.responses import PlainTextResponse
 
         class _APIKeyMiddleware(BaseHTTPMiddleware):
             """Block requests without a valid MCP_API_KEY.
@@ -144,7 +143,7 @@ if __name__ == "__main__":
                     key = (request.headers.get("x-api-key")
                            or request.query_params.get("api_key"))
                     if key != expected:
-                        return PlainTextResponse("Unauthorized", status_code=401)
+                        return JSONResponse({"error": "invalid_token", "error_description": "Invalid or missing API key"}, status_code=401)
                 return await call_next(request)
 
         app = mcp.sse_app()
