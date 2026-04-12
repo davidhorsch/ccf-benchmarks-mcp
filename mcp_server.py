@@ -146,11 +146,22 @@ if __name__ == "__main__":
                         return JSONResponse({"error": "invalid_token", "error_description": "Invalid or missing API key"}, status_code=401)
                 return await call_next(request)
 
+        from starlette.middleware.cors import CORSMiddleware
+
         if transport == "streamable-http":
             app = mcp.streamable_http_app()
         else:
             app = mcp.sse_app()
+        # Starlette applies middleware in reverse add order (last = outermost).
+        # _APIKeyMiddleware must be added first so CORS is outermost and handles
+        # OPTIONS preflights before the API key check runs.
         app.add_middleware(_APIKeyMiddleware)
+        app.add_middleware(
+            CORSMiddleware,
+            allow_origins=["*"],
+            allow_methods=["GET", "POST", "DELETE", "OPTIONS"],
+            allow_headers=["*"],
+        )
         uvicorn.run(app, host=mcp.settings.host, port=mcp.settings.port)
     else:
         mcp.run()
