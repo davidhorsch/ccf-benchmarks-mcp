@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+"""
+CCF Industry Benchmark MCP Server
+
+Exposes CSRD-derived GHG emission intensity data collected from company
+sustainability reports. Use this to benchmark a customer's carbon footprint
+against peers in the same sector.
+
+Run via Claude Code MCP config — no API keys or paid services required.
+"""
+
+import json
+import os
+from pathlib import Path
+from mcp.server.fastmcp import FastMCP
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.responses import PlainTextResponse
+
+DATA_FILE = Path(__file__).parent / "industry_benchmarks.json"
+with open(DATA_FILE, encoding="utf-8") as f:
+    DATA = json.load(f)
+
+mcp = FastMCP("ccf-benchmarks")
+
+
+@mcp.tool()
+def list_companies() -> list[str]:
+    """List all companies in the CCF benchmark dataset."""
+    return sorted(e["company"] for e in DATA["csrd_company_data"])
+
+
+@mcp.tool()
+def list_sectors() -> dict[str, list[str]]:
+    """List all sectors and their sub-sectors available in the benchmark dataset."""
+    sectors: dict[str, set] = {}
+    for e in DATA["csrd_company_data"]:
+        sectors.setdefault(e["sector"], set()).add(e["sub_sector"])
+    return {k: sorted(v) for k, v in sorted(sectors.items())}
+
+
+@mcp.tool()
+def get_benchmarks_by_sector(sector: str = "", sub_sector: str = "") -> list[dict]:
+    """
+    Get GHG emission intensity benchmarks filtered by sector or sub-sector.
+
+    Returns tCO2e/EUR M and tCO2e/FTE intensities for matching companies.
+    Partial, case-insensitive matching. Leave both empty to get all companies.
+
+    Key metrics in response:
+    - intensity_s12_per_eur_m: Scope 1+2 emissions per EUR million revenue
+    - intensity_s123_per_eur_m: Full value chain emissions per EUR million revenue
+    - intensity_s12_per_fte: Scope 1+2 emissions per employee
+    """
+    results = []
+    for e in DATA["csrd_company_data"]:
+        if sector and sector.lower() not in e["sector"].lower():
+            continue
+        if sub_sector and sub_sector.lower() not in e["sub_sector"].lower():
+            continue
+        results.append({
+            "company":    e["company"],
+            "sector":     e["sector"],
+            "sub_sector": e["sub_sector"],
+            "country":    e["country"],
+            "year":       e["year"],
+            "source":     e.get("source_type"),
+            "confidence": e.get("confidence"),
+            "intensities": e["intensities"],
+        })
+    results.sort(key=lambda x: x["company"])
+    return results
+
+
+@mcp.tool()
+def get_company_benchmark(company: str) -> dict | None:
+    """
+    Get full benchmark data for a specific company including raw KPIs.
+    Partial, case-insensitive matching (e.g. 'basf', 'thyssenkrupp').
+    Returns None if not found.
+    """
+    for e in DATA["csrd_company_data"]:
+        if company.lower() in e["company"].lower():
+            return e
+    return None
+
+
+@mcp.tool()
+def get_eu_ets_benchmarks(product_filter: str = "") -> list[dict]:
+    """
+    Get EU ETS product benchmarks (tCO2e per tonne of product).
+
+    These are the top-10th-percentile efficiency benchmarks used for EU ETS
+    free allowance allocation — best-practice values, not sector averages.
+    Average installations typically emit 2–3x these values.
+
+    Optionally filter by product name (partial match).
+    """
+    values = DATA["eu_ets_product_benchmarks"]["values"]
+    if product_filter:
+        values = [v for v in values if product_filter.lower() in v["product"].lower()]
+    return values
+
+
+@mcp.tool()
+def get_dataset_metadata() -> dict:
+    """
+    Get metadata about the benchmark dataset: version, caveats, scope
+    definitions, and data sources. Read this first to understand limitations.
+    """
+    return DATA["metadata"]
+
+
+class _APIKeyMiddleware(BaseHTTPMiddleware):
+    """Block requests that don't carry the correct MCP_API_KEY.
+
+    Key can be passed as:
+      - HTTP header:   X-API-Key: <key>
+      - Query param:   ?api_key=<key>
+
+    If MCP_API_KEY env var is not set the middleware is disabled (open access).
+    """
+    async def dispatch(self, request, call_next):
+        expected = os.environ.get("MCP_API_KEY", "")
+        if expected:
+            key = (request.headers.get("x-api-key")
+                   or request.query_params.get("api_key"))
+            if key != expected:
+                return PlainTextResponse("Unauthorized", status_code=401)
+        return await call_next(request)
+
+
+def _build_sse_app():
+    """Return a Starlette ASGI app with auth middleware for internet deployment."""
+    import uvicorn
+    from starlette.applications import Starlette
+    from starlette.routing import Mount, Route
+    from mcp.server.sse import SseServerTransport
+
+    sse = SseServerTransport("/messages/")
+
+    async def handle_sse(request):
+        async with sse.connect_sse(
+            request.scope, request.receive, request._send
+        ) as streams:
+            await mcp._mcp_server.run(
+                streams[0], streams[1],
+                mcp._mcp_server.create_initialization_options(),
+            )
+
+    app = Starlette(routes=[
+        Route("/sse", endpoint=handle_sse),
+        Mount("/messages/", app=sse.handle_post_message),
+    ])
+    app.add_middleware(_APIKeyMiddleware)
+    return app
+
+
+if __name__ == "__main__":
+    transport = os.environ.get("MCP_TRANSPORT", "stdio")
+    if transport == "sse":
+        import uvicorn
+        port = int(os.environ.get("PORT", 8000))
+        uvicorn.run(_build_sse_app(), host="0.0.0.0", port=port)
+    else:
+        mcp.run()

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ccf-benchmarks-mcp
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python mcp_server.py
+    envVars:
+      - key: MCP_TRANSPORT
+        value: sse
+      - key: MCP_API_KEY
+        sync: false   # set this manually in the Render dashboard — never commit the value
