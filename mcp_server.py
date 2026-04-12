@@ -6,15 +6,14 @@ Exposes CSRD-derived GHG emission intensity data collected from company
 sustainability reports. Use this to benchmark a customer's carbon footprint
 against peers in the same sector.
 
-Run via Claude Code MCP config — no API keys or paid services required.
+Run locally via Claude Code MCP config (stdio) or deploy to Render (SSE).
+No API keys or paid services required for the data itself.
 """
 
 import json
 import os
 from pathlib import Path
 from mcp.server.fastmcp import FastMCP
-from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.responses import PlainTextResponse
 
 DATA_FILE = Path(__file__).parent / "industry_benchmarks.json"
 with open(DATA_FILE, encoding="utf-8") as f:
@@ -110,58 +109,12 @@ def get_dataset_metadata() -> dict:
     return DATA["metadata"]
 
 
-class _APIKeyMiddleware(BaseHTTPMiddleware):
-    """Block requests that don't carry the correct MCP_API_KEY.
-
-    Key can be passed as:
-      - HTTP header:   X-API-Key: <key>
-      - Query param:   ?api_key=<key>
-
-    If MCP_API_KEY env var is not set the middleware is disabled (open access).
-    """
-    async def dispatch(self, request, call_next):
-        expected = os.environ.get("MCP_API_KEY", "")
-        if expected:
-            key = (request.headers.get("x-api-key")
-                   or request.query_params.get("api_key"))
-            if key != expected:
-                return PlainTextResponse("Unauthorized", status_code=401)
-        return await call_next(request)
-
-
-def _build_sse_app():
-    """Return a Starlette ASGI app with auth middleware for internet deployment."""
-    import uvicorn
-    from starlette.applications import Starlette
-    from starlette.routing import Mount, Route
-    from mcp.server.sse import SseServerTransport
-
-    sse = SseServerTransport("/messages/")
-
-    async def handle_sse(request):
-        async with sse.connect_sse(
-            request.scope, request.receive, request._send
-        ) as streams:
-            await mcp._mcp_server.run(
-                streams[0], streams[1],
-                mcp._mcp_server.create_initialization_options(),
-            )
-
-    app = Starlette(routes=[
-        Route("/sse", endpoint=handle_sse),
-        Mount("/messages/", app=sse.handle_post_message),
-    ])
-    app.add_middleware(_APIKeyMiddleware)
-    return app
-
-
 if __name__ == "__main__":
     # Default to SSE when PORT is injected by the cloud host (e.g. Render)
     default_transport = "sse" if os.environ.get("PORT") else "stdio"
     transport = os.environ.get("MCP_TRANSPORT", default_transport)
     if transport == "sse":
-        import uvicorn
         port = int(os.environ.get("PORT", 8000))
-        uvicorn.run(_build_sse_app(), host="0.0.0.0", port=port)
+        mcp.run(transport="sse", host="0.0.0.0", port=port)
     else:
         mcp.run()
