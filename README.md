@@ -11,7 +11,7 @@ GHG emission intensity benchmarks extracted from EU company CSRD reports, expose
 
 Key metrics per company:
 | Metric | Description |
-|---|---|
+| --- | --- |
 | `intensity_s12_per_eur_m` | Scope 1+2 tCO2e per EUR million revenue |
 | `intensity_s123_per_eur_m` | Full value chain tCO2e per EUR million revenue |
 | `intensity_s12_per_fte` | Scope 1+2 tCO2e per employee |
@@ -45,20 +45,26 @@ ccf-benchmarks-mcp/
 
 The server runs publicly at:
 ```
-https://csrd-benchmarks-mcp.onrender.com/sse
+https://csrd-benchmarks-mcp.onrender.com/mcp
 ```
 
 Connect in Claude Code:
 ```bash
-claude mcp add ccf-benchmarks --url "https://csrd-benchmarks-mcp.onrender.com/sse?api_key=YOUR_KEY"
+claude mcp add ccf-benchmarks --url "https://csrd-benchmarks-mcp.onrender.com/mcp?api_key=YOUR_KEY"
 ```
+
+Or add as a custom connector on **claude.ai web** (Settings → Customize → Connectors → + → Add custom connector):
+```
+https://csrd-benchmarks-mcp.onrender.com/mcp?api_key=YOUR_KEY
+```
+Once added on web, it syncs to the mobile app automatically.
 
 Or in `claude_desktop_config.json`:
 ```json
 {
   "mcpServers": {
     "ccf-benchmarks": {
-      "url": "https://csrd-benchmarks-mcp.onrender.com/sse?api_key=YOUR_KEY"
+      "url": "https://csrd-benchmarks-mcp.onrender.com/mcp?api_key=YOUR_KEY"
     }
   }
 }
@@ -85,7 +91,7 @@ Add to `~/.claude.json` under `mcpServers`:
 ### Available tools
 
 | Tool | Description |
-|---|---|
+| --- | --- |
 | `list_companies()` | All 52 companies in the dataset |
 | `list_sectors()` | Sectors and sub-sectors |
 | `get_benchmarks_by_sector(sector, sub_sector)` | Filter by sector — partial, case-insensitive |

@@ -124,11 +124,11 @@ async def health_check(request: Request) -> JSONResponse:
 
 
 if __name__ == "__main__":
-    # Default to SSE when PORT is injected by the cloud host (e.g. Render)
-    default_transport = "sse" if os.environ.get("PORT") else "stdio"
+    # Default to streamable-http when PORT is injected by the cloud host (e.g. Render)
+    default_transport = "streamable-http" if os.environ.get("PORT") else "stdio"
     transport = os.environ.get("MCP_TRANSPORT", default_transport)
 
-    if transport == "sse":
+    if transport in ("sse", "streamable-http"):
         import uvicorn
         from starlette.middleware.base import BaseHTTPMiddleware
 
@@ -146,7 +146,10 @@ if __name__ == "__main__":
                         return JSONResponse({"error": "invalid_token", "error_description": "Invalid or missing API key"}, status_code=401)
                 return await call_next(request)
 
-        app = mcp.sse_app()
+        if transport == "streamable-http":
+            app = mcp.streamable_http_app()
+        else:
+            app = mcp.sse_app()
         app.add_middleware(_APIKeyMiddleware)
         uvicorn.run(app, host=mcp.settings.host, port=mcp.settings.port)
     else:

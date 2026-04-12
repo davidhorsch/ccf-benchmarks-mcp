@@ -7,6 +7,6 @@ services:
     startCommand: python mcp_server.py
     envVars:
       - key: MCP_TRANSPORT
-        value: sse
+        value: streamable-http
       - key: MCP_API_KEY
         sync: false   # set this manually in the Render dashboard — never commit the value
