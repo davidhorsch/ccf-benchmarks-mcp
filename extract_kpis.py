@@ -598,6 +598,7 @@ Rules:
 - If Scope 3 total is not stated but categories are present, sum them
 - "CO2e", "CO₂e", "GHG", "greenhouse gas" all refer to the same metric
 - Revenue is often found in EU Taxonomy tables or the financial highlights section
+- Ensure the reporting data refers to an entire calendar year. Check https://en.wikipedia.org/wiki/Fiscal_year for reference and highlight if data referes to fiscal year if calendar year not available in the notes.
 """
 
 

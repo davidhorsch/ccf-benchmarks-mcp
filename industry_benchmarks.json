@@ -77,26 +77,25 @@
       "country": "Germany",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 784000,
-        "scope2_lb_tco2e": 4030000,
-        "scope2_mb_tco2e": 3570000,
-        "scope3_total_tco2e": 17500000,
-        "revenue_eur_million": 12853,
+        "scope1_tco2e": 1010000,
+        "scope2_lb_tco2e": 4320000,
+        "scope2_mb_tco2e": 3840000,
+        "scope3_total_tco2e": 17980000,
+        "revenue_eur_million": 13643,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 12853,
+        "revenue_original_value": 13643,
         "fte": null,
-        "reporting_year": 2025,
-        "notes": "The provided pages (108–139) cover governance, strategy, materiality assessment methodology, and the ESRS index — not the actual GHG emissions data tables. Quantitative Scope 1/2/3 figures are disclosed in 'ESRS E1: Climate Change – Greenhouse Gas Emissions' (referenced as E1-6), which is not included in these pages. Revenue and FTE figures would appear in the financial statements and 'ESRS S1: Own Workforce – Characteristics' sections respectively, also not provided. Reporting year confirmed as fiscal 2025 per cover and text references. | Pass2: All emissions values from p.148 GHG table in million metric tons CO2e, converted to tCO2e (x1,000,000). Scope 1 = 0.784 Mt (European decimal notation). Scope 3 Cat 1 = 13.00 Mt. Cat 11 (Use of sold products) explicitly classified as non-relevant (<1% of total Scope 3, footnote 7). Revenue not directly stated in provided pages; derived from market-based GHG intensity of 0.0017 Mt CO2e/€M applied to total market-based emissions of 21.85 Mt (= 21,850,000 / 0.0017 ≈ 12,853 EUR million); cross-checked against energy intensity (14,939,000 MWh / 1,154.30 MWh/€M ≈ 12,942 EUR million) — consistent at ~€12.9B. FTE not found in provided report sections. Scope 1 + Scope 2 (market-based) combined = 4.35 Mt as stated in table."
+        "notes": "The provided pages (108–139) cover governance, strategy, materiality assessment methodology, and the ESRS index — not the actual GHG emissions data tables. Quantitative Scope 1/2/3 figures are disclosed in 'ESRS E1: Climate Change – Greenhouse Gas Emissions' (referenced as E1-6), which is not included in these pages. Revenue and FTE figures would appear in the financial statements and 'ESRS S1: Own Workforce – Characteristics' sections respectively, also not provided. Fiscal year is calendar year so used 2024 data from 2025 report. Reporting year confirmed as fiscal 2025 per cover and text references. | Pass2: All emissions values from p.148 GHG table in million metric tons CO2e, converted to tCO2e (x1,000,000). Scope 1 = 0.784 Mt (European decimal notation). Scope 3 Cat 1 = 13.00 Mt. Cat 11 (Use of sold products) explicitly classified as non-relevant (<1% of total Scope 3, footnote 7). Revenue not directly stated in provided pages; derived from market-based GHG intensity of 0.0016 Mt CO2e/€M applied to total market-based emissions of 21.83 Mt (= 21,830,000 / 0.0016 ≈ 12,853 EUR million); FTE not found in provided report sections. Scope 1 + Scope 2 (market-based) combined = 4.35 Mt as stated in table."
       },
       "intensities": {
-        "scope1_tco2e": 784000,
-        "scope2_tco2e": 3570000,
-        "scope12_tco2e": 4354000,
-        "intensity_s12_per_eur_m": 338.8,
-        "scope3_tco2e": 17500000,
-        "scope123_tco2e": 21854000,
-        "intensity_s123_per_eur_m": 1700.3,
-        "revenue_eur_million": 12853
+        "scope1_tco2e": 1010000,
+        "scope2_tco2e": 3840000,
+        "scope12_tco2e": 4850000,
+        "intensity_s12_per_eur_m": 355.5,
+        "scope3_tco2e": 17980000,
+        "scope123_tco2e": 22830000,
+        "intensity_s123_per_eur_m": 1673.4,
+        "revenue_eur_million": 13643
       },
       "confidence": "high"
     },
