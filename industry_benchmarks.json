@@ -1742,11 +1742,11 @@
       "country": "Sweden",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 6924,
-        "scope2_mb_tco2e": 34746,
-        "scope2_lb_tco2e": null,
+        "scope1_tco2e": 15102,
+        "scope2_mb_tco2e": 26553,
+        "scope2_lb_tco2e": 364693,
         "scope2_tco2e": null,
-        "scope3_total_tco2e": 6955000,
+        "scope3_total_tco2e": 8729000,
         "revenue_eur_million": 20401,
         "revenue_currency_original": "SEK",
         "revenue_original_value": 234478,
@@ -1757,10 +1757,10 @@
       "intensities": {
         "intensity_s12_per_eur_m": 2.0,
         "intensity_s12_per_fte": 0.4,
-        "intensity_s123_per_eur_m": 343.0,
-        "intensity_s123_per_fte": 71.6,
-        "s12_tco2e": 41670,
-        "s123_tco2e": 6996670
+        "intensity_s123_per_eur_m": 429.9,
+        "intensity_s123_per_fte": 89.75,
+        "s12_tco2e": 41655,
+        "s123_tco2e": 8770000
       },
       "confidence": "medium"
     },
