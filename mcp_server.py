@@ -156,7 +156,9 @@ def _build_sse_app():
 
 
 if __name__ == "__main__":
-    transport = os.environ.get("MCP_TRANSPORT", "stdio")
+    # Default to SSE when PORT is injected by the cloud host (e.g. Render)
+    default_transport = "sse" if os.environ.get("PORT") else "stdio"
+    transport = os.environ.get("MCP_TRANSPORT", default_transport)
     if transport == "sse":
         import uvicorn
         port = int(os.environ.get("PORT", 8000))
