@@ -114,7 +114,7 @@ def get_dataset_metadata() -> dict:
 
 
 from starlette.requests import Request
-from starlette.responses import JSONResponse
+from starlette.responses import JSONResponse  # used by health_check
 
 
 @mcp.custom_route("/health", methods=["GET"])
@@ -130,32 +130,12 @@ if __name__ == "__main__":
 
     if transport in ("sse", "streamable-http"):
         import uvicorn
-        from starlette.middleware.base import BaseHTTPMiddleware
-
-        class _APIKeyMiddleware(BaseHTTPMiddleware):
-            """Block requests without a valid MCP_API_KEY.
-            Accepts key via:  X-API-Key header  or  ?api_key= query param.
-            /health is always allowed so Render health checks pass.
-            """
-            async def dispatch(self, request, call_next):
-                expected = os.environ.get("MCP_API_KEY", "")
-                if expected and request.url.path != "/health":
-                    key = (request.headers.get("x-api-key")
-                           or request.query_params.get("api_key"))
-                    if key != expected:
-                        return JSONResponse({"error": "invalid_token", "error_description": "Invalid or missing API key"}, status_code=401)
-                return await call_next(request)
-
         from starlette.middleware.cors import CORSMiddleware
 
         if transport == "streamable-http":
             app = mcp.streamable_http_app()
         else:
             app = mcp.sse_app()
-        # Starlette applies middleware in reverse add order (last = outermost).
-        # _APIKeyMiddleware must be added first so CORS is outermost and handles
-        # OPTIONS preflights before the API key check runs.
-        app.add_middleware(_APIKeyMiddleware)
         app.add_middleware(
             CORSMiddleware,
             allow_origins=["*"],
