@@ -18,7 +18,7 @@
       "Year-to-year comparability is affected by revenue fluctuations (e.g. BASF revenue dropped 21% from 2022 to 2023, inflating intensity).",
       "CSRD-derived benchmarks use FY2023 or FY2024 data depending on company reporting cycle. All are first-year CSRD disclosures; methodology and coverage may improve in subsequent years.",
       "Proprietary databases (Trucost/S&P Sustainable1, MSCI CarbonMetrics) provide GICS-level benchmarks but require subscription."
-    ],
+    ]
   },
   "eu_ets_product_benchmarks": {
     "description": "EU ETS top-10th-percentile efficiency benchmarks (tCO2e per tonne of product) used for free allowance allocation under EU Reg. 2021/447. These represent best-practice, not sector averages. Average installations emit 2–3x these values. Period: 2021–2025.",
