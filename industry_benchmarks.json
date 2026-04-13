@@ -81,23 +81,29 @@
         "scope2_lb_tco2e": 4320000,
         "scope2_mb_tco2e": 3840000,
         "scope3_total_tco2e": 17980000,
-        "revenue_eur_million": 13643,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 13570000,
+          "cat11_use_of_sold_products": 2330000
+        },
+        "revenue_eur_million": 14179,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 13643,
-        "fte": null,
-        "notes": "The provided pages (108–139) cover governance, strategy, materiality assessment methodology, and the ESRS index — not the actual GHG emissions data tables. Quantitative Scope 1/2/3 figures are disclosed in 'ESRS E1: Climate Change – Greenhouse Gas Emissions' (referenced as E1-6), which is not included in these pages. Revenue and FTE figures would appear in the financial statements and 'ESRS S1: Own Workforce – Characteristics' sections respectively, also not provided. Fiscal year is calendar year so used 2024 data from 2025 report. Reporting year confirmed as fiscal 2025 per cover and text references. | Pass2: All emissions values from p.148 GHG table in million metric tons CO2e, converted to tCO2e (x1,000,000). Scope 1 = 0.784 Mt (European decimal notation). Scope 3 Cat 1 = 13.00 Mt. Cat 11 (Use of sold products) explicitly classified as non-relevant (<1% of total Scope 3, footnote 7). Revenue not directly stated in provided pages; derived from market-based GHG intensity of 0.0016 Mt CO2e/€M applied to total market-based emissions of 21.83 Mt (= 21,830,000 / 0.0016 ≈ 12,853 EUR million); FTE not found in provided report sections. Scope 1 + Scope 2 (market-based) combined = 4.35 Mt as stated in table.",
-        "scope3_by_category": null,
-        "reporting_year": null
+        "revenue_original_value": 14179,
+        "fte": 17503,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.41; Revenue: p.74; FTE: p.96. All GHG emissions are reported in million metric tons CO2e and converted to tCO2e. Revenue is reported in EUR million. FTE refers to full-time equivalents. All data refers to the calendar year 2024."
       },
       "intensities": {
         "scope1_tco2e": 1010000,
         "scope2_tco2e": 3840000,
         "scope12_tco2e": 4850000,
-        "intensity_s12_per_eur_m": 355.5,
+        "intensity_s12_per_eur_m": 342.1,
+        "intensity_s12_per_fte": 277.1,
         "scope3_tco2e": 17980000,
         "scope123_tco2e": 22830000,
-        "intensity_s123_per_eur_m": 1673.4,
-        "revenue_eur_million": 13643
+        "intensity_s123_per_eur_m": 1610.1,
+        "intensity_s123_per_fte": 1304.3,
+        "revenue_eur_million": 14179,
+        "fte": 17503
       },
       "confidence": "high",
       "document": "Covestro_2025_CSRD.pdf"
@@ -115,26 +121,29 @@
         "scope2_lb_tco2e": 36300,
         "scope2_mb_tco2e": 22129,
         "scope3_total_tco2e": 332835,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 108016,
+          "cat11_use_of_sold_products": 0
+        },
         "revenue_eur_million": 4341.3,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 4341.3,
-        "fte": 32434,
+        "fte": 36527,
         "reporting_year": 2024,
-        "notes": "All emissions are reported in tCO2e. Revenue is reported as Total Operating Income. The Scope 3 category 'cat11_use_of_sold_products' is not explicitly quantified in the provided tables, with the report stating that packaging products sold have negligible emissions as they are used directly in post centers or warehouses and have no emissions during their use (page 139).",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.58, 140; Revenue: p.3, 14, 232, 243, 266; FTE: p.3, 67, 181. All GHG emissions are in tCO2e. Revenue refers to 'Total Operating Income' in EUR million. FTE refers to 'Number of employees (at year end)' including Staci. Page 181 notes that Staci is included in financial statements but not yet fully reflected in the CSRD report for 2024, but will be in the next reporting period. Scope 3 category 'use of sold products' is 0 as the company primarily provides services and packaging products sold have no emissions during their use (p. 139)."
       },
       "intensities": {
         "scope1_tco2e": 76513,
         "scope2_tco2e": 22129,
         "scope12_tco2e": 98642,
         "intensity_s12_per_eur_m": 22.7,
-        "intensity_s12_per_fte": 3.0,
+        "intensity_s12_per_fte": 2.7,
         "scope3_tco2e": 332835,
         "scope123_tco2e": 431477,
         "intensity_s123_per_eur_m": 99.4,
-        "intensity_s123_per_fte": 13.3,
+        "intensity_s123_per_fte": 11.8,
         "revenue_eur_million": 4341.3,
-        "fte": 32434
+        "fte": 36527
       },
       "confidence": "high",
       "document": "BPOST_SA_2024_CSRD.pdf"
@@ -151,14 +160,17 @@
         "scope1_tco2e": 271000,
         "scope2_lb_tco2e": 11100,
         "scope2_mb_tco2e": 11300,
-        "scope3_total_tco2e": 18302000,
+        "scope3_total_tco2e": 18373000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 89000,
+          "cat11_use_of_sold_products": 18125000
+        },
         "revenue_eur_million": 6644,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 6644,
+        "revenue_original_value": 6643939,
         "fte": 4375,
         "reporting_year": 2024,
-        "notes": "All emissions values were converted from ktCO2e to tCO2e (multiplied by 1000). Revenue is reported in EUR million. FTE is reported as total employees.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.126, p.127; Revenue: p.6, p.23, p.36, p.395; FTE: p.6, p.20, p.95, p.179. All emissions are converted from ktCO2e to tCO2e by multiplying by 1,000. Revenue is reported in EUR million. FTE is based on the total headcount at year-end."
       },
       "intensities": {
         "scope1_tco2e": 271000,
@@ -166,10 +178,10 @@
         "scope12_tco2e": 282300,
         "intensity_s12_per_eur_m": 42.5,
         "intensity_s12_per_fte": 64.5,
-        "scope3_tco2e": 18302000,
-        "scope123_tco2e": 18584300,
-        "intensity_s123_per_eur_m": 2797.2,
-        "intensity_s123_per_fte": 4247.8,
+        "scope3_tco2e": 18373000,
+        "scope123_tco2e": 18655300,
+        "intensity_s123_per_eur_m": 2807.8,
+        "intensity_s123_per_fte": 4264.1,
         "revenue_eur_million": 6644,
         "fte": 4375
       },
@@ -189,25 +201,28 @@
         "scope2_lb_tco2e": 863000,
         "scope2_mb_tco2e": 117000,
         "scope3_total_tco2e": 14815000,
-        "revenue_eur_million": 35955,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 10188000,
+          "cat11_use_of_sold_products": 1345000
+        },
+        "revenue_eur_million": 29964,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 35955,
+        "revenue_original_value": 29964,
         "fte": 88497,
         "reporting_year": 2024,
-        "notes": "All emissions are reported in ktonnes CO2eq in the source document and converted to tCO2e (1 ktonnes = 1,000 tCO2e). Revenue is reported as 'Revenue' in millions of EUR. FTE is reported as 'Average number of employees (FTE)'. The SBTi target boundary excludes less than 5% of total Scope 1 and 2 emissions and less than 10% of total Scope 3 emissions. Data improvements allowed for better distinction of packaging emissions between category one and category twelve, explaining the large decrease compared to the 2022 baseline for 'End-of-life treatment of sold products'.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.180; Revenue: p.5, p.6, p.44; FTE: p.6, p.93. Scope 1, Scope 2 market-based, Scope 2 location-based, and Scope 3 total emissions are from the 'GHG emissions' table on page 180, reported in ktonnes and converted to tCO2e. Scope 3 categories 'Purchased goods and services' and 'Use of sold products' are also from this table. Revenue is 'Net revenue (beia)' from performance highlights and key figures. FTE is 'Average number of employees (FTE)' from key figures and personnel expenses."
       },
       "intensities": {
         "scope1_tco2e": 974000,
         "scope2_tco2e": 117000,
         "scope12_tco2e": 1091000,
-        "intensity_s12_per_eur_m": 30.3,
+        "intensity_s12_per_eur_m": 36.4,
         "intensity_s12_per_fte": 12.3,
         "scope3_tco2e": 14815000,
         "scope123_tco2e": 15906000,
-        "intensity_s123_per_eur_m": 442.4,
+        "intensity_s123_per_eur_m": 530.8,
         "intensity_s123_per_fte": 179.7,
-        "revenue_eur_million": 35955,
+        "revenue_eur_million": 29964,
         "fte": 88497
       },
       "confidence": "high",
@@ -226,13 +241,16 @@
         "scope2_lb_tco2e": 118356,
         "scope2_mb_tco2e": 0,
         "scope3_total_tco2e": 813481,
-        "revenue_eur_million": 5603,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 395865,
+          "cat11_use_of_sold_products": 24645
+        },
+        "revenue_eur_million": 5634,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 5603,
-        "fte": 10333,
+        "revenue_original_value": 5634,
+        "fte": 9664,
         "reporting_year": 2024,
-        "notes": "Emissions data (Scope 1, 2, 3 actuals) are not present in the provided pages (pp. 46–75). The Climate change metrics and targets section starts on p. 87 per the disclosure index; those pages were not supplied. Page 55 mentions 2025 Scope 1/2 targets (6,100 / 141,000 tCO2e) and a 2030 Scope 3 target (599,000 tCO2e) — these are forward-looking targets, not 2024 actuals, and have been excluded. Revenue of €5,603 million is taken from the EU taxonomy turnover table (p. 72), consistent with reported turnover for FY2024. The 10,333 figure is described as total employees (not explicitly FTE); all are based in the Netherlands (2023: 10,410). | Pass2: Scope 2 market-based is 0.0 tCO2e because KPN has contractual arrangements for 100% renewable electricity (via guarantees of origin) since 2011. Revenue not directly stated in the provided pages; derived from GHG intensity ratios on p.96: total location-based GHG 938,045 tCO2e ÷ intensity ratio 167 tCO2e/EUR m = ~5,617 EUR m (cross-checked: market-based 819,690 ÷ 146 = ~5,614 EUR m — consistent). FTE figure not found in the provided report sections. Scope 3 total covers all 15 GHG Protocol categories; Cat 4, 8, 10, 14 are zero/not applicable for KPN.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.92; Revenue: p.183; FTE: p.117, p.198. Scope 2 market-based emissions are 0.0 as KPN's electricity consumption is based on 100% renewable electricity (p.85, p.92). Revenue is reported as 'Total revenues and other income' from the consolidated statement of profit or loss."
       },
       "intensities": {
         "scope1_tco2e": 6208,
@@ -242,10 +260,10 @@
         "intensity_s12_per_fte": 0.6,
         "scope3_tco2e": 813481,
         "scope123_tco2e": 819689,
-        "intensity_s123_per_eur_m": 146.3,
-        "intensity_s123_per_fte": 79.3,
-        "revenue_eur_million": 5603,
-        "fte": 10333
+        "intensity_s123_per_eur_m": 145.5,
+        "intensity_s123_per_fte": 84.8,
+        "revenue_eur_million": 5634,
+        "fte": 9664
       },
       "confidence": "high",
       "document": "KPN_2024_CSRD.pdf"
@@ -263,13 +281,16 @@
         "scope2_lb_tco2e": 164079,
         "scope2_mb_tco2e": 114970,
         "scope3_total_tco2e": 5248523,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 4710261,
+          "cat11_use_of_sold_products": 994948
+        },
         "revenue_eur_million": 23683,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 23683,
         "fte": 62035,
         "reporting_year": 2024,
-        "notes": "Scope 1 emissions (20,844 tCO2e) and Scope 2 market-based emissions (114,970 tCO2e) are from page 192, table E1-6. Scope 3 total emissions (5,248,523 tCO2e) are from page 192, table E1-6. Specific Scope 3 categories 'Purchased goods and services' (4,710,261 tCO2e) and 'Use of sold products' (994,948 tCO2e) are from page 193, table E1-6. Note that 'Use of sold products' is explicitly excluded from the total Scope 3 GHG emissions calculation as per SBTi criteria (page 182). Total net sales (revenue) of 23,683 EUR million is from page 5, 'Financial Highlights 2024 (IFRS)'. Total employees (FTE) of 62,035 is from page 72, 'Employees worldwide'.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.191, p.192, p.193, p.194; Revenue: p.4, p.5, p.80, p.137, p.476, p.478; FTE: p.5, p.72, p.159, p.278, p.477. Scope 3 total excludes emissions from 'use of sold products' as per the company's SBTi-approved targets (p.194). Scope 2 market-based emissions are used as preferred. All data refers to the calendar year 2024."
       },
       "intensities": {
         "scope1_tco2e": 20844,
@@ -296,27 +317,33 @@
       "country": "Germany",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 21185,
-        "scope2_lb_tco2e": 57625,
-        "scope2_mb_tco2e": 35973,
-        "scope3_total_tco2e": 482744,
-        "revenue_eur_million": 3538.1,
+        "scope1_tco2e": 20355,
+        "scope2_lb_tco2e": 51872,
+        "scope2_mb_tco2e": 28691,
+        "scope3_total_tco2e": 645033,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 261588,
+          "cat11_use_of_sold_products": 137382
+        },
+        "revenue_eur_million": 3380.7,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 3538.1,
-        "fte": null,
-        "reporting_year": 2025,
-        "notes": "Pages 111–154 cover general information, governance, strategy, IRO management, and EU Taxonomy overview only. GHG emissions (Scope 1, 2, 3) are disclosed on page 172 (ESRS E1-6), which is not included in this excerpt. Revenue and FTE figures are not present in the provided pages. Reporting period is fiscal year 2025 (closing date December 31, 2025). GHG data is noted to have been restated due to accounting policy adjustments including emission factors (see page 172). EU Taxonomy aligned turnover was 5% of total turnover in 2025. | Pass2: Revenue sourced from EU Taxonomy KPI table (p.159): total turnover A+B = €3,538.1 million in EUR. FTE not disclosed in the provided pages. 2024 Scope 2 market-based and all Scope 3 category figures were restated vs. originally reported values; 2025 figures used throughout. Scope 3 categories 7 (employee commuting), 8, 9, 10, 13, 14, 15 reported as NR (not reported / not applicable). Combined Scope 1 + market-based Scope 2 = 57,158 t CO2eq (consistent with 21,185 + 35,973).",
-        "scope3_by_category": null
+        "revenue_original_value": 3380.7,
+        "fte": 13528,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.162, 163; Revenue: p.2, 241; FTE: p.2, 185. The reporting period is the calendar year 2024, as confirmed on p.111. Market-based Scope 2 emissions are preferred and used for the `scope2_mb_tco2e` field. Scope 3 total is explicitly stated. Specific Scope 3 categories are also explicitly stated."
       },
       "intensities": {
-        "scope1_tco2e": 21185,
-        "scope2_tco2e": 35973,
-        "scope12_tco2e": 57158,
-        "intensity_s12_per_eur_m": 16.2,
-        "scope3_tco2e": 482744,
-        "scope123_tco2e": 539902,
-        "intensity_s123_per_eur_m": 152.6,
-        "revenue_eur_million": 3538.1
+        "scope1_tco2e": 20355,
+        "scope2_tco2e": 28691,
+        "scope12_tco2e": 49046,
+        "intensity_s12_per_eur_m": 14.5,
+        "intensity_s12_per_fte": 3.6,
+        "scope3_tco2e": 645033,
+        "scope123_tco2e": 694079,
+        "intensity_s123_per_eur_m": 205.3,
+        "intensity_s123_per_fte": 51.3,
+        "revenue_eur_million": 3380.7,
+        "fte": 13528
       },
       "confidence": "high",
       "document": "Sartorius_2025_CSRD.pdf"
@@ -334,13 +361,16 @@
         "scope2_lb_tco2e": 28670,
         "scope2_mb_tco2e": 405,
         "scope3_total_tco2e": 4650996,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 3510330,
+          "cat11_use_of_sold_products": 241343
+        },
         "revenue_eur_million": 7298.8,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 7298.8,
         "fte": 10405,
         "reporting_year": 2024,
-        "notes": "All emissions are reported in tCO2e. Revenue is reported in EUR million. FTE is total headcount. Market-based Scope 2 emissions are used as preferred. Scope 3 category 'Purchased goods and services' is explicitly stated in the table on page 133 as 3,510,330 tCO2e, which aligns with the percentage (75.47%) of total Scope 3 (4,650,996 * 0.7547 = 3,510,330.09).",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.131, 133; Revenue: p.2, 42, 102; FTE: p.2, 102, 193. All values are for the 2024 calendar year. Revenue is reported in EUR million. GHG emissions are reported in tCO2e. FTE is reported as headcount."
       },
       "intensities": {
         "scope1_tco2e": 53007,
@@ -371,13 +401,16 @@
         "scope2_lb_tco2e": 58925,
         "scope2_mb_tco2e": 875,
         "scope3_total_tco2e": 9043386,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 528954,
+          "cat11_use_of_sold_products": 4032177
+        },
         "revenue_eur_million": 9518.556,
-        "revenue_currency_original": "DKK",
+        "revenue_currency_original": "DKKm",
         "revenue_original_value": 71034,
         "fte": 8278,
         "reporting_year": 2024,
-        "notes": "All emissions are in tonnes CO2e. Revenue is converted from DKK to EUR using the rate 1 DKK = 0.134 EUR. For Scope 2, market-based emissions are preferred and provided, with location-based also included. FTE is the total number of full-time equivalents at year-end.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.94; Revenue: p.32; FTE: p.133. All GHG emissions are reported in tonnes CO2e. Revenue in DKKm converted to EUR million using the rate 1 DKK = 0.134 EUR."
       },
       "intensities": {
         "scope1_tco2e": 733299,
@@ -404,30 +437,33 @@
       "country": "Norway",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 1179300,
-        "scope2_lb_tco2e": 142879,
-        "scope2_mb_tco2e": 490,
-        "scope3_total_tco2e": 4838563,
-        "revenue_eur_million": 6781.272,
+        "scope1_tco2e": 1113058,
+        "scope2_lb_tco2e": 151147,
+        "scope2_mb_tco2e": 1078,
+        "scope3_total_tco2e": 4436208,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 260730,
+          "cat11_use_of_sold_products": 456053
+        },
+        "revenue_eur_million": 7182.992,
         "revenue_currency_original": "NOK",
-        "revenue_original_value": 78852,
-        "fte": 6388,
-        "reporting_year": 2025,
-        "notes": "Scope 1, Scope 2 (market-based), and Scope 3 total emissions are from the table on page 79. Scope 3 categories are also from page 79. The total Scope 3 value from the table (4,838,563 tCO2e) is slightly different from the percentage-derived value from page 72 (80.4% of 6.0 Mt = 4,824,000 tCO2e); the table value is used for precision. FTE is from page 131. Revenue is from page 106 (78,852 NOK million) and converted to EUR using the rate 1 NOK = 0.086 EUR.",
-        "scope3_by_category": null
+        "revenue_original_value": 83522000000,
+        "fte": 6915,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.80; Revenue: p.108; FTE: p.3, p.120. Revenue conversion rate: 1 NOK = 0.086 EUR."
       },
       "intensities": {
-        "scope1_tco2e": 1179300,
-        "scope2_tco2e": 490,
-        "scope12_tco2e": 1179790,
-        "intensity_s12_per_eur_m": 174.0,
-        "intensity_s12_per_fte": 184.7,
-        "scope3_tco2e": 4838563,
-        "scope123_tco2e": 6018353,
-        "intensity_s123_per_eur_m": 887.5,
-        "intensity_s123_per_fte": 942.1,
-        "revenue_eur_million": 6781.272,
-        "fte": 6388
+        "scope1_tco2e": 1113058,
+        "scope2_tco2e": 1078,
+        "scope12_tco2e": 1114136,
+        "intensity_s12_per_eur_m": 155.1,
+        "intensity_s12_per_fte": 161.1,
+        "scope3_tco2e": 4436208,
+        "scope123_tco2e": 5550344,
+        "intensity_s123_per_eur_m": 772.7,
+        "intensity_s123_per_fte": 802.7,
+        "revenue_eur_million": 7182.992,
+        "fte": 6915
       },
       "confidence": "high",
       "document": "Statkraft_2025_CSRD.pdf"
@@ -441,30 +477,33 @@
       "country": "France",
       "year": 2023,
       "raw_kpis": {
-        "scope1_tco2e": 542,
-        "scope2_lb_tco2e": 777,
-        "scope2_mb_tco2e": 262,
-        "scope3_total_tco2e": 96870,
-        "revenue_eur_million": 2356.1,
+        "scope1_tco2e": 724,
+        "scope2_lb_tco2e": 1119,
+        "scope2_mb_tco2e": 557,
+        "scope3_total_tco2e": 337877,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 92876,
+          "cat11_use_of_sold_products": 122216
+        },
+        "revenue_eur_million": 2296.9,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 2356.1,
-        "fte": 3779,
-        "reporting_year": 2024,
-        "notes": "Scope 1 and Scope 2 are reported only as a combined total of 1,320 tCO2e for 2024 (carbon trajectory diagram, p.149); individual scope 1 / scope 2 location-based / market-based breakdowns are not available in the provided pages. The Scope 3 figure of 96,870 tCO2e (p.150 diagram) represents upstream Scope 3 only (scope 3a); downstream Scope 3 (scope 3b) exists per the report but no figures are provided in these pages. The detailed E1-6 GHG disclosure tables with per-scope and per-category breakdowns are referenced under section 4.2.2.5 which is not included in the excerpt. Note that production-related emissions are currently booked in Scope 3 cat 1 (to be reclassified to Scopes 1+2 from 2025), which explains the unusually low combined Scope 1+2 figure. FTE of 3,779 = total registered employees worldwide as of 31 Dec 2024 (permanent + fixed-term + apprentices + vocational training). Revenue of EUR 2,356.1 million taken from consolidated income statement (p.141). | Pass2: All emissions from the detailed GHG Protocol table on p.157. Scope 3 total is location-based (market-based variant is 385,145 tCO2e). Category 3 energy/fuel is location-based (397); market-based is 211. FTE is registered headcount worldwide (3,779 incl. permanent 3,115 + temporary contract 664); an additional 1,636 FTE of extra/freelance temporary workers is reported separately using the 1,607-hour method. Revenue coverage is 89% of financial scope — Newen Studios international subsidiaries and several small entities excluded. ~1% of data extrapolated due to Q4 2024 collection lag. Carbon trajectory diagram confirms scope 1+2 sum of 1,320 tCO2e (542+777=1,319 ≈ consistent). Cat11 (use of sold products, 161,913) and Cat9 (downstream transport, 126,549) are downstream scope 3 and dominate total emissions (74.6% downstream per pie chart).",
-        "scope3_by_category": null
+        "revenue_original_value": 2296.9,
+        "fte": 3640,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p. 183; Revenue: p. 9, 164, 280, 303; FTE: p. 195. Scope 1 tCO2e is the sum of direct emissions from stationary combustion sources (242), mobile combustion sources (403), and fugitive emissions (79) for 2025. Scope 2 market-based tCO2e is the sum of indirect emissions from electricity consumption (market-based) (303) and indirect emissions associated with the consumption of steam, heating or cooling (254) for 2025. Scope 3 total tCO2e is explicitly stated as 'TOTAL SCOPES 1, 2 AND 3 (MARKET BASED)' for 2025. FTE represents the 'TOTAL HEADCOUNT WORLDWIDE' for 2025, which includes permanent and non-permanent contracts. Revenue is consistently reported in EUR million."
       },
       "intensities": {
-        "scope1_tco2e": 542,
-        "scope2_tco2e": 262,
-        "scope12_tco2e": 804,
-        "intensity_s12_per_eur_m": 0.3,
-        "intensity_s12_per_fte": 0.2,
-        "scope3_tco2e": 96870,
-        "scope123_tco2e": 97674,
-        "intensity_s123_per_eur_m": 41.5,
-        "intensity_s123_per_fte": 25.8,
-        "revenue_eur_million": 2356.1,
-        "fte": 3779
+        "scope1_tco2e": 724,
+        "scope2_tco2e": 557,
+        "scope12_tco2e": 1281,
+        "intensity_s12_per_eur_m": 0.6,
+        "intensity_s12_per_fte": 0.4,
+        "scope3_tco2e": 337877,
+        "scope123_tco2e": 339158,
+        "intensity_s123_per_eur_m": 147.7,
+        "intensity_s123_per_fte": 93.2,
+        "revenue_eur_million": 2296.9,
+        "fte": 3640
       },
       "confidence": "high",
       "document": "TF1_2024_CSRD.pdf"
@@ -482,13 +521,16 @@
         "scope2_lb_tco2e": 600000,
         "scope2_mb_tco2e": 800000,
         "scope3_total_tco2e": 9800000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 8300000,
+          "cat11_use_of_sold_products": null
+        },
         "revenue_eur_million": 15743.7,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 15743.7,
         "fte": 49659,
-        "reporting_year": 2024,
-        "notes": "All emissions data are for the business year 2024/25 and are reported in million tCO2e in the source table (page 201), converted to tCO2e. Revenue is in millions of euros (page 2). FTE is total headcount including apprentices (page 113).",
-        "scope3_by_category": null
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.201; Revenue: p.2, 4, 50, 112, 113, 199, 355; FTE: p.2, 54, 284. All GHG emissions are for the business year 2024/25 (fiscal year ending March 31, 2025). Scope 3 categories 3.6, 3.7, 3.8, 3.10, 3.11, 3.12, 3.13, 3.14, 3.15 are reported as immaterial or not listed with values on p.201. The reporting year is a fiscal year ending March 31, 2025."
       },
       "intensities": {
         "scope1_tco2e": 12100000,
@@ -515,30 +557,33 @@
       "country": "France",
       "year": 2023,
       "raw_kpis": {
-        "scope1_tco2e": 14868470,
-        "scope2_lb_tco2e": 20682800,
-        "scope2_mb_tco2e": 20064140,
-        "scope3_total_tco2e": 23243928,
-        "revenue_eur_million": 27058,
+        "scope1_tco2e": 14590300,
+        "scope2_lb_tco2e": 19204300,
+        "scope2_mb_tco2e": 19599000,
+        "scope3_total_tco2e": 24252478,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 6603625,
+          "cat11_use_of_sold_products": 6994615
+        },
+        "revenue_eur_million": 26940.2,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 27058,
-        "fte": 66657,
-        "reporting_year": 2024,
-        "notes": "Scope 1 and Scope 2 (market-based) GHG emissions are reported in tCO2eq on page 314. Total Scope 3 GHG emissions and specific categories are also from page 314. Total revenue is reported in million euros on page 51 and 213. Total headcount (FTE) is from page 213 and 328.",
-        "scope3_by_category": null
+        "revenue_original_value": 26940.2,
+        "fte": 65168,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.318, table \"Gross Scopes 1, 2 & 3 and Total GHG Emissions\", row \"Gross Scope 1 GHG Emissions (tCO2eq)\" for Scope 1, row \"Gross Scope 2 GHG Emissions (Location-based) (tCO2eq)\" for Scope 2 LB, row \"Gross Scope 2 GHG Emissions (Market-based) (tCO2eq)\" for Scope 2 MB, row \"Total Gross Indirect (Scope 3) GHG Emissions (tCO2eq)\" for Scope 3 total, row \"1 Purchased goods and services (b)\" for Scope 3 Cat 1, row \"11 Use of sold products\" for Scope 3 Cat 11; Revenue: p.219, table \"Revenue\", row \"TOTAL REVENUE\"; FTE: p.331, text \"The Group’s total number of employees stands at 65,168 people (1) as of December 31, 2025\"; All data refers to the year 2025. Scope 2 is market-based as preferred. Revenue is consolidated. FTE is total headcount."
       },
       "intensities": {
-        "scope1_tco2e": 14868470,
-        "scope2_tco2e": 20064140,
-        "scope12_tco2e": 34932610,
-        "intensity_s12_per_eur_m": 1291.0,
-        "intensity_s12_per_fte": 524.1,
-        "scope3_tco2e": 23243928,
-        "scope123_tco2e": 58176538,
-        "intensity_s123_per_eur_m": 2150.1,
-        "intensity_s123_per_fte": 872.8,
-        "revenue_eur_million": 27058,
-        "fte": 66657
+        "scope1_tco2e": 14590300,
+        "scope2_tco2e": 19599000,
+        "scope12_tco2e": 34189300,
+        "intensity_s12_per_eur_m": 1269.1,
+        "intensity_s12_per_fte": 524.6,
+        "scope3_tco2e": 24252478,
+        "scope123_tco2e": 58441778,
+        "intensity_s123_per_eur_m": 2169.3,
+        "intensity_s123_per_fte": 896.8,
+        "revenue_eur_million": 26940.2,
+        "fte": 65168
       },
       "confidence": "high",
       "document": "Air_Liquide_2024_CSRD.pdf"
@@ -552,30 +597,33 @@
       "country": "Austria",
       "year": 2023,
       "raw_kpis": {
-        "scope1_tco2e": 1280000,
-        "scope2_lb_tco2e": 400000,
-        "scope2_mb_tco2e": 400000,
-        "scope3_total_tco2e": 1540000,
-        "revenue_eur_million": 2663.9,
+        "scope1_tco2e": 1150000,
+        "scope2_lb_tco2e": 690000,
+        "scope2_mb_tco2e": 270000,
+        "scope3_total_tco2e": 1450000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 880000,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": 2602.4,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 2663.9,
-        "fte": 7816,
-        "reporting_year": 2024,
-        "notes": "All emissions are converted from Mio. Tonnen CO2-Äquivalent to tCO2e. Scope 1 emissions for 2017-2023 were recalculated. Scope 1 and 2 emissions include all GHGs (CO2, CH4, N2O, HFCs, PFCs, SF6, NF3) and are market-based for Scope 2. Scope 3 total includes category 15 (Investments) for all years. Scope 3 category 1 (Purchased goods and services) for 2023 was recalculated. Scope 3 category 10 (Processing of sold products) and category 11 (Use of sold products) are explicitly stated as not relevant. FTE is based on full-time equivalents as of 31.12.2024.",
-        "scope3_by_category": null
+        "revenue_original_value": 2602432,
+        "fte": 7738,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.105 (values in million metric tons CO2 eq. converted to tCO2e); Revenue: p.3 (EUR mn), p.199 (EUR '000 converted to EUR million); FTE: p.3 (FTE as at 31/12), p.214 (FTE as at 31/12); Scope 3 C1: p.105 (value in million metric tons CO2 eq. converted to tCO2e); Scope 3 C11: p.106, p.107 (explicitly excluded from inventory and not material). All data refers to the calendar year 2025."
       },
       "intensities": {
-        "scope1_tco2e": 1280000,
-        "scope2_tco2e": 400000,
-        "scope12_tco2e": 1680000,
-        "intensity_s12_per_eur_m": 630.7,
-        "intensity_s12_per_fte": 214.9,
-        "scope3_tco2e": 1540000,
-        "scope123_tco2e": 3220000,
-        "intensity_s123_per_eur_m": 1208.8,
-        "intensity_s123_per_fte": 412.0,
-        "revenue_eur_million": 2663.9,
-        "fte": 7816
+        "scope1_tco2e": 1150000,
+        "scope2_tco2e": 270000,
+        "scope12_tco2e": 1420000,
+        "intensity_s12_per_eur_m": 545.7,
+        "intensity_s12_per_fte": 183.5,
+        "scope3_tco2e": 1450000,
+        "scope123_tco2e": 2870000,
+        "intensity_s123_per_eur_m": 1102.8,
+        "intensity_s123_per_fte": 370.9,
+        "revenue_eur_million": 2602.4,
+        "fte": 7738
       },
       "confidence": "high",
       "document": "Lenzing_2024_CSRD.pdf"
@@ -589,30 +637,33 @@
       "country": "Germany",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 109977,
-        "scope2_lb_tco2e": 160249,
-        "scope2_mb_tco2e": 135598,
-        "scope3_total_tco2e": 352392,
-        "revenue_eur_million": 562.115,
+        "scope1_tco2e": 102919,
+        "scope2_lb_tco2e": 170932,
+        "scope2_mb_tco2e": 151845,
+        "scope3_total_tco2e": 315720,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 315720,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": 554.231,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 562.115,
-        "fte": 1794,
-        "reporting_year": 2025,
-        "notes": "The provided extract covers only pages 94–129 (governance, strategy, materiality sections). Emissions data (ESRS E1-6: Gross Scope 1, 2, 3 GHG emissions) is disclosed starting at page 166, which was not included in this extract — all emission KPIs are therefore null. Employee headcount of 1,794 derived from geographic breakdown as of 12/31/2025 (Europe 1,772 + Asia 6 + USA 16); no separate FTE figure was stated. Revenue not disclosed in this section. One indirect emissions reference exists: the climate roadmap targets ~90,000 tCO2e/year reduction vs. 2022 baseline, described as >75% of Scope 1 emissions, implying a 2022 Scope 1 baseline of roughly 120,000 tCO2e — but this is not the 2025 reported figure. Reporting period stated as January 1 to December 31, 2025. | Pass2: Revenue originally stated as EUR 562,115 thousand; converted to EUR 562.115 million. Scope 3 covers only the two categories assessed as significant: 3.1 purchased goods/services (raw materials only — services and other goods explicitly excluded, ~10% of raw material quantities not collected) and 3.5 waste generated in companies; all other categories assessed as non-significant. Cat11 (use of sold products): Eminex® generates negative avoided emissions (methane reduction in manure storage) but per GHG Protocol negative emissions cannot be credited and are reported separately outside the Scope 3 total — no positive tCO2e value reported for this category. Minor discrepancy in market-based Scope 2 between detailed table (p.180: 135,589 t) and summary table (p.183: 135,598 t); used summary table value. FTE not disclosed in the provided report sections.",
-        "scope3_by_category": null
+        "revenue_original_value": 554231,
+        "fte": 1725,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.175 (Scope 1), p.176 (Scope 2 location-based), p.176 (Scope 2 market-based), p.177 (Scope 3 total, Scope 3 category 1); Revenue: p.3, p.4, p.242; FTE: p.42. Scope 3 category 11 (Use of Products Sold) is stated as 'not significant' and not quantified on p.177. FTE is the average value over the fiscal year 2024."
       },
       "intensities": {
-        "scope1_tco2e": 109977,
-        "scope2_tco2e": 135598,
-        "scope12_tco2e": 245575,
-        "intensity_s12_per_eur_m": 436.9,
-        "intensity_s12_per_fte": 136.9,
-        "scope3_tco2e": 352392,
-        "scope123_tco2e": 597967,
-        "intensity_s123_per_eur_m": 1063.8,
-        "intensity_s123_per_fte": 333.3,
-        "revenue_eur_million": 562.115,
-        "fte": 1794
+        "scope1_tco2e": 102919,
+        "scope2_tco2e": 151845,
+        "scope12_tco2e": 254764,
+        "intensity_s12_per_eur_m": 459.7,
+        "intensity_s12_per_fte": 147.7,
+        "scope3_tco2e": 315720,
+        "scope123_tco2e": 570484,
+        "intensity_s123_per_eur_m": 1029.3,
+        "intensity_s123_per_fte": 330.7,
+        "revenue_eur_million": 554.231,
+        "fte": 1725
       },
       "confidence": "high",
       "document": "Alzchem_Group_2025_CSRD.pdf"
@@ -626,30 +677,33 @@
       "country": "Germany",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 2990000,
-        "scope2_lb_tco2e": 1610000,
-        "scope2_mb_tco2e": 1360000,
-        "scope3_total_tco2e": 19500000,
-        "revenue_eur_million": 14069,
+        "scope1_tco2e": 3390000,
+        "scope2_lb_tco2e": 1940000,
+        "scope2_mb_tco2e": 1670000,
+        "scope3_total_tco2e": 21600000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 11800000,
+          "cat11_use_of_sold_products": 3700000
+        },
+        "revenue_eur_million": 15157,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 14069,
-        "fte": 31053,
-        "reporting_year": 2025,
-        "notes": "All CO2e emissions were reported in million metric tons and converted to tCO2e by multiplying by 1,000,000. Scope 2 market-based emissions are prioritized as per instructions. Location-based Scope 2 emissions are provided in footnote c of Table T32 on page 117. The FTE figure represents the number of employees as of December 31, 2025, as consistently reported across multiple tables (e.g., T01, T50, T77), rather than the annual average (T184). Scope 3 categories 6-9 are consolidated and deemed immaterial (0.1 million metric tons CO2eq) as per page 119, and categories 10, 13, 14, 15 are not reported.",
-        "scope3_by_category": null
+        "revenue_original_value": 15157,
+        "fte": 31930,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.137, T36; Revenue: p.2, T01, p.37, p.48, T18, p.137, T36; FTE: p.2, T01, p.177, p.178, T56. Scope 1 and 2 emissions are reported as market-based (preferred) and location-based (in footnote c of T36). All emissions are in million metric tons CO2eq and converted to tCO2e."
       },
       "intensities": {
-        "scope1_tco2e": 2990000,
-        "scope2_tco2e": 1360000,
-        "scope12_tco2e": 4350000,
-        "intensity_s12_per_eur_m": 309.2,
-        "intensity_s12_per_fte": 140.1,
-        "scope3_tco2e": 19500000,
-        "scope123_tco2e": 23850000,
-        "intensity_s123_per_eur_m": 1695.2,
-        "intensity_s123_per_fte": 768.0,
-        "revenue_eur_million": 14069,
-        "fte": 31053
+        "scope1_tco2e": 3390000,
+        "scope2_tco2e": 1670000,
+        "scope12_tco2e": 5060000,
+        "intensity_s12_per_eur_m": 333.8,
+        "intensity_s12_per_fte": 158.5,
+        "scope3_tco2e": 21600000,
+        "scope123_tco2e": 26660000,
+        "intensity_s123_per_eur_m": 1758.9,
+        "intensity_s123_per_fte": 835.0,
+        "revenue_eur_million": 15157,
+        "fte": 31930
       },
       "confidence": "high",
       "document": "Evonik_2025_CSRD.pdf"
@@ -663,30 +717,33 @@
       "country": "France",
       "year": 2023,
       "raw_kpis": {
-        "scope1_tco2e": 1358000,
-        "scope2_lb_tco2e": 1047000,
-        "scope2_mb_tco2e": 787000,
-        "scope3_total_tco2e": 57705000,
-        "revenue_eur_million": 9544,
+        "scope1_tco2e": 1261000,
+        "scope2_lb_tco2e": 950000,
+        "scope2_mb_tco2e": 641000,
+        "scope3_total_tco2e": 54602000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 8650000,
+          "cat11_use_of_sold_products": 17448000
+        },
+        "revenue_eur_million": 9068,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 9544,
-        "fte": 21164,
-        "reporting_year": 2024,
-        "notes": "All emissions are reported in tCO2e. Revenue is reported in EUR million. For Scope 2, market-based emissions are preferred and available. FTE represents total headcount.",
-        "scope3_by_category": null
+        "revenue_original_value": 9068,
+        "fte": 20704,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.189, p.254; Revenue: p.219, p.292; FTE: p.169, p.225, p.258. Scope 2 market-based emissions are used as preferred. Scope 3 total emissions are explicitly stated, as are categories 1 and 11. Revenue is reported in millions of euros. FTE refers to total headcount."
       },
       "intensities": {
-        "scope1_tco2e": 1358000,
-        "scope2_tco2e": 787000,
-        "scope12_tco2e": 2145000,
-        "intensity_s12_per_eur_m": 224.7,
-        "intensity_s12_per_fte": 101.4,
-        "scope3_tco2e": 57705000,
-        "scope123_tco2e": 59850000,
-        "intensity_s123_per_eur_m": 6271.0,
-        "intensity_s123_per_fte": 2827.9,
-        "revenue_eur_million": 9544,
-        "fte": 21164
+        "scope1_tco2e": 1261000,
+        "scope2_tco2e": 641000,
+        "scope12_tco2e": 1902000,
+        "intensity_s12_per_eur_m": 209.7,
+        "intensity_s12_per_fte": 91.9,
+        "scope3_tco2e": 54602000,
+        "scope123_tco2e": 56504000,
+        "intensity_s123_per_eur_m": 6231.1,
+        "intensity_s123_per_fte": 2729.1,
+        "revenue_eur_million": 9068,
+        "fte": 20704
       },
       "confidence": "high",
       "document": "Arkema_2024_CSRD.pdf"
@@ -704,13 +761,16 @@
         "scope2_lb_tco2e": 870919,
         "scope2_mb_tco2e": 858264,
         "scope3_total_tco2e": 49679052,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 10590931,
+          "cat11_use_of_sold_products": 844014
+        },
         "revenue_eur_million": 7951.49,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 7951490,
         "fte": 6173,
         "reporting_year": 2024,
-        "notes": "Comparative figures for 2023 have been restated due to emission rights accounting policy change and a change in cash flow statement presentation method. Borealis divested its nitrogen business unit in July 2023, so 2023 comparatives in the management report include data for six months from this divested business. Scope 3 emissions are calculated using general mass and spend-based emission factors, with a goal to include supplier and customer-based factors in the future. For Scope 2 emissions, the methodology for market and location-based is equal due to limited data availability. FTE excludes Integra Plastics EAD headcount (134 employees) which was acquired during the reporting period. Company car fuel consumption data for 2024 was not available, so 2023 data was used (represents approximately +/- 0.1% of the total). Energy intensity is calculated on total revenue and total energy consumption as NACE code split is not available for 2024. Revenue is based on 'Total sales and other income' from the Consolidated Income Statement, reported in EUR thousand.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.119; Revenue: p.197; FTE: p.30, 147. Revenue is 'Total sales and other income' in EUR thousand, converted to EUR million. FTE is total headcount."
       },
       "intensities": {
         "scope1_tco2e": 1599059,
@@ -737,30 +797,33 @@
       "country": "Germany",
       "year": 2023,
       "raw_kpis": {
-        "scope1_tco2e": 15552000,
-        "scope2_lb_tco2e": 3564000,
-        "scope2_mb_tco2e": 2396000,
-        "scope3_total_tco2e": 91640000,
-        "revenue_eur_million": 65260,
+        "scope1_tco2e": 14224000,
+        "scope2_lb_tco2e": 3256000,
+        "scope2_mb_tco2e": 1857000,
+        "scope3_total_tco2e": 93970000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 52560000,
+          "cat11_use_of_sold_products": 2780000
+        },
+        "revenue_eur_million": 59657,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 65260,
-        "fte": 111822,
-        "reporting_year": 2024,
-        "notes": "All emissions are in CO2 equivalents (tCO2e). Scope 1 and Scope 2 emissions are reported as 'Gross Scope 1 emissions' and 'Gross market-based Scope 2 emissions' (Financial control) from the table on page 200. Scope 3 total and categories are from the table on page 200 (Financial control). Revenue is from page 46 and 359. FTE is from page 4 and 288. Footnotes on pages 194, 195, 199, 201 provide additional context on calculation methodologies, base years, and data adjustments for emissions.",
-        "scope3_by_category": null
+        "revenue_original_value": 59657,
+        "fte": 108251,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.194, p.195; Revenue: p.48; FTE: p.261. All GHG emissions are for 'Financial control' for the year 2025 and converted from Million metric tons CO2e to tCO2e. Revenue is stated in EUR million. FTE is total number of employees as of December 31, 2025."
       },
       "intensities": {
-        "scope1_tco2e": 15552000,
-        "scope2_tco2e": 2396000,
-        "scope12_tco2e": 17948000,
-        "intensity_s12_per_eur_m": 275.0,
-        "intensity_s12_per_fte": 160.5,
-        "scope3_tco2e": 91640000,
-        "scope123_tco2e": 109588000,
-        "intensity_s123_per_eur_m": 1679.3,
-        "intensity_s123_per_fte": 980.0,
-        "revenue_eur_million": 65260,
-        "fte": 111822
+        "scope1_tco2e": 14224000,
+        "scope2_tco2e": 1857000,
+        "scope12_tco2e": 16081000,
+        "intensity_s12_per_eur_m": 269.6,
+        "intensity_s12_per_fte": 148.6,
+        "scope3_tco2e": 93970000,
+        "scope123_tco2e": 110051000,
+        "intensity_s123_per_eur_m": 1844.7,
+        "intensity_s123_per_fte": 1016.6,
+        "revenue_eur_million": 59657,
+        "fte": 108251
       },
       "confidence": "high",
       "document": "BASF_2024_CSRD.pdf"
@@ -774,30 +837,33 @@
       "country": "Germany",
       "year": 2023,
       "raw_kpis": {
-        "scope1_tco2e": 854000,
-        "scope2_lb_tco2e": 1296000,
-        "scope2_mb_tco2e": 1033000,
-        "scope3_total_tco2e": 10372000,
-        "revenue_eur_million": 6366,
+        "scope1_tco2e": 847000,
+        "scope2_lb_tco2e": 1002000,
+        "scope2_mb_tco2e": 884000,
+        "scope3_total_tco2e": 10294000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 4401000,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": 5673,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 6366,
-        "fte": 12338,
-        "reporting_year": 2024,
-        "notes": "All tCO2e values were converted from 'thousand metric tons CO2e' by multiplying by 1,000. Scope 2 market-based emissions are preferred. FTE is reported as 'Employees (as of Dec. 31)' from page 5 and 203.",
-        "scope3_by_category": null
+        "revenue_original_value": 5673,
+        "fte": 11709,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.108; Revenue: p.5, p.36, p.39, p.50, p.107; FTE: p.5, p.32, p.50, p.157. Scope 1, Scope 2 (location-based), Scope 2 (market-based), and Scope 3 total GHG emissions are reported in thousand metric tons CO2e on page 108 and converted to tCO2e. Scope 3 category 1 (Purchased goods and services) and category 12 (End-of-life treatment of sold products) are reported in thousand metric tons CO2e on page 108 and converted to tCO2e. Category 11 (Use of sold products) is not explicitly disclosed. Revenue is reported in € million on pages 5, 36, 39, 50, and 107. FTE is reported as 'Employees (as of Dec. 31)' on pages 5, 32, 50, and 157."
       },
       "intensities": {
-        "scope1_tco2e": 854000,
-        "scope2_tco2e": 1033000,
-        "scope12_tco2e": 1887000,
-        "intensity_s12_per_eur_m": 296.4,
-        "intensity_s12_per_fte": 152.9,
-        "scope3_tco2e": 10372000,
-        "scope123_tco2e": 12259000,
-        "intensity_s123_per_eur_m": 1925.7,
-        "intensity_s123_per_fte": 993.6,
-        "revenue_eur_million": 6366,
-        "fte": 12338
+        "scope1_tco2e": 847000,
+        "scope2_tco2e": 884000,
+        "scope12_tco2e": 1731000,
+        "intensity_s12_per_eur_m": 305.1,
+        "intensity_s12_per_fte": 147.8,
+        "scope3_tco2e": 10294000,
+        "scope123_tco2e": 12025000,
+        "intensity_s123_per_eur_m": 2119.7,
+        "intensity_s123_per_fte": 1027.0,
+        "revenue_eur_million": 5673,
+        "fte": 11709
       },
       "confidence": "high",
       "document": "Lanxess_2024_CSRD.pdf"
@@ -909,24 +975,30 @@
         "scope1_tco2e": 9778526,
         "scope2_lb_tco2e": 1036020,
         "scope2_mb_tco2e": 991275,
-        "scope3_total_tco2e": 145906773,
+        "scope3_total_tco2e": 95362239,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 13494945,
+          "cat11_use_of_sold_products": 79908065
+        },
         "revenue_eur_million": 33981,
-        "revenue_currency_original": "EUR",
+        "revenue_currency_original": "EUR mn",
         "revenue_original_value": 33981,
-        "fte": null,
+        "fte": 23557,
         "reporting_year": 2024,
-        "notes": "Scope 3 total is reported as 'Total gross indirect (Scope 3) GHG emissions (all significant categories)'. FTE/headcount not explicitly found in the provided text.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.213, p.215; Revenue: p.3, p.10; FTE: p.3, p.114. Scope 1 and Scope 2 (market-based) emissions are from the 'Scope 1 and 2 emissions, divided into consolidated Group and partners’ share in joint operations controlled by OMV' table on page 213 and confirmed on page 215. Scope 2 (location-based) is also available on page 213 and 215. Total Scope 3 emissions (target-relevant) and specific categories (Purchased goods and services, Use of sold products) are from the 'Significant Scope 3 GHG emissions' table on page 215. Revenue is from the 'Five-year summary' table on page 3 and confirmed on page 10. FTE is from the 'Five-year summary' table on page 3 and 'Employees broken down by regions and countries' table on page 114."
       },
       "intensities": {
         "scope1_tco2e": 9778526,
         "scope2_tco2e": 991275,
         "scope12_tco2e": 10769801,
         "intensity_s12_per_eur_m": 316.9,
-        "scope3_tco2e": 145906773,
-        "scope123_tco2e": 156676574,
-        "intensity_s123_per_eur_m": 4610.7,
-        "revenue_eur_million": 33981
+        "intensity_s12_per_fte": 457.2,
+        "scope3_tco2e": 95362239,
+        "scope123_tco2e": 106132040,
+        "intensity_s123_per_eur_m": 3123.3,
+        "intensity_s123_per_fte": 4505.3,
+        "revenue_eur_million": 33981,
+        "fte": 23557
       },
       "confidence": "high",
       "document": "OMV_2024_CSRD_env.pdf"
@@ -944,26 +1016,29 @@
         "scope2_lb_tco2e": 392956,
         "scope2_mb_tco2e": 392956,
         "scope3_total_tco2e": 21766996,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 1283837,
+          "cat11_use_of_sold_products": 11928717
+        },
         "revenue_eur_million": 24224,
-        "revenue_currency_original": null,
-        "revenue_original_value": null,
-        "fte": 22098,
+        "revenue_currency_original": "EUR",
+        "revenue_original_value": 24224,
+        "fte": 20985,
         "reporting_year": 2024,
-        "notes": "GHG emissions (Scope 1, 2, 3) and revenue are material topics explicitly stated to be covered in the RWE Annual Report 2024. FTE is from the 'Employees' row in the 'Employment, training and skills development' table on page 15, representing Full-Time Equivalents for 2024.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.124; Revenue: p.3, p.45, p.127; FTE: p.3, p.51. All reported values are for the fiscal year 2024 (January 1 to December 31, 2024), as confirmed on p.196. Scope 3 total emissions exclude Scope 3.3d emissions from the generation of purchased electricity sold to end customers (p.118, footnote 1). Scope 3 categories are from p.124."
       },
       "intensities": {
         "scope1_tco2e": 53242042,
         "scope2_tco2e": 392956,
         "scope12_tco2e": 53634998,
         "intensity_s12_per_eur_m": 2214.1,
-        "intensity_s12_per_fte": 2427.1,
+        "intensity_s12_per_fte": 2555.9,
         "scope3_tco2e": 21766996,
         "scope123_tco2e": 75401994,
         "intensity_s123_per_eur_m": 3112.7,
-        "intensity_s123_per_fte": 3412.2,
+        "intensity_s123_per_fte": 3593.1,
         "revenue_eur_million": 24224,
-        "fte": 22098
+        "fte": 20985
       },
       "confidence": "high",
       "document": "RWE_2024_full_CSRD.pdf"
@@ -981,13 +1056,16 @@
         "scope2_lb_tco2e": 1800000,
         "scope2_mb_tco2e": 1400000,
         "scope3_total_tco2e": 412100000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 39200000,
+          "cat11_use_of_sold_products": 359500000
+        },
         "revenue_eur_million": 156878,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 156878,
         "fte": 248883,
         "reporting_year": 2024,
-        "notes": "All emissions were converted from M tCO2e to tCO2e. Revenue is reported in EUR million. FTE represents total employees.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.208; Revenue: p.10, p.49, p.178; FTE: p.20, p.228. All reported values are for the year ended December 31, 2024. Scope 1, Scope 2 (market-based), and Scope 3 total and categories are converted from million tons CO2e to tCO2e. FTE is the total headcount."
       },
       "intensities": {
         "scope1_tco2e": 1100000,
@@ -1017,14 +1095,17 @@
         "scope1_tco2e": 236355,
         "scope2_lb_tco2e": 4002218,
         "scope2_mb_tco2e": 16212,
-        "scope3_total_tco2e": 10394000,
-        "revenue_eur_million": 112800,
-        "revenue_currency_original": null,
-        "revenue_original_value": null,
-        "fte": 196000,
+        "scope3_total_tco2e": 10141734,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 3901195,
+          "cat11_use_of_sold_products": 1258060
+        },
+        "revenue_eur_million": 115769,
+        "revenue_currency_original": "EUR",
+        "revenue_original_value": 115769,
+        "fte": 198194,
         "reporting_year": 2024,
-        "notes": "Scope 1 and Scope 2 emissions (market-based and location-based) are from page 42. Scope 3 total emissions are derived from the 'Climate transition plan for net zero emissions' chart on page 40 (10,394 kilotons converted to tons). Total FTE is an approximation from a general statement on page 119 ('Our nearly 200 thousand employees'). Total group revenue was not explicitly stated in this Corporate Responsibility Report.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.135; Revenue: p.67, p.123, p.296; FTE: p.70, p.104. All GHG emissions values are in tCO2e. Revenue is in EUR million. FTE is the total headcount as of December 31, 2024."
       },
       "intensities": {
         "scope1_tco2e": 236355,
@@ -1032,12 +1113,12 @@
         "scope12_tco2e": 252567,
         "intensity_s12_per_eur_m": 2.2,
         "intensity_s12_per_fte": 1.3,
-        "scope3_tco2e": 10394000,
-        "scope123_tco2e": 10646567,
-        "intensity_s123_per_eur_m": 94.4,
-        "intensity_s123_per_fte": 54.3,
-        "revenue_eur_million": 112800,
-        "fte": 196000
+        "scope3_tco2e": 10141734,
+        "scope123_tco2e": 10394301,
+        "intensity_s123_per_eur_m": 89.8,
+        "intensity_s123_per_fte": 52.4,
+        "revenue_eur_million": 115769,
+        "fte": 198194
       },
       "confidence": "high",
       "document": "DeutscheTelekom_2024_CSRD.pdf"
@@ -1055,13 +1136,16 @@
         "scope2_lb_tco2e": 1100000,
         "scope2_mb_tco2e": 1200000,
         "scope3_total_tco2e": 186000000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 27400000,
+          "cat11_use_of_sold_products": 152900000
+        },
         "revenue_eur_million": 32837,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 32837,
         "fte": 95373,
         "reporting_year": 2025,
-        "notes": "All emissions are for fiscal year 2024/2025 and converted from Mt CO2e to tCO2e (page 123). Revenue is for fiscal year 2024/2025 (page 36, 329). FTE is the annual average number of employees for 2024/2025 (page 322).",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.123; Revenue: p.2, p.36, p.228; FTE: p.322. All data refers to the fiscal year 2024/2025, which ends on September 30, 2025. Scope 2 market-based emissions are preferred. The sum of reported Scope 3 categories (Cat 1 and Cat 11) is 180.3 MtCO2e, which is slightly less than the total Scope 3 emissions (186.0 MtCO2e) as some categories are excluded from reporting due to low GHG emissions (p.123)."
       },
       "intensities": {
         "scope1_tco2e": 19800000,
@@ -1088,30 +1172,33 @@
       "country": "Germany",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 347000,
-        "scope2_lb_tco2e": 667000,
-        "scope2_mb_tco2e": 94000,
-        "scope3_total_tco2e": 416758000,
-        "revenue_eur_million": 75900,
+        "scope1_tco2e": 288000,
+        "scope2_lb_tco2e": 633000,
+        "scope2_mb_tco2e": 71000,
+        "scope3_total_tco2e": 159144000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 9425000,
+          "cat11_use_of_sold_products": 134133000
+        },
+        "revenue_eur_million": 78914,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 75.9,
-        "fte": 327000,
-        "reporting_year": 2024,
-        "notes": "Revenue is from the 'SIEMENS AT A GLANCE' KPI table on page 118, stated as 75.9 Billion €. Converted to 75,900 Million €. FTE is from 'Key figures' on page 2 and 'Siemens employees' on page 96. All emissions are converted from 1,000 metric tons of CO2e (kt CO2e) to metric tons of CO2e (tCO2e) by multiplying by 1,000. All emissions and revenue figures are assumed to include Siemens Healthineers (SHS) as per the general statement on page 2: 'All indicators in the report include Siemens Healthineers (SHS), unless otherwise noted.' and the specific KPI tables do not note exclusion of SHS for these figures. The report states 'In this Report, the Innomotics business is part of the reporting scope, unless explicitly stated otherwise.' (page 136), which applies to the Scope 3 figures.",
-        "scope3_by_category": null
+        "revenue_original_value": 78914,
+        "fte": 317562,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.176; Revenue: p.16, p.43; FTE: p.66. All GHG emissions converted from ktCO2e to tCO2e. FTE is total headcount as of Sep 30, 2025. The reporting year 'fiscal 2025' refers to the company's fiscal year (October 1, 2024 - September 30, 2025), not a calendar year."
       },
       "intensities": {
-        "scope1_tco2e": 347000,
-        "scope2_tco2e": 94000,
-        "scope12_tco2e": 441000,
-        "intensity_s12_per_eur_m": 5.8,
-        "intensity_s12_per_fte": 1.3,
-        "scope3_tco2e": 416758000,
-        "scope123_tco2e": 417199000,
-        "intensity_s123_per_eur_m": 5496.7,
-        "intensity_s123_per_fte": 1275.8,
-        "revenue_eur_million": 75900,
-        "fte": 327000
+        "scope1_tco2e": 288000,
+        "scope2_tco2e": 71000,
+        "scope12_tco2e": 359000,
+        "intensity_s12_per_eur_m": 4.5,
+        "intensity_s12_per_fte": 1.1,
+        "scope3_tco2e": 159144000,
+        "scope123_tco2e": 159503000,
+        "intensity_s123_per_eur_m": 2021.2,
+        "intensity_s123_per_fte": 502.3,
+        "revenue_eur_million": 78914,
+        "fte": 317562
       },
       "confidence": "high",
       "document": "Siemens_2024_CSRD.pdf"
@@ -1128,27 +1215,30 @@
         "scope1_tco2e": 31100000,
         "scope2_lb_tco2e": 800000,
         "scope2_mb_tco2e": 900000,
-        "scope3_total_tco2e": 195000000,
+        "scope3_total_tco2e": 363000000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": null,
+          "cat11_use_of_sold_products": 181000000
+        },
         "revenue_eur_million": 88797,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 88797,
-        "fte": 31669,
+        "fte": 32492,
         "reporting_year": 2024,
-        "notes": null,
-        "scope3_by_category": null
+        "notes": "GHG emissions: Scope 1 (ESRS total) from p.164; Scope 2 location-based from p.164; Scope 2 market-based (preferred) from p.164; Scope 3 total derived from Net GHG Lifecycle Emissions (Scope 1+2+3) on p.164 minus Scope 1 and Scope 2 market-based emissions; Scope 3 category 11 from p.164. Revenue: Sales from operations from p.99 and p.185. FTE: Employees (Group) from p.16 and p.22. All emissions converted from MtCO2eq to tCO2e (x 1,000,000). Revenue is in EUR million. FTE is total headcount."
       },
       "intensities": {
         "scope1_tco2e": 31100000,
         "scope2_tco2e": 900000,
         "scope12_tco2e": 32000000,
         "intensity_s12_per_eur_m": 360.4,
-        "intensity_s12_per_fte": 1010.5,
-        "scope3_tco2e": 195000000,
-        "scope123_tco2e": 227000000,
-        "intensity_s123_per_eur_m": 2556.4,
-        "intensity_s123_per_fte": 7167.9,
+        "intensity_s12_per_fte": 984.9,
+        "scope3_tco2e": 363000000,
+        "scope123_tco2e": 395000000,
+        "intensity_s123_per_eur_m": 4448.3,
+        "intensity_s123_per_fte": 12156.8,
         "revenue_eur_million": 88797,
-        "fte": 31669
+        "fte": 32492
       },
       "confidence": "high",
       "document": "ENI_2024_CSRD.pdf"
@@ -1166,13 +1256,16 @@
         "scope2_lb_tco2e": 338000,
         "scope2_mb_tco2e": 279000,
         "scope3_total_tco2e": 17048000,
-        "revenue_eur_million": 10011.7,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 8606000,
+          "cat11_use_of_sold_products": 2912000
+        },
+        "revenue_eur_million": 10012,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 10011.7,
+        "revenue_original_value": 10012,
         "fte": 24473,
         "reporting_year": 2024,
-        "notes": "Emissions values (Tt CO2eq) from page 159 were converted to tCO2e by multiplying by 1,000, based on the context of '10 million tons' for Scope 1 on page 149. FTE is based on 'Total workforce' from page 4 and 27, which includes trainees and non-active age-related part-time work. Revenue is from the Consolidated Income Statement on page 207.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p. 159 (values in Tt CO2eq converted to tCO2e by multiplying by 1,000); Revenue: p. 65, 207 (stated in € million); FTE: p. 27 (Total workforce on the reporting date). The reporting period is January 1 to December 31, 2024 (p. 104)."
       },
       "intensities": {
         "scope1_tco2e": 10135000,
@@ -1182,9 +1275,9 @@
         "intensity_s12_per_fte": 425.5,
         "scope3_tco2e": 17048000,
         "scope123_tco2e": 27462000,
-        "intensity_s123_per_eur_m": 2743.0,
+        "intensity_s123_per_eur_m": 2742.9,
         "intensity_s123_per_fte": 1122.1,
-        "revenue_eur_million": 10011.7,
+        "revenue_eur_million": 10012,
         "fte": 24473
       },
       "confidence": "high",
@@ -1203,13 +1296,16 @@
         "scope2_lb_tco2e": 39146,
         "scope2_mb_tco2e": 15693,
         "scope3_total_tco2e": 525268,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 416005,
+          "cat11_use_of_sold_products": null
+        },
         "revenue_eur_million": 4307.349,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 4307349,
         "fte": 18623,
         "reporting_year": 2024,
-        "notes": "FTE refers to full-time equivalent employees, excluding learners and temporary staff, as of December 31, 2024 (Page 94). Scope 3 category 12 'End-of-life treatment of sold products' is used for 'cat11_use_of_sold_products' (Page 74). Revenue is reported in EUR thousand on page 231 and converted to EUR million.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p. 74; Revenue: p. 231; FTE: p. 93. Scope 2 market-based emissions are preferred. Location-based Scope 2 emissions are 39,146 tCO2e (p. 74, footnote 3). Category 11 'use of sold products' was not explicitly found; Category 12 'End-of-life treatment of sold products' is provided instead with a value of 9,718 tCO2e (p. 74). FTE is based on full-time equivalents excluding learners and temporary staff as of December 31, 2024. Revenue original value is in EUR thousand."
       },
       "intensities": {
         "scope1_tco2e": 9827,
@@ -1236,30 +1332,33 @@
       "country": "Denmark",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 202000,
-        "scope2_lb_tco2e": 205000,
-        "scope2_mb_tco2e": 167000,
-        "scope3_total_tco2e": 13440000,
-        "revenue_eur_million": 22392.204,
+        "scope1_tco2e": 362000,
+        "scope2_lb_tco2e": 274000,
+        "scope2_mb_tco2e": 215000,
+        "scope3_total_tco2e": 19031000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": null,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": 33142.354,
         "revenue_currency_original": "DKK",
-        "revenue_original_value": 167106,
-        "fte": 73338,
-        "reporting_year": 2024,
-        "notes": "Revenue converted from DKKm to EUR million using a rate of 0.134. Scope 1, Scope 2, and Scope 3 values were reported in '000 tCO2e and converted to tCO2e. Specific Scope 3 categories (cat1, cat11) are not individually disclosed, but are part of the 'Other categories' total of 469 '000 tCO2e.",
-        "scope3_by_category": null
+        "revenue_original_value": 247331,
+        "fte": 151751,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p.61; Revenue: p.10, p.20, p.93; FTE: p.10, p.76, p.94. Scope 3 categories (Cat 1, Cat 11) are aggregated under 'Other categories' on p.61 and not separately disclosed. All emissions are converted from '000 tCO2e to tCO2e by multiplying by 1,000. Revenue is converted from DKKm to EUR million using the rate 1 DKK = 0.134 EUR."
       },
       "intensities": {
-        "scope1_tco2e": 202000,
-        "scope2_tco2e": 167000,
-        "scope12_tco2e": 369000,
-        "intensity_s12_per_eur_m": 16.5,
-        "intensity_s12_per_fte": 5.0,
-        "scope3_tco2e": 13440000,
-        "scope123_tco2e": 13809000,
-        "intensity_s123_per_eur_m": 616.7,
-        "intensity_s123_per_fte": 188.3,
-        "revenue_eur_million": 22392.204,
-        "fte": 73338
+        "scope1_tco2e": 362000,
+        "scope2_tco2e": 215000,
+        "scope12_tco2e": 577000,
+        "intensity_s12_per_eur_m": 17.4,
+        "intensity_s12_per_fte": 3.8,
+        "scope3_tco2e": 19031000,
+        "scope123_tco2e": 19608000,
+        "intensity_s123_per_eur_m": 591.6,
+        "intensity_s123_per_fte": 129.2,
+        "revenue_eur_million": 33142.354,
+        "fte": 151751
       },
       "confidence": "high",
       "document": "DSV_2024_CSRD.pdf"
@@ -1273,30 +1372,33 @@
       "country": "Germany",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 672542,
-        "scope2_lb_tco2e": 1304971,
-        "scope2_mb_tco2e": 164421,
-        "scope3_total_tco2e": 130297238,
-        "revenue_eur_million": 142380,
+        "scope1_tco2e": 667275,
+        "scope2_lb_tco2e": 1241512,
+        "scope2_mb_tco2e": 144145,
+        "scope3_total_tco2e": 127541482,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 31709908,
+          "cat11_use_of_sold_products": 89538674
+        },
+        "revenue_eur_million": 133453,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 142380,
-        "fte": 159104,
-        "reporting_year": 2024,
-        "notes": "Scope 1 and Scope 2 (market-based) emissions are from page 195. Scope 2 location-based emissions are from page 124, footnote 2. Scope 3 total and categories are from page 196. FTE is the total number of employees of the group, as reported on page 2, with a note on page 9 about consolidated companies being 157,457 and workforce worldwide being 158,441 on page 39 and 165.",
-        "scope3_by_category": null
+        "revenue_original_value": 133453,
+        "fte": 154540,
+        "reporting_year": 2025,
+        "notes": "GHG emissions: p. 127. Scope 1 and Scope 2 market-based emissions exclude locations where the Group does not have operational control, including biogenic emissions. Scope 3 emissions are for categories purchased goods and services (excluding customer support), transport logistics, and use phase for the Automotive segment. Revenue: p. 11, 69, 161, 164, 271. FTE: p. 2, 9, 38, 265. FTE excludes the joint operation Spotlight and non-consolidated companies."
       },
       "intensities": {
-        "scope1_tco2e": 672542,
-        "scope2_tco2e": 164421,
-        "scope12_tco2e": 836963,
-        "intensity_s12_per_eur_m": 5.9,
+        "scope1_tco2e": 667275,
+        "scope2_tco2e": 144145,
+        "scope12_tco2e": 811420,
+        "intensity_s12_per_eur_m": 6.1,
         "intensity_s12_per_fte": 5.3,
-        "scope3_tco2e": 130297238,
-        "scope123_tco2e": 131134201,
-        "intensity_s123_per_eur_m": 921.0,
-        "intensity_s123_per_fte": 824.2,
-        "revenue_eur_million": 142380,
-        "fte": 159104
+        "scope3_tco2e": 127541482,
+        "scope123_tco2e": 128352902,
+        "intensity_s123_per_eur_m": 961.8,
+        "intensity_s123_per_fte": 830.5,
+        "revenue_eur_million": 133453,
+        "fte": 154540
       },
       "confidence": "high",
       "document": "BMW_2024_CSRD.pdf"
@@ -1314,13 +1416,16 @@
         "scope2_lb_tco2e": 3130000,
         "scope2_mb_tco2e": 4900000,
         "scope3_total_tco2e": 46260000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 4340000,
+          "cat11_use_of_sold_products": 14280000
+        },
         "revenue_eur_million": 78947,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 78947,
         "fte": 60359,
         "reporting_year": 2024,
-        "notes": "All emissions are for the reporting year 2024. Scope 1, Scope 2 (location-based and market-based), and total Scope 3 GHG emissions, as well as Scope 3 categories 1 and 11, are sourced from the 'Gross Scope 1, 2 and 3 GHG emissions' table on page 146. Total revenue is from page 23 and 160. Total FTE is from page 23, 28, and 30.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.146, values are in Mln tCO2eq and converted to tCO2e. Revenue: p.160, value is in Millions of euro. FTE: p.343, value is total employees. The report is for the calendar year 2024."
       },
       "intensities": {
         "scope1_tco2e": 20210000,
@@ -1351,25 +1456,28 @@
         "scope2_lb_tco2e": 2600000,
         "scope2_mb_tco2e": 1700000,
         "scope3_total_tco2e": 342000000,
-        "revenue_eur_million": 197386,
+        "scope3_by_category": {
+          "cat1_purchased_goods": null,
+          "cat11_use_of_sold_products": 342000000
+        },
+        "revenue_eur_million": 180728.01,
         "revenue_currency_original": "USD",
-        "revenue_original_value": 214550000000,
+        "revenue_original_value": 195610000000,
         "fte": 102887,
         "reporting_year": 2024,
-        "notes": "Scope 1 tCO2e and market-based Scope 2 tCO2e are reported as 'Gross' emissions on page 333. The sum of these gross figures (43.2 MtCO2e + 1.7 MtCO2e = 44.9 MtCO2e) differs from the 'Scope 1+2 GHG emissions (market based)' figure of 34.3 MtCO2e on page 333. This discrepancy is likely due to the 34.3 MtCO2e figure being a 'net' emission figure, potentially after accounting for nature-based carbon sinks, as indicated by footnotes on pages 20 and 331 for similar combined Scope 1+2 figures. For Scope 3, the 'Total gross indirect GHG (Scope 3) emissions' of 342 MtCO2e (page 334) is broken down into 'Petroleum products' (218 MtCO2e) and 'Gas' (124 MtCO2e), which sum up to the total. According to the glossary (page 665), Scope 3 category 11 refers to 'indirect GHG emissions related to the direct use-phase emissions of sold products', aligning with this breakdown. Revenue is taken from the 'Consolidated statement of income' on page 455, which reports 'Revenues from sales' in M$. The USD to EUR conversion rate used is 0.92.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.333 (Scope 1 Gross GHG emissions), p.333 (Scope 2 Gross market-based GHG emissions), p.334 (Scope 3 Total gross indirect GHG emissions, identified as Category 11 'Use of sold products'). Revenue: p.50, p.455, p.333 (value and currency), p.50 (exchange rate 1 USD = 0.9239 EUR, derived from 1 EUR = 1.0824 USD). FTE: p.6, p.13, p.371 (Total number of employees). Note on GHG: The sum of Gross Scope 1 (43.2 MtCO2e) and Gross market-based Scope 2 (1.7 MtCO2e) from p.333 is 44.9 MtCO2e. However, the document also states a combined 'Scope 1+2 GHG emissions (market based)' of 34.3 MtCO2e on p.333, and 34 MtCO2e for 'Scope 1+2 from operated facilities' on p.7, p.13, p.20, p.21, p.647. The individual Scope 1 and Scope 2 values provided are the gross figures from the ESRS perimeter tables."
       },
       "intensities": {
         "scope1_tco2e": 43200000,
         "scope2_tco2e": 1700000,
         "scope12_tco2e": 44900000,
-        "intensity_s12_per_eur_m": 227.5,
+        "intensity_s12_per_eur_m": 248.4,
         "intensity_s12_per_fte": 436.4,
         "scope3_tco2e": 342000000,
         "scope123_tco2e": 386900000,
-        "intensity_s123_per_eur_m": 1960.1,
+        "intensity_s123_per_eur_m": 2140.8,
         "intensity_s123_per_fte": 3760.4,
-        "revenue_eur_million": 197386,
+        "revenue_eur_million": 180728.01,
         "fte": 102887
       },
       "confidence": "high",
@@ -1384,30 +1492,33 @@
       "country": "Luxembourg",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 97000000,
-        "scope2_lb_tco2e": 5500000,
-        "scope2_mb_tco2e": 4900000,
-        "scope3_total_tco2e": 8510000,
-        "revenue_eur_million": 57445.72,
-        "revenue_currency_original": "USD",
-        "revenue_original_value": 62441,
-        "fte": 125416,
+        "scope1_tco2e": 486858,
+        "scope2_lb_tco2e": 591154,
+        "scope2_mb_tco2e": 374757,
+        "scope3_total_tco2e": 57724713,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 45143545,
+          "cat11_use_of_sold_products": 9302558
+        },
+        "revenue_eur_million": 32290,
+        "revenue_currency_original": "EUR",
+        "revenue_original_value": 32290,
+        "fte": 158998,
         "reporting_year": 2024,
-        "notes": "Scope 1 and Scope 2 (market-based and location-based) emissions are adjusted to the 2024 portfolio. Scope 3 total is the sum of Scope 3 (steel) and Scope 3 (mining) emissions. The report states that raw material extraction (a significant part of Scope 3 Category 1) is not currently accounted for in the reported Scope 3. Revenue is based on turnover reported in USD and converted to EUR using a 0.92 EUR/USD conversion rate.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.146; Revenue: p.412; FTE: p.8, p.49, p.258. Scope 1, Scope 2 (location-based and market-based), and Scope 3 total emissions are the sum of Auchan Retail and New Immo Holding values. Scope 3 categories are also summed for both entities. Revenue is taken from the consolidated income statement. There is a slightly higher revenue figure (€33,239 million) mentioned on p.95 and p.145 for Taxonomy purposes and GHG intensity calculation, but the consolidated income statement figure is used for consistency with financial reporting."
       },
       "intensities": {
-        "scope1_tco2e": 97000000,
-        "scope2_tco2e": 4900000,
-        "scope12_tco2e": 101900000,
-        "intensity_s12_per_eur_m": 1773.8,
-        "intensity_s12_per_fte": 812.5,
-        "scope3_tco2e": 8510000,
-        "scope123_tco2e": 110410000,
-        "intensity_s123_per_eur_m": 1922.0,
-        "intensity_s123_per_fte": 880.4,
-        "revenue_eur_million": 57445.72,
-        "fte": 125416
+        "scope1_tco2e": 486858,
+        "scope2_tco2e": 374757,
+        "scope12_tco2e": 861615,
+        "intensity_s12_per_eur_m": 26.7,
+        "intensity_s12_per_fte": 5.4,
+        "scope3_tco2e": 57724713,
+        "scope123_tco2e": 58586328,
+        "intensity_s123_per_eur_m": 1814.4,
+        "intensity_s123_per_fte": 368.5,
+        "revenue_eur_million": 32290,
+        "fte": 158998
       },
       "confidence": "high",
       "document": "ArcelorMittal_2024_CSRD.pdf"
@@ -1421,26 +1532,29 @@
       "country": "France",
       "year": 2024,
       "raw_kpis": {
-        "scope1_tco2e": 685000,
-        "scope2_lb_tco2e": 695000,
-        "scope2_mb_tco2e": 122000,
-        "scope3_total_tco2e": 18984000,
+        "scope1_tco2e": 684663,
+        "scope2_lb_tco2e": 694742,
+        "scope2_mb_tco2e": 122408,
+        "scope3_total_tco2e": 18984106,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 14849498,
+          "cat11_use_of_sold_products": 727266
+        },
         "revenue_eur_million": 27376,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 27376,
         "fte": 89528,
         "reporting_year": 2024,
-        "notes": "Scope 1 and Scope 2 market-based emissions are from Page 5. Scope 3 total emissions are from Page 5. Scope 3 category 'Purchased goods and services' is from Page 4, and 'Use of sold products' is from Page 5. FTE is 'Total number of employees' from Page 11. Revenue in EUR million is inferred from the 'Total GHG emissions (market-based) per net revenue' (722.9 tCO2e/Million € on Page 6) and 'Total Scope 1, 2, 3 market-based' (19,791 Ktons CO2 equivalent on Page 5). Calculation: (19,791 * 1000) / 722.9 = 27,376 Million €.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.220; Revenue: p.5, p.16, p.57; FTE: p.104, p.183, p.263. All values are for the calendar year 2024. Scope 1, Scope 2 (location-based and market-based), and Scope 3 total emissions are in tCO2e. Revenue is in EUR million. FTE represents total number of employees."
       },
       "intensities": {
-        "scope1_tco2e": 685000,
-        "scope2_tco2e": 122000,
-        "scope12_tco2e": 807000,
+        "scope1_tco2e": 684663,
+        "scope2_tco2e": 122408,
+        "scope12_tco2e": 807071,
         "intensity_s12_per_eur_m": 29.5,
         "intensity_s12_per_fte": 9.0,
-        "scope3_tco2e": 18984000,
-        "scope123_tco2e": 19791000,
+        "scope3_tco2e": 18984106,
+        "scope123_tco2e": 19791177,
         "intensity_s123_per_eur_m": 722.9,
         "intensity_s123_per_fte": 221.1,
         "revenue_eur_million": 27376,
@@ -1462,13 +1576,16 @@
         "scope2_lb_tco2e": 3660000,
         "scope2_mb_tco2e": 6410000,
         "scope3_total_tco2e": 60060000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 2540000,
+          "cat11_use_of_sold_products": 27840000
+        },
         "revenue_eur_million": 80119,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 80119,
         "fte": 76566,
         "reporting_year": 2024,
-        "notes": "Scope 1, Scope 2 (location-based), Scope 2 (market-based), and Scope 3 total emissions are from page 11 and 45, converted from million metric tons CO2e to tCO2e. Scope 3 category 'cat1_purchased_goods' is from 'Purchased goods and services' on page 45. Scope 3 category 'cat11_use_of_sold_products' is the sum of 'Purchased power sold to end-customers (market-based)' and 'Combustion of natural gas sold to end-customers' from page 45, as these represent the use of sold electricity and gas. Total revenue is from page 86, in EUR million. FTE is from page 61, representing the E.ON Group's core workforce at year-end 2024.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.45; Revenue: p.83, p.86; FTE: p.28, p.61. Scope 1, Scope 2 (location-based), Scope 2 (market-based), and Scope 3 (market-based) are reported in million metric tons CO2e on p.45. Scope 3 categories 'Purchased goods and services' (Category 1) and 'Combustion of natural gas sold to end-customers' (Category 11, Use of sold products) are reported in million metric tons CO2e on p.45. FTE is from the 'Core Workforce' table on p.61 and also mentioned on p.28. Revenue is from the 'External Sales' table on p.86 and also mentioned on p.83, stated in € in millions."
       },
       "intensities": {
         "scope1_tco2e": 1980000,
@@ -1499,28 +1616,25 @@
         "scope2_lb_tco2e": 2590000,
         "scope2_mb_tco2e": 260000,
         "scope3_total_tco2e": 81040000,
-        "revenue_eur_million": 95865,
-        "revenue_currency_original": "CHF",
-        "revenue_original_value": 91300,
-        "fte": 277000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": null,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": null,
+        "revenue_currency_original": null,
+        "revenue_original_value": null,
+        "fte": null,
         "reporting_year": 2024,
-        "notes": "Scope 1, Scope 2 market-based, and Scope 3 total emissions are reported in million tonnes CO2e and converted to tonnes CO2e. Scope 1 (3.08 MtCO2e) and Scope 2 market-based (0.26 MtCO2e) are from page 38 and 151. Scope 2 location-based (2.59 MtCO2e) is from page 40 and 152. The total Scope 3 emissions (81.04 MtCO2e) are derived from the sum of 'Scope 3 (in scope for Net Zero Roadmap)' (71.35 MtCO2e) and 'Scope 3 (not in scope for Net Zero Roadmap)' (9.69 MtCO2e) on page 38, which is consistent with 'Gross other indirect (Scope 3) GHG emissions' on page 40 and 152. Specific values for Scope 3 categories 'Purchased goods and services' and 'Use of sold products' were not found. Total revenue is not disclosed in this Non-Financial Statement 2024; it is referenced as being in the Nestlé Annual Review. Total headcount (FTE) is from page 70, 150, and 197.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.38, p.151, p.152; FTE: p.70, p.150, p.197. Reporting year is calendar year ending December 31, 2024 (p.4). Scope 1 emissions (3.08 million tonnes CO2e) and market-based Scope 2 emissions (0.26 million tonnes CO2e) are from the 'Nestlé GHG footprint breakdown by Scope' table on page 38 and confirmed on page 151. Location-based Scope 2 emissions (2.59 million metric tonnes CO2e) are from page 152. The total Scope 3 emissions (81.04 million metric tonnes CO2e) are reported as 'Gross other indirect (Scope 3) GHG emissions' on page 152, representing the total Scope 3 inventory, including categories outside the SBTi target scope (p.37). The report does not provide specific numerical values for individual GHG Protocol categories like 'Purchased goods and services' or 'Use of sold products' in the 2024 data. Revenue is not disclosed in this Non-Financial Statement; the document refers to the 'Nestlé Annual Review' for financial details (p.4). FTE (277,000) refers to the total headcount, including permanent and temporary employees, as stated on pages 70, 150, and 197, and is counted irrespective of full-time or part-time status (p.130)."
       },
       "intensities": {
         "scope1_tco2e": 3080000,
         "scope2_tco2e": 260000,
         "scope12_tco2e": 3340000,
-        "intensity_s12_per_eur_m": 34.8,
-        "intensity_s12_per_fte": 12.1,
         "scope3_tco2e": 81040000,
-        "scope123_tco2e": 84380000,
-        "intensity_s123_per_eur_m": 880.2,
-        "intensity_s123_per_fte": 304.6,
-        "revenue_eur_million": 95865,
-        "fte": 277000
+        "scope123_tco2e": 84380000
       },
-      "confidence": "high",
+      "confidence": "low",
       "document": "Nestle_2024_CSRD.pdf"
     },
     {
@@ -1536,26 +1650,29 @@
         "scope2_lb_tco2e": null,
         "scope2_mb_tco2e": 1260000,
         "scope3_total_tco2e": 10204000,
-        "revenue_eur_million": 8997.37,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 5966000,
+          "cat11_use_of_sold_products": 981000
+        },
+        "revenue_eur_million": 8997.366,
         "revenue_currency_original": "SEK",
         "revenue_original_value": 103418,
-        "fte": 15263,
+        "fte": 14618,
         "reporting_year": 2024,
-        "notes": "Scope 1, Scope 2 (market-based), and Scope 3 emissions were reported in thousand tonnes and converted to tonnes. Revenue was reported in SEK million and converted to EUR million using the rate 1 SEK = 0.087 EUR. For Scope 3, 'Category 10: Processing of sold products' was mapped to 'cat11_use_of_sold_products'. FTE is based on 'Total workforce' which includes permanent and temporary employees.",
-        "scope3_by_category": null
+        "notes": "GHG emissions (Scope 1, Scope 2 market-based, Scope 3 total, Cat 1, Cat 10): p.91 (all values in thousand tonnes, converted to tCO2e). Revenue: p.12, p.54, p.101 (SEK million, converted to EUR million using 1 SEK = 0.087 EUR). FTE: p.12, p.109 (Permanent employees at year end). For 'cat11_use_of_sold_products', 'Category 10: Processing of sold products' was used as the closest available category."
       },
       "intensities": {
         "scope1_tco2e": 9483000,
         "scope2_tco2e": 1260000,
         "scope12_tco2e": 10743000,
         "intensity_s12_per_eur_m": 1194.0,
-        "intensity_s12_per_fte": 703.9,
+        "intensity_s12_per_fte": 734.9,
         "scope3_tco2e": 10204000,
         "scope123_tco2e": 20947000,
         "intensity_s123_per_eur_m": 2328.1,
-        "intensity_s123_per_fte": 1372.4,
-        "revenue_eur_million": 8997.37,
-        "fte": 15263
+        "intensity_s123_per_fte": 1433.0,
+        "revenue_eur_million": 8997.366,
+        "fte": 14618
       },
       "confidence": "high",
       "document": "SSAB_2024_CSRD.pdf"
@@ -1573,13 +1690,16 @@
         "scope2_lb_tco2e": 43836,
         "scope2_mb_tco2e": 17588,
         "scope3_total_tco2e": 264278,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 111474,
+          "cat11_use_of_sold_products": null
+        },
         "revenue_eur_million": 16030,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 16030,
         "fte": 108179,
         "reporting_year": 2024,
-        "notes": "The document distinguishes between \"Revenue\" (16,030 EUR million) and \"Net Revenue\" (13,965 EUR million). \"Revenue\" is used as the primary revenue figure as it is referred to as \"turnover\" in the EU Taxonomy section and is the broader figure in the consolidated income statement. Scope 2 emissions: Market-based emissions are preferred and available. Scope 3 emissions: Categories 10 (\"Processing of products sold\") and 11 (\"Use of products sold\") are explicitly stated as not relevant for Publicis Groupe's intellectual services activities. All data is for the 2024 reporting year.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.185 (all values are in TeqCO2, which is tCO2e). Scope 2 market-based is preferred. Scope 3 category 'cat11_use_of_sold_products' is explicitly stated as 'N/P' (Not relevant/provided) on p.186. Revenue: p.194 ('Turnover (currency)'), p.278 ('Revenue'). FTE: p.15 ('108,179 EMPLOYEES*'), p.190 ('Groupe Workforce Number'), p.204 ('Total employees'). The document provides both 'Net revenue' (€13,965 million, p.16, p.265, p.278) and 'Revenue' (€16,030 million, p.194, p.278). 'Revenue' is used as it aligns with the 'Turnover (currency)' in the EU Taxonomy table on p.194 and represents a broader measure before pass-through costs, as defined on p.278."
       },
       "intensities": {
         "scope1_tco2e": 5211,
@@ -1607,16 +1727,19 @@
       "year": 2024,
       "raw_kpis": {
         "scope1_tco2e": 104000,
-        "scope2_lb_tco2e": 48000,
+        "scope2_lb_tco2e": null,
         "scope2_mb_tco2e": 1000,
         "scope3_total_tco2e": 7990000,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 7020000,
+          "cat11_use_of_sold_products": 70000
+        },
         "revenue_eur_million": 17295,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 17295,
         "fte": 32729,
         "reporting_year": 2024,
-        "notes": "Revenue is reported in mEUR (page 10). Scope 1 GHG emissions (1,000 tCO2e) are from page 78 and 79. Market-based Scope 2 GHG emissions (1,000 tCO2e) are from page 78 and 79, and location-based Scope 2 GHG emissions (1,000 tCO2e) are from page 79. Total Scope 3 GHG emissions (million tCO2e) and Scope 3 category 1 (Purchased goods and services, million tCO2e) are from page 79. Scope 3 category 11 (Use of sold products) is stated as immaterial on page 80 and not listed with a value on page 79. FTE is based on the 'Average number of employees (FTEs)' from page 9.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.11, p.53, p.78, p.79, p.80; Revenue: p.7, p.10, p.135; FTE: p.11, p.150. Scope 1 GHG emissions (1,000 t CO2e) is 104. Market-based Scope 2 GHG emissions (1,000 t CO2e) is 1. Location-based Scope 2 is not disclosed for 2024. Total Gross indirect (Scope 3) GHG emissions (million t CO2e) is 7.99. Category 1 (Purchased goods and services) is 7.02 million tCO2e. Category 12 (End-of-life treatment of sold products) is 0.07 million tCO2e. Note that the accounting policy on p.80 states 'use of sold products (our products do not emit GHG emissions during their use)', implying zero emissions for the use phase, but the table on p.79 provides a value for 'End-of-life treatment of sold products' which is used for cat11. Revenue is 17,295 mEUR. FTE is the average number of employees. All data points refer to the calendar year 2024."
       },
       "intensities": {
         "scope1_tco2e": 104000,
@@ -1647,13 +1770,16 @@
         "scope2_lb_tco2e": 44715,
         "scope2_mb_tco2e": 624,
         "scope3_total_tco2e": 1575252,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 1169215,
+          "cat11_use_of_sold_products": null
+        },
         "revenue_eur_million": 8817.2,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 8817.2,
         "fte": 18668,
         "reporting_year": 2024,
-        "notes": "FTE is based on total annual average employees from T.77 on page 304. Scope 3 Category 11 (Use of sold products) is reported as n/a as per footnote 12 on page 110, stating that PUMA does not cause direct use phase emissions and indirect use phase emissions are optional under GHG protocol.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.109; Revenue: p.5, p.21, p.30, p.34, p.340; FTE: p.164, p.304, p.341. The reporting year is a calendar year (January 1 to December 31, 2024) as confirmed on p.326. For FTE, the annual average FTE (18,668) is used as specified on p.164. For Scope 3, 'Use of sold products' (Cat 11) is reported as n/a on p.110, with a footnote explaining that PUMA does not cause any direct use phase emissions and reports indirect use phase emissions as n/a as it is optional under GHG protocol."
       },
       "intensities": {
         "scope1_tco2e": 5950,
@@ -1684,13 +1810,16 @@
         "scope2_lb_tco2e": 18857,
         "scope2_mb_tco2e": 80,
         "scope3_total_tco2e": 266336,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 47948,
+          "cat11_use_of_sold_products": null
+        },
         "revenue_eur_million": 3252,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 3252,
         "fte": 20151,
         "reporting_year": 2024,
-        "notes": "Scope 3 category 'cat11_use_of_sold_products' is stated as 'Not applicable' on page 274. Revenue of 3,252 EUR million represents 'Total operating revenue' (page 174). FTE of 20,151 is the 'Total year average' FTE (page 183, 237), while headcount is 32,405 (page 7, 183, 237).",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.236; Revenue: p.174; FTE: p.237. Scope 3 category 'Use of sold products' is stated as 'Not applicable' on p.274. Revenue of €3,252 million from contracts with customers (p.174) was chosen over 'Total revenue including interest' of €3,275 million (p.160) as it represents core business revenue."
       },
       "intensities": {
         "scope1_tco2e": 21339,
@@ -1721,13 +1850,13 @@
         "scope2_lb_tco2e": 433505,
         "scope2_mb_tco2e": 37348,
         "scope3_total_tco2e": 55649186,
+        "scope3_by_category": null,
         "revenue_eur_million": 38153,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 38153,
+        "revenue_original_value": 38.2,
         "fte": 159002,
         "reporting_year": 2024,
-        "notes": "FTE of 159,002 is the total headcount for the full financial scope (page 143), with page 17 mentioning 159,000 employees. The CSRD reporting scope excludes approximately 2,000 employees from this total (page 31). All emissions are reported in tCO2e (page 42). Scope 2 market-based emissions are preferred for the main scope2_tco2e field (page 42).",
-        "scope3_by_category": null
+        "notes": null
       },
       "intensities": {
         "scope1_tco2e": 106360,
@@ -1758,13 +1887,16 @@
         "scope2_lb_tco2e": 37142,
         "scope2_mb_tco2e": 0,
         "scope3_total_tco2e": 399199,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 333467,
+          "cat11_use_of_sold_products": 2022
+        },
         "revenue_eur_million": 6430,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 6430,
         "fte": 13131,
         "reporting_year": 2024,
-        "notes": "Scope 1, 2, and 3 emissions are reported in tCO2e. Scope 2 market-based emissions are 0 due to 100% renewable electricity sourcing. The Scope 3 methodology changed in 2024, including the 2020 baseline. Several Scope 3 categories (5, 8, 9, 10) were excluded from the footprint. Revenue is reported as 'underlying revenue' from the management discussion.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.124; Revenue: p.25, p.223, p.227; FTE: p.276. For FTE, the 'full-time equivalents' figure from the financial statements is used. For Scope 2, the market-based emissions are 0 tCO2e due to 100% renewable electricity sourcing, while the location-based emissions are 37,142 tCO2e. Revenue refers to 'Group underlying revenue'."
       },
       "intensities": {
         "scope1_tco2e": 23085,
@@ -1795,13 +1927,16 @@
         "scope2_lb_tco2e": 7742,
         "scope2_mb_tco2e": 889,
         "scope3_total_tco2e": 753465,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 609086,
+          "cat11_use_of_sold_products": 3182
+        },
         "revenue_eur_million": 3918,
         "revenue_currency_original": "EUR",
         "revenue_original_value": 3918,
         "fte": 7041,
         "reporting_year": 2024,
-        "notes": "FTE (Full-Time Equivalent) is used as reported on page 84 and 135. A total employee headcount of 7,477 is also mentioned on page 181 and 182. Both location-based and market-based Scope 2 emissions are provided as found in the report. Scope 3 total emissions are explicitly stated and match the sum of listed categories plus other categories not explicitly requested.",
-        "scope3_by_category": null
+        "notes": "GHG emissions (Scope 1, Scope 2 location-based, Scope 2 market-based, Scope 3 total, Scope 3 categories): p.162; Revenue: p.2, p.113, p.252; FTE: p.2, p.84. All values are for the calendar year 2024. Emissions are in tCO2e. Revenue is in EUR million. FTE refers to full-time equivalent positions as of the reporting date."
       },
       "intensities": {
         "scope1_tco2e": 1403,
@@ -1829,17 +1964,16 @@
       "year": 2024,
       "raw_kpis": {
         "scope1_tco2e": 15102,
-        "scope2_mb_tco2e": 26553,
         "scope2_lb_tco2e": 364693,
-        "scope2_tco2e": null,
+        "scope2_mb_tco2e": 26553,
         "scope3_total_tco2e": 8729000,
+        "scope3_by_category": null,
         "revenue_eur_million": 20401,
         "revenue_currency_original": "SEK",
         "revenue_original_value": 234478,
         "fte": 97710,
         "reporting_year": 2024,
-        "notes": "Scope 1+2 sourced from H&M Annual & Sustainability Report 2024. S3 derived from -23.7% vs 2019 baseline of 9,115,000 tCO2e. FY Dec2023-Nov2024. Revenue SEK 234,478M * 0.087 = EUR 20,401M.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: Annual & Sustainability Report 2024 p.58-90; Revenue: p.120-126 (SEK 234,478M * 0.087 = EUR 20,401M); FTE: p.90-103 (97,710 avg FTE). S3 derived from -23.7% vs 2019 baseline of 9,115,000 tCO2e. FY Dec2023-Nov2024."
       },
       "intensities": {
         "scope1_tco2e": 15102,
@@ -1870,13 +2004,16 @@
         "scope2_lb_tco2e": 504850,
         "scope2_mb_tco2e": 289750,
         "scope3_total_tco2e": 107414952,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 16310804,
+          "cat11_use_of_sold_products": 83890767
+        },
         "revenue_eur_million": 56232,
         "revenue_currency_original": "EUR",
-        "revenue_original_value": 56.2,
+        "revenue_original_value": 56232,
         "fte": 98636,
         "reporting_year": 2024,
-        "notes": "Scope 2 market-based emissions are used as preferred. Scope 3 total is the sum of all reported categories. Revenue original value is in billions of euros.",
-        "scope3_by_category": null
+        "notes": "GHG emissions: p.132; Revenue: p.16, p.398, p.410, p.421; FTE: p.16, p.21, p.96. All reported values are for the 2024 calendar year. For Scope 2, market-based emissions are preferred and used for the 'scope2_mb_tco2e' field, while location-based is also provided in 'scope2_lb_tco2e'. The Scope 3 total is explicitly stated, and two categories are provided."
       },
       "intensities": {
         "scope1_tco2e": 406440,
@@ -1931,6 +2068,166 @@
       },
       "confidence": "high",
       "document": "Orange_2024_CSRD.pdf"
+    },
+    {
+      "id": "csrd-orange-2024",
+      "source_type": "csrd_report",
+      "company": "Orange",
+      "sector": "Other",
+      "sub_sector": "Telecommunications",
+      "country": "France",
+      "year": 2024,
+      "raw_kpis": {
+        "scope1_tco2e": 350581,
+        "scope2_lb_tco2e": 1104385,
+        "scope2_mb_tco2e": 679483,
+        "scope3_total_tco2e": 5531945,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 2227496,
+          "cat11_use_of_sold_products": 166011
+        },
+        "revenue_eur_million": 40260,
+        "revenue_currency_original": "EUR",
+        "revenue_original_value": 40260,
+        "fte": 126909,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.384; Revenue: p.7, 104, 108; FTE: p.7, 434. Revenue is consolidated group revenue. FTE is 'active employees at end of period' for the consolidated group. Scope 1 and Scope 2 emissions are gross. Scope 2 emissions are reported as market-based (preferred). Scope 3 total emissions are reported as market-based for all scopes. Scope 3 categories are reported for the total group."
+      },
+      "intensities": {
+        "scope1_tco2e": 350581,
+        "scope2_tco2e": 679483,
+        "scope12_tco2e": 1030064,
+        "intensity_s12_per_eur_m": 25.6,
+        "intensity_s12_per_fte": 8.1,
+        "scope3_tco2e": 5531945,
+        "scope123_tco2e": 6562009,
+        "intensity_s123_per_eur_m": 163.0,
+        "intensity_s123_per_fte": 51.7,
+        "revenue_eur_million": 40260,
+        "fte": 126909
+      },
+      "confidence": "high",
+      "document": "Orange_2024_CSRD.pdf"
+    },
+    {
+      "id": "csrd-aperam-2024",
+      "source_type": "csrd_report",
+      "company": "Aperam",
+      "sector": "Manufacturing",
+      "sub_sector": "Iron & Steel",
+      "country": "Luxembourg",
+      "year": 2024,
+      "raw_kpis": {
+        "scope1_tco2e": 860291,
+        "scope2_lb_tco2e": null,
+        "scope2_mb_tco2e": 196457,
+        "scope3_total_tco2e": 4242051,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 3563322.84,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": 6255.485118,
+        "revenue_currency_original": "EUR",
+        "revenue_original_value": 6255485118,
+        "fte": 12207,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.42; Revenue: p.29, 44; FTE: p.13, 91. Scope 1 is non-biogenic. Scope 2 is market-based. Scope 3 category 1 (purchased goods) is calculated as 84% of total Scope 3 emissions as stated on p.45. Revenue on p.44 is rounded to EUR 6,255 million, while p.29 provides a more precise figure of EUR 6,255,485,118."
+      },
+      "intensities": {
+        "scope1_tco2e": 860291,
+        "scope2_tco2e": 196457,
+        "scope12_tco2e": 1056748,
+        "intensity_s12_per_eur_m": 168.9,
+        "intensity_s12_per_fte": 86.6,
+        "scope3_tco2e": 4242051,
+        "scope123_tco2e": 5298799,
+        "intensity_s123_per_eur_m": 847.1,
+        "intensity_s123_per_fte": 434.1,
+        "revenue_eur_million": 6255.485118,
+        "fte": 12207
+      },
+      "confidence": "high",
+      "document": "Aperam_2024_CSRD.pdf"
+    },
+    {
+      "id": "csrd-inditex-2024",
+      "source_type": "csrd_report",
+      "company": "Inditex",
+      "sector": "Manufacturing",
+      "sub_sector": "Consumer Goods / Apparel",
+      "country": "Spain",
+      "year": 2024,
+      "raw_kpis": {
+        "scope1_tco2e": 60912,
+        "scope2_lb_tco2e": 433654,
+        "scope2_mb_tco2e": 1340,
+        "scope3_total_tco2e": 9902054,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 6696995,
+          "cat11_use_of_sold_products": 3250659
+        },
+        "revenue_eur_million": 38632,
+        "revenue_currency_original": "EUR",
+        "revenue_original_value": 38632,
+        "fte": 162083,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.166; Revenue: p.18, p.42; FTE: p.96, p.123, p.240. The reporting year 2024 refers to the fiscal year 1 February 2024 – 31 January 2025. Scope 2 market-based is preferred over location-based. Category 11 for Scope 3 is used as requested."
+      },
+      "intensities": {
+        "scope1_tco2e": 60912,
+        "scope2_tco2e": 1340,
+        "scope12_tco2e": 62252,
+        "intensity_s12_per_eur_m": 1.6,
+        "intensity_s12_per_fte": 0.4,
+        "scope3_tco2e": 9902054,
+        "scope123_tco2e": 9964306,
+        "intensity_s123_per_eur_m": 257.9,
+        "intensity_s123_per_fte": 61.5,
+        "revenue_eur_million": 38632,
+        "fte": 162083
+      },
+      "confidence": "high",
+      "document": "Inditex_2024_CSRD.pdf"
+    },
+    {
+      "id": "csrd-svenska-handelsbanken-2024",
+      "source_type": "csrd_report",
+      "company": "Svenska Handelsbanken",
+      "sector": "Other",
+      "sub_sector": "Financial Services",
+      "country": "Sweden",
+      "year": 2024,
+      "raw_kpis": {
+        "scope1_tco2e": 143,
+        "scope2_lb_tco2e": 4468,
+        "scope2_mb_tco2e": 2205,
+        "scope3_total_tco2e": 46059746,
+        "scope3_by_category": {
+          "cat1_purchased_goods": 2714,
+          "cat11_use_of_sold_products": null
+        },
+        "revenue_eur_million": 5423.915,
+        "revenue_currency_original": "SEK",
+        "revenue_original_value": 62345,
+        "fte": 12703,
+        "reporting_year": 2024,
+        "notes": "GHG emissions: p.293; Revenue: p.24; FTE: p.26. Revenue is reported in SEK million and converted to EUR million using the provided rate (1 SEK = 0.087 EUR). Scope 3 category 'Use of sold products' is not reported as it is not calculated by the company (p.292)."
+      },
+      "intensities": {
+        "scope1_tco2e": 143,
+        "scope2_tco2e": 2205,
+        "scope12_tco2e": 2348,
+        "intensity_s12_per_eur_m": 0.4,
+        "intensity_s12_per_fte": 0.2,
+        "scope3_tco2e": 46059746,
+        "scope123_tco2e": 46062094,
+        "intensity_s123_per_eur_m": 8492.4,
+        "intensity_s123_per_fte": 3626.1,
+        "revenue_eur_million": 5423.915,
+        "fte": 12703
+      },
+      "confidence": "high",
+      "document": "Svenska_Handelsbanken_2024_CSRD.pdf"
     }
   ]
 }

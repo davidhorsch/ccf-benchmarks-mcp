@@ -218,9 +218,12 @@ def select_companies(documents: list, max_companies: int) -> list:
             break
         pool = sector_pools[s]
         while pos[s] < len(pool):
-            c = pool[pos[s]]; pos[s] += 1
+            c = pool[pos[s]]
+            pos[s] += 1
             if c["id"] not in seen:
-                selected.append(c); seen.add(c["id"]); break
+                selected.append(c)
+                seen.add(c["id"])
+                break
 
     # Pass 2: fill remaining with best-scored
     if len(selected) < max_companies:

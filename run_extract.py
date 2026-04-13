@@ -3,7 +3,7 @@
 Wrapper that runs extract_kpis.py using the `claude` CLI for auth
 instead of the Anthropic SDK (for session-login users without API key).
 """
-import json, subprocess, sys, types, unittest.mock as mock
+import subprocess, sys, types
 
 # --- Minimal stub that mimics anthropic.Anthropic().messages.create() ---
 

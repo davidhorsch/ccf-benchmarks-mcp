@@ -18,11 +18,13 @@ import json
 import os
 import re
 import time
+import unicodedata
 from pathlib import Path
 
 from dotenv import load_dotenv, find_dotenv
 from google import genai
 from google.genai import types
+import requests
 
 load_dotenv(find_dotenv())
 
@@ -35,6 +37,8 @@ MODEL          = "gemini-2.5-flash"
 REPORTS_DIR    = Path(__file__).parent / "csrd_reports"
 BENCHMARKS     = Path(__file__).parent / "industry_benchmarks.json"
 
+_SRNAV_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+
 # Page ranges from srnav.com metadata (sust_start / sust_end).
 # Gemini reads the full PDF — these are passed as hints in the prompt so the
 # model focuses on the sustainability section rather than the full annual report.
@@ -46,8 +50,8 @@ REPORTS = [
         "sub_sector": "Chemical Industry",
         "country":    "Germany",
         "year":       2024,
-        "sust_start": 108,
-        "sust_end":   210,
+        "sust_start": 1,
+        "sust_end":   111,
     },
     {
         "file":       "BPOST_SA_2024_CSRD.pdf",
@@ -454,7 +458,7 @@ REPORTS = [
         "country":    "Sweden",
         "year":       2024,
         "sust_start": 1,
-        "sust_end":   35,
+        "sust_end":   80,
     },
     {
         "file":       "Inditex_2024_CSRD.pdf",
@@ -737,7 +741,6 @@ def delete_file(client: genai.Client, uploaded_file: types.File) -> None:
 def compute_intensities(kpis: dict) -> dict:
     """Calculate tCO2e/EUR M and tCO2e/FTE intensity metrics."""
     s1  = kpis.get("scope1_tco2e")
-    # Prefer market-based; fall back to location-based then undifferentiated.
     # Use explicit None checks so that 0 (e.g. 100 % renewable via RECs) is
     # treated as a valid value and not silently skipped by a falsy `or` chain.
     s2  = (
@@ -785,10 +788,14 @@ def compute_intensities(kpis: dict) -> dict:
 # JSON UPDATE
 # ---------------------------------------------------------------------------
 
+def _build_id(company: str, year: int) -> str:
+    return f"csrd-{company.lower().replace(' ', '-')}-{year}"
+
+
 def build_benchmark_entry(report: dict, kpis: dict, intensities: dict) -> dict:
     """Build a benchmark entry dict for industry_benchmarks.json."""
     return {
-        "id": f"csrd-{report['company'].lower().replace(' ', '-')}-{report['year']}",
+        "id": _build_id(report["company"], report["year"]),
         "source_type": "csrd_report",
         "company":    report["company"],
         "sector":     report["sector"],
@@ -923,18 +930,198 @@ def migrate_benchmarks(dry_run: bool = False) -> None:
 
 
 # ---------------------------------------------------------------------------
+# DOWNLOAD
+# ---------------------------------------------------------------------------
+
+# Known name differences between our REPORTS list and srnav.com company names.
+# Key = normalised REPORTS name, value = normalised srnav name.
+_SRNAV_ALIASES: dict[str, str] = {
+    "orsted":            "orsted",           # Ørsted normalises the same way
+    "hmgroup":           "hmgroup",
+    "hm":                "hmgroup",
+    "hmgroupab":         "hmgroup",
+    "prosiebensat1":     "prosiebensat1media",
+    "svenskahandelsbanken": "handelsbanken",
+    "handelsbanken":     "handelsbanken",
+    "eon":               "eon",
+    "enel":              "enel",
+    "arcelormittal":     "arcelormittal",
+    "totalenergies":     "totalenergies",
+}
+
+
+def _resolve_sveltekit_val(data: list, value):
+    """Resolve one level of SvelteKit index references. Booleans/None are literals."""
+    if value is None or isinstance(value, bool):
+        return value
+    if isinstance(value, int) and 0 <= value < len(data):
+        t = data[value]
+        if not isinstance(t, bool) and isinstance(t, int):
+            return data[t] if 0 <= t < len(data) else t
+        return t
+    return value
+
+
+def _norm(name: str) -> str:
+    """Normalise a company name for fuzzy matching (ASCII, lowercase, no punctuation)."""
+    # Decompose unicode (é → e + combining accent) then strip non-ASCII
+    nfkd = unicodedata.normalize("NFKD", name)
+    ascii_str = nfkd.encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^a-z0-9]", "", ascii_str.lower())
+
+
+def _fetch_srnav_index() -> dict[str, dict]:
+    """Fetch and parse the srnav.com report index.
+
+    Returns {normalised_company_name: {name, link, year, sust_start, sust_end}}.
+    Where multiple reports exist for the same company (different years), all are
+    stored as {norm_name__year: ...} so year-specific lookup is possible.
+    """
+    resp = requests.get("https://www.srnav.com/reports/__data.json", headers=_SRNAV_HEADERS, timeout=30)
+    resp.raise_for_status()
+
+    nodes = resp.json().get("nodes", [])
+    if len(nodes) < 2:
+        raise ValueError("Unexpected srnav __data.json structure")
+    data = nodes[1].get("data", [])
+    root = data[0] if data else {}
+
+    doc_indices = data[root["documents"]] if isinstance(root, dict) and "documents" in root else []
+
+    index: dict[str, dict] = {}
+    for idx in doc_indices:
+        try:
+            raw = data[idx]
+            if not isinstance(raw, dict):
+                continue
+            co = _resolve_sveltekit_val(data, raw.get("company"))
+            if not isinstance(co, dict):
+                continue
+            name   = _resolve_sveltekit_val(data, co.get("name")) or ""
+            link   = _resolve_sveltekit_val(data, raw.get("original_link")) or ""
+            year   = _resolve_sveltekit_val(data, raw.get("year"))
+            sust_s = _resolve_sveltekit_val(data, raw.get("pdfpage_sust_start"))
+            sust_e = _resolve_sveltekit_val(data, raw.get("pdfpage_sust_end"))
+            if not (name and link):
+                continue
+            doc = {"name": name, "link": link, "year": year,
+                   "sust_start": sust_s, "sust_end": sust_e}
+            norm = _norm(name)
+            norm = _SRNAV_ALIASES.get(norm, norm)
+            # Keep the highest-year report for each company as default
+            if norm not in index or (year or 0) > (index[norm].get("year") or 0):
+                index[norm] = doc
+            # Also store year-specific key
+            index[f"{norm}__{year}"] = doc
+        except Exception:
+            continue
+
+    return index
+
+
+def download_missing_reports(dry_run: bool = False) -> list[str]:
+    """Download PDFs for REPORTS entries whose local file does not exist yet.
+
+    Matches each report against the srnav.com index by normalised company name
+    (with year preference). Saves to the exact filename expected by REPORTS.
+    Returns the list of company names successfully downloaded.
+    """
+    REPORTS_DIR.mkdir(exist_ok=True)
+
+    missing = [r for r in REPORTS if not (REPORTS_DIR / r["file"]).exists()]
+    if not missing:
+        print("[download] All PDFs already present — nothing to do.")
+        return []
+
+    print(f"[download] {len(missing)}/{len(REPORTS)} PDFs missing.")
+    print("[download] Fetching srnav.com index...")
+    try:
+        srnav = _fetch_srnav_index()
+    except Exception as e:
+        print(f"[error] Could not fetch srnav index: {e}")
+        return []
+    print(f"[download] Index contains {sum(1 for k in srnav if '__' not in k)} companies.")
+
+    downloaded, not_found = [], []
+
+    for report in missing:
+        company = report["company"]
+        year    = report["year"]
+        target  = REPORTS_DIR / report["file"]
+        norm    = _norm(company)
+        norm    = _SRNAV_ALIASES.get(norm, norm)
+
+        # Prefer year-specific match, fall back to latest available
+        match = srnav.get(f"{norm}__{year}") or srnav.get(norm)
+
+        # Partial-name fallback: find any key that contains or is contained by norm
+        if not match:
+            for key, doc in srnav.items():
+                if "__" in key:
+                    continue
+                if norm in key or key in norm:
+                    match = doc
+                    break
+
+        if not match:
+            print(f"  [not found] {company} — not in srnav index")
+            not_found.append(company)
+            continue
+
+        match_year = match.get("year")
+        if match_year and match_year != year:
+            print(f"  [warn] {company}: requested year {year}, found {match_year} on srnav")
+
+        print(f"  [↓] {company} ({match_year}) — {match['link'][:80]}...")
+        if dry_run:
+            downloaded.append(company)
+            continue
+
+        try:
+            r = requests.get(match["link"], headers=_SRNAV_HEADERS, timeout=120, stream=True)
+            r.raise_for_status()
+            ct = r.headers.get("content-type", "")
+            if "html" in ct.lower():
+                print(f"  [warn] Got HTML not PDF for {company} — skipping")
+                not_found.append(company)
+                continue
+            with open(target, "wb") as f:
+                for chunk in r.iter_content(chunk_size=65536):
+                    f.write(chunk)
+            size_kb = target.stat().st_size // 1024
+            print(f"  [ok] {target.name} ({size_kb:,} KB)")
+            downloaded.append(company)
+        except Exception as e:
+            print(f"  [error] {company}: {e}")
+            if target.exists():
+                target.unlink()
+            not_found.append(company)
+        time.sleep(1.0)
+
+    print(f"\n[download] {len(downloaded)} downloaded, {len(not_found)} not found on srnav")
+    if not_found:
+        print(f"  Not found: {', '.join(not_found)}")
+    return downloaded
+
+
+# ---------------------------------------------------------------------------
 # MAIN
 # ---------------------------------------------------------------------------
 
 def main():
     parser = argparse.ArgumentParser(description="Extract CSRD KPIs using Gemini 2.5 Flash")
-    parser.add_argument("--dry-run",  action="store_true", help="Print results without writing JSON")
+    parser.add_argument("--dry-run",  action="store_true", help="Print results without writing JSON / downloading")
     parser.add_argument("--company",  default=None,        help="Run only this company (substring match)")
     parser.add_argument("--migrate",  action="store_true", help="Apply script rules to existing JSON entries without calling Gemini")
+    parser.add_argument("--download", action="store_true", help="Download missing PDFs from srnav.com, then exit")
     args = parser.parse_args()
 
     if args.migrate:
         migrate_benchmarks(dry_run=args.dry_run)
+        return
+
+    if args.download:
+        download_missing_reports(dry_run=args.dry_run)
         return
 
     client = genai.Client(api_key=GOOGLE_API_KEY)
