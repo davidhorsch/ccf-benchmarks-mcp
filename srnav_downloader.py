@@ -2,7 +2,7 @@
 """
 SRNAV CSRD Report Downloader
 Downloads CSRD sustainability reports from srnav.com for benchmark analysis.
-Targets manufacturing, logistics, energy, and chemical sectors.
+Targets technology, manufacturing, food, transport, infrastructure, consumer goods, and extractives sectors.
 
 No login required — report index and PDFs are publicly accessible.
 
@@ -28,22 +28,50 @@ import requests
 BASE_URL = "https://www.srnav.com"
 
 TARGET_SECTORS = [
+    "Technology & Communications",        # Software, semiconductors, telecom
     "Resource Transformation",            # Chemicals, materials
+    "Food & Beverage",                    # Processed foods, beverages, retail
     "Transportation",                     # Automotive, logistics
-    "Extractives & Minerals Processing",  # Oil & gas, mining
     "Infrastructure",                     # Energy & utilities
-    "Food & Beverage",                    # Cross-sector comparison
+    "Consumer Goods",                     # Apparel, household, retail
+    "Extractives & Minerals Processing",  # Oil & gas, mining
 ]
 
 PRIORITY_INDUSTRIES = [
+    # Resource Transformation
     "Chemicals",
-    "Logistics",
-    "Road Transportation",
-    "Oil & Gas",
-    "Electric Utilities & Power Generators",
-    "Automobiles",
+    "Electrical & Electronic Equipment",
     "Industrial Machinery & Goods",
-    "Food Processing",
+    "Building Products & Furnishings",
+    "Pulp & Paper Products",
+    "Construction Materials",
+    # Transportation
+    "Auto Parts",
+    "Automobiles",
+    "Air Freight & Logistics",
+    "Marine Transportation",
+    "Aerospace & Defence",
+    "Rail Transportation",
+    # Infrastructure
+    "Electric Utilities & Power Generators",
+    "Engineering & Construction Services",
+    # Technology & Communications
+    "Semiconductors",
+    "Hardware",
+    # Consumer Goods
+    "Apparel, Accessories & Footwear",
+    "Household & Personal Products",
+    "Media & Entertainment",
+    "Multiline and Specialty Retailers & Distributors",
+    "Toys & Sporting Goods",
+    # Extractives & Minerals Processing
+    "Metals & Mining",
+    "Oil & Gas - Refining & Marketing",
+    "Oil & Gas - Exploration & Production",
+    # Food & Beverage
+    "Processed Foods",
+    "Alcoholic Beverages",
+    "Food Retailers & Distributors",
 ]
 
 OUTPUT_DIR = Path(__file__).parent / "csrd_reports"
@@ -234,6 +262,21 @@ def select_companies(documents: list, max_companies: int) -> list:
 # DOWNLOAD
 # ---------------------------------------------------------------------------
 
+def _safe_unlink(path: Path) -> None:
+    """Delete a file only if it is empty (0 bytes). Raises if the file has content."""
+    if path.exists() and path.stat().st_size > 0:
+        raise RuntimeError(
+            f"Refusing to delete non-empty file {path.name} ({path.stat().st_size} bytes). "
+            "Only 0-byte or partial files may be removed."
+        )
+    path.unlink(missing_ok=True)
+
+
+RETRYABLE_STATUS = {429, 503}
+MAX_RETRIES = 3
+RETRY_BACKOFF = 5  # seconds; doubles each attempt (5 → 10 → 20)
+
+
 def download_pdf(doc: dict, output_dir: Path) -> Optional[Path]:
     company = doc.get("company") or {}
     name = (company.get("name") or "unknown").replace("/", "-").replace(" ", "_")
@@ -241,35 +284,69 @@ def download_pdf(doc: dict, output_dir: Path) -> Optional[Path]:
     filepath = output_dir / f"{name}_{year}_CSRD.pdf"
 
     if filepath.exists():
-        print(f"  [skip] {filepath.name} already exists")
-        return filepath
+        if filepath.stat().st_size > 0:
+            print(f"  [skip] {filepath.name} already exists")
+            return filepath
+        _safe_unlink(filepath)  # stale 0-byte file from a prior failed download — retry
 
     url = doc["original_link"]
     print(f"  [↓] {name} ({year})  {url[:90]}...")
 
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=60, stream=True)
-        resp.raise_for_status()
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            resp = requests.get(url, headers=HEADERS, timeout=60, stream=True)
 
-        if "html" in resp.headers.get("content-type", "").lower():
-            print(f"  [warn] Got HTML instead of PDF — skipping {name}")
-            return None
+            if resp.status_code in RETRYABLE_STATUS and attempt < MAX_RETRIES:
+                wait = int(resp.headers.get("Retry-After") or RETRY_BACKOFF * (2 ** (attempt - 1)))
+                print(f"  [retry] {name}: HTTP {resp.status_code} — waiting {wait}s (attempt {attempt}/{MAX_RETRIES})")
+                time.sleep(wait)
+                continue
 
-        with open(filepath, "wb") as f:
-            for chunk in resp.iter_content(chunk_size=8192):
-                f.write(chunk)
+            resp.raise_for_status()
 
-        print(f"  [ok] {filepath.name} ({filepath.stat().st_size // 1024} KB)")
-        return filepath
+            if "html" in resp.headers.get("content-type", "").lower():
+                print(f"  [warn] Got HTML instead of PDF — skipping {name}")
+                return None
 
-    except requests.RequestException as e:
-        print(f"  [error] {name}: {e}")
-        return None
+            with open(filepath, "wb") as f:
+                for chunk in resp.iter_content(chunk_size=8192):
+                    f.write(chunk)
+
+            if filepath.stat().st_size == 0:
+                _safe_unlink(filepath)
+                print(f"  [warn] {name}: server returned an empty file — skipping")
+                return None
+
+            print(f"  [ok] {filepath.name} ({filepath.stat().st_size // 1024} KB)")
+            return filepath
+
+        except requests.RequestException as e:
+            if attempt < MAX_RETRIES:
+                wait = RETRY_BACKOFF * (2 ** (attempt - 1))
+                print(f"  [retry] {name}: {e} — waiting {wait}s (attempt {attempt}/{MAX_RETRIES})")
+                time.sleep(wait)
+            else:
+                print(f"  [error] {name}: {e}")
+                _safe_unlink(filepath)  # clean up any partial write
+
+    return None
 
 
 # ---------------------------------------------------------------------------
 # METADATA CSV
 # ---------------------------------------------------------------------------
+
+# Maps our metadata company names (lowercase) to the name srnav uses (lowercase).
+# Needed so the "already present" check recognises the same company under both names.
+_COMPANY_ALIASES: dict[str, str] = {
+    "aperam":         "aperam sa",
+    "bmw group":      "bmw",
+    "dsv":            "dsv panalpina",
+    "prosiebensat.1": "prosiebensat.1 media",
+    "publicis":       "publicis groupe",
+    "renault group":  "renault",
+    "thyssenkrupp":   "thyssenkrupp ag",
+}
 
 # Column order matches csrd_reports/metadata.csv used by extract_kpis.py
 METADATA_FIELDS = [
@@ -291,10 +368,16 @@ def _load_existing_metadata(output_dir: Path) -> tuple[list[dict], set[tuple[str
     lines = [l for l in path.read_text(encoding="utf-8").splitlines()
              if not l.startswith("#")]
     rows = list(csv.DictReader(lines))
-    seen = {
-        (r["company_name"].strip().lower(), str(r["year"]).strip())
-        for r in rows if r.get("company_name") and r.get("year")
-    }
+    seen: set[tuple[str, str]] = set()
+    for r in rows:
+        if not (r.get("company_name") and r.get("year")):
+            continue
+        name = r["company_name"].strip().lower()
+        year = str(r["year"]).strip()
+        seen.add((name, year))
+        # Also register the srnav variant so we don't re-download the same company
+        if name in _COMPANY_ALIASES:
+            seen.add((_COMPANY_ALIASES[name], year))
     return rows, seen
 
 
@@ -324,6 +407,9 @@ def save_metadata(new_docs: list, output_dir: Path, existing_rows: list[dict]) -
     path = output_dir / "metadata.csv"
     new_rows = [_doc_to_row(doc) for doc in new_docs]
     all_rows = existing_rows + new_rows
+    assert len(all_rows) >= len(existing_rows), (
+        f"BUG: metadata write would reduce row count from {len(existing_rows)} to {len(all_rows)}"
+    )
     with open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=METADATA_FIELDS, extrasaction="ignore")
         w.writeheader()
@@ -366,6 +452,13 @@ def main():
     already = len(documents) - len(new_documents)
     print(f"[filter] {len(documents)} available on srnav — {already} already present, {len(new_documents)} new candidates.")
 
+    # Hard filter: only keep reports from target sectors
+    new_documents = [
+        d for d in new_documents
+        if (d.get("company") or {}).get("sector") in TARGET_SECTORS
+    ]
+    print(f"[filter] {len(new_documents)} candidates after restricting to target sectors.")
+
     if not new_documents:
         print("[done] All reports already downloaded — nothing to do.")
         return
@@ -383,10 +476,11 @@ def main():
         return
 
     print(f"\n[download] {len(selected)} new PDFs → {output_dir}/")
+    existing_files = {r.get("local_file", "") for r in existing_rows}
     downloaded = []
     for doc in selected:
         fp = download_pdf(doc, output_dir)
-        if fp:
+        if fp and fp.name not in existing_files:
             doc["_local_path"] = fp.name   # filename only, matching metadata.csv convention
             downloaded.append(doc)
         time.sleep(1.0)
