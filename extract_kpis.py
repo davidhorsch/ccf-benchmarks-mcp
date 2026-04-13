@@ -606,7 +606,7 @@ Required fields:
   "revenue_currency_original": "<string>",   // e.g. "EUR", "USD", "DKK"
   "revenue_original_value": <number or null>,
   "reporting_year": <number or null>,
-  "notes": "<caveats, unit conversions, ambiguities>"
+  "notes": "<ALWAYS begin with source pages: 'GHG emissions: p.X; Revenue: p.Y; FTE: p.Z' — then add caveats, unit conversions, ambiguities>"
 }}
 
 Rules:
@@ -619,6 +619,7 @@ Rules:
 - "CO2e", "CO₂e", "GHG", "greenhouse gas" all refer to the same metric
 - Revenue is often found in EU Taxonomy tables or the financial highlights section
 - Ensure the reporting data refers to an entire calendar year. Check https://en.wikipedia.org/wiki/Fiscal_year for reference and highlight if data referes to fiscal year if calendar year not available in the notes.
+- notes MUST start with page references for every extracted value before any other text
 """
 
 
@@ -809,6 +810,7 @@ def build_benchmark_entry(report: dict, kpis: dict, intensities: dict) -> dict:
         },
         "intensities": intensities,
         "confidence": "high" if intensities.get("intensity_s12_per_eur_m") else "low",
+        "document":   report["file"],
     }
 
 
@@ -858,6 +860,9 @@ def migrate_benchmarks(dry_run: bool = False) -> None:
     entries = db.get("csrd_company_data", [])
     change_log: list[str] = []
 
+    # Build lookup: company name → source PDF filename (from REPORTS list)
+    company_to_file: dict[str, str] = {r["company"]: r["file"] for r in REPORTS}
+
     for entry in entries:
         company = entry["company"]
         raw     = entry.setdefault("raw_kpis", {})
@@ -870,23 +875,29 @@ def migrate_benchmarks(dry_run: bool = False) -> None:
             entry["sub_sector"] = new_sub
             log.append(f"sub_sector: '{old_sub}' → '{new_sub}'")
 
-        # 2. Ensure scope3_by_category in raw_kpis
+        # 2. Add document filename if missing
+        if "document" not in entry:
+            doc = company_to_file.get(company)
+            entry["document"] = doc  # None for hand-authored entries not in REPORTS
+            log.append(f"document: '{doc}'")
+
+        # 3. Ensure scope3_by_category in raw_kpis
         if "scope3_by_category" not in raw:
             raw["scope3_by_category"] = None
             log.append("raw_kpis: added scope3_by_category=null")
 
-        # 3. Ensure reporting_year in raw_kpis
+        # 4. Ensure reporting_year in raw_kpis
         if "reporting_year" not in raw:
             raw["reporting_year"] = None
             log.append("raw_kpis: added reporting_year=null")
 
-        # 4. Rebuild intensities from raw_kpis
+        # 5. Rebuild intensities from raw_kpis
         new_intensities = compute_intensities(raw)
         if entry.get("intensities") != new_intensities:
             entry["intensities"] = new_intensities
             log.append("intensities: rebuilt from raw_kpis")
 
-        # 5. Recalculate confidence
+        # 6. Recalculate confidence
         new_conf = "high" if new_intensities.get("intensity_s12_per_eur_m") else "low"
         if entry.get("confidence") != new_conf:
             log.append(f"confidence: '{entry.get('confidence')}' → '{new_conf}'")

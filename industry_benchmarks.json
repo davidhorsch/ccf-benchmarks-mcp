@@ -99,7 +99,8 @@
         "intensity_s123_per_eur_m": 1673.4,
         "revenue_eur_million": 13643
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Covestro_2025_CSRD.pdf"
     },
     {
       "id": "csrd-bpost-sa-2024",
@@ -135,7 +136,8 @@
         "revenue_eur_million": 4341.3,
         "fte": 32434
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "BPOST_SA_2024_CSRD.pdf"
     },
     {
       "id": "csrd-rubis-2024",
@@ -171,7 +173,8 @@
         "revenue_eur_million": 6644,
         "fte": 4375
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Rubis_2024_CSRD.pdf"
     },
     {
       "id": "csrd-heineken-2024",
@@ -207,7 +210,8 @@
         "revenue_eur_million": 35955,
         "fte": 88497
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Heineken_2024_CSRD.pdf"
     },
     {
       "id": "csrd-kpn-2024",
@@ -243,7 +247,8 @@
         "revenue_eur_million": 5603,
         "fte": 10333
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "KPN_2024_CSRD.pdf"
     },
     {
       "id": "csrd-adidas-2024",
@@ -279,7 +284,8 @@
         "revenue_eur_million": 23683,
         "fte": 62035
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "adidas_2024_CSRD.pdf"
     },
     {
       "id": "csrd-sartorius-2024",
@@ -312,7 +318,8 @@
         "intensity_s123_per_eur_m": 152.6,
         "revenue_eur_million": 3538.1
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Sartorius_2025_CSRD.pdf"
     },
     {
       "id": "csrd-nordex-2024",
@@ -348,7 +355,8 @@
         "revenue_eur_million": 7298.8,
         "fte": 10405
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Nordex_2024_CSRD.pdf"
     },
     {
       "id": "csrd-ørsted-2024",
@@ -384,7 +392,8 @@
         "revenue_eur_million": 9518.556,
         "fte": 8278
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Ørsted_2024_CSRD.pdf"
     },
     {
       "id": "csrd-statkraft-2024",
@@ -420,7 +429,8 @@
         "revenue_eur_million": 6781.272,
         "fte": 6388
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Statkraft_2025_CSRD.pdf"
     },
     {
       "id": "csrd-tf1-2023",
@@ -456,7 +466,8 @@
         "revenue_eur_million": 2356.1,
         "fte": 3779
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "TF1_2024_CSRD.pdf"
     },
     {
       "id": "csrd-voestalpine-ag-2024",
@@ -492,7 +503,8 @@
         "revenue_eur_million": 15743.7,
         "fte": 49659
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "voestalpine_AG_2025_CSRD.pdf"
     },
     {
       "id": "csrd-air-liquide-2023",
@@ -528,7 +540,8 @@
         "revenue_eur_million": 27058,
         "fte": 66657
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Air_Liquide_2024_CSRD.pdf"
     },
     {
       "id": "csrd-lenzing-2023",
@@ -564,7 +577,8 @@
         "revenue_eur_million": 2663.9,
         "fte": 7816
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Lenzing_2024_CSRD.pdf"
     },
     {
       "id": "csrd-alzchem-group-2024",
@@ -600,7 +614,8 @@
         "revenue_eur_million": 562.115,
         "fte": 1794
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Alzchem_Group_2025_CSRD.pdf"
     },
     {
       "id": "csrd-evonik-2024",
@@ -636,7 +651,8 @@
         "revenue_eur_million": 14069,
         "fte": 31053
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Evonik_2025_CSRD.pdf"
     },
     {
       "id": "csrd-arkema-2023",
@@ -672,7 +688,8 @@
         "revenue_eur_million": 9544,
         "fte": 21164
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Arkema_2024_CSRD.pdf"
     },
     {
       "id": "csrd-borealis-2023",
@@ -708,7 +725,8 @@
         "revenue_eur_million": 7951.49,
         "fte": 6173
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Borealis_2024_CSRD.pdf"
     },
     {
       "id": "csrd-basf-2023",
@@ -744,7 +762,8 @@
         "revenue_eur_million": 65260,
         "fte": 111822
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "BASF_2024_CSRD.pdf"
     },
     {
       "id": "csrd-lanxess-2023",
@@ -780,7 +799,8 @@
         "revenue_eur_million": 6366,
         "fte": 12338
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Lanxess_2024_CSRD.pdf"
     },
     {
       "id": "sr-volkswagen-group-2023",
@@ -814,7 +834,8 @@
         "fte": 684000
       },
       "confidence": "high",
-      "source": "Volkswagen Group Sustainability Report 2023"
+      "source": "Volkswagen Group Sustainability Report 2023",
+      "document": null
     },
     {
       "id": "sr-dhl-group-2023",
@@ -838,7 +859,8 @@
         "fte": 601760
       },
       "confidence": "low",
-      "source": "DHL Group Environment Report 2023; DHL Group Annual Report 2023"
+      "source": "DHL Group Environment Report 2023; DHL Group Annual Report 2023",
+      "document": null
     },
     {
       "id": "sr-shell-2023",
@@ -872,7 +894,8 @@
         "fte": 93000
       },
       "confidence": "high",
-      "source": "Shell Sustainability Report 2023"
+      "source": "Shell Sustainability Report 2023",
+      "document": null
     },
     {
       "id": "csrd-omv-2024",
@@ -905,7 +928,8 @@
         "intensity_s123_per_eur_m": 4610.7,
         "revenue_eur_million": 33981
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "OMV_2024_CSRD_env.pdf"
     },
     {
       "id": "csrd-rwe-2024",
@@ -925,7 +949,7 @@
         "revenue_original_value": null,
         "fte": 22098,
         "reporting_year": 2024,
-        "notes": "GHG emissions (Scope 1, 2, 3) and revenue are material topics explicitly stated to be covered in the RWE Annual Report 2024, not in this supplementary report. FTE is from the 'Employees' row in the 'Employment, training and skills development' table on page 15, representing Full-Time Equivalents for 2024.",
+        "notes": "GHG emissions (Scope 1, 2, 3) and revenue are material topics explicitly stated to be covered in the RWE Annual Report 2024. FTE is from the 'Employees' row in the 'Employment, training and skills development' table on page 15, representing Full-Time Equivalents for 2024.",
         "scope3_by_category": null
       },
       "intensities": {
@@ -941,7 +965,8 @@
         "revenue_eur_million": 24224,
         "fte": 22098
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "RWE_2024_full_CSRD.pdf"
     },
     {
       "id": "csrd-stellantis-2024",
@@ -977,7 +1002,8 @@
         "revenue_eur_million": 156878,
         "fte": 248883
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Stellantis_2024_CSRD.pdf"
     },
     {
       "id": "csrd-deutsche-telekom-2024",
@@ -1013,7 +1039,8 @@
         "revenue_eur_million": 112800,
         "fte": 196000
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "DeutscheTelekom_2024_CSRD.pdf"
     },
     {
       "id": "csrd-thyssenkrupp-2024",
@@ -1049,7 +1076,8 @@
         "revenue_eur_million": 32837,
         "fte": 95373
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Thyssenkrupp_2025_CSRD.pdf"
     },
     {
       "id": "csrd-siemens-2024",
@@ -1085,7 +1113,8 @@
         "revenue_eur_million": 75900,
         "fte": 327000
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Siemens_2024_CSRD.pdf"
     },
     {
       "id": "csrd-eni-2024",
@@ -1121,7 +1150,8 @@
         "revenue_eur_million": 88797,
         "fte": 31669
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "ENI_2024_CSRD.pdf"
     },
     {
       "id": "csrd-salzgitter-2024",
@@ -1157,7 +1187,8 @@
         "revenue_eur_million": 10011.7,
         "fte": 24473
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Salzgitter_2024_CSRD.pdf"
     },
     {
       "id": "csrd-hugo-boss-2024",
@@ -1193,7 +1224,8 @@
         "revenue_eur_million": 4307.349,
         "fte": 18623
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "HugoBoss_2024_CSRD.pdf"
     },
     {
       "id": "csrd-dsv-2024",
@@ -1229,7 +1261,8 @@
         "revenue_eur_million": 22392.204,
         "fte": 73338
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "DSV_2024_CSRD.pdf"
     },
     {
       "id": "csrd-bmw-group-2024",
@@ -1265,7 +1298,8 @@
         "revenue_eur_million": 142380,
         "fte": 159104
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "BMW_2024_CSRD.pdf"
     },
     {
       "id": "csrd-enel-2024",
@@ -1301,7 +1335,8 @@
         "revenue_eur_million": 78947,
         "fte": 60359
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Enel_2024_CSRD.pdf"
     },
     {
       "id": "csrd-totalenergies-2024",
@@ -1337,7 +1372,8 @@
         "revenue_eur_million": 197386,
         "fte": 102887
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "TotalEnergies_2024_CSRD.pdf"
     },
     {
       "id": "csrd-arcelormittal-2024",
@@ -1373,7 +1409,8 @@
         "revenue_eur_million": 57445.72,
         "fte": 125416
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "ArcelorMittal_2024_CSRD.pdf"
     },
     {
       "id": "csrd-danone-2024",
@@ -1409,7 +1446,8 @@
         "revenue_eur_million": 27376,
         "fte": 89528
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Danone_2024_CSRD.pdf"
     },
     {
       "id": "csrd-e.on-2024",
@@ -1445,7 +1483,8 @@
         "revenue_eur_million": 80119,
         "fte": 76566
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "EON_2024_CSRD.pdf"
     },
     {
       "id": "csrd-nestlé-2024",
@@ -1481,7 +1520,8 @@
         "revenue_eur_million": 95865,
         "fte": 277000
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Nestle_2024_CSRD.pdf"
     },
     {
       "id": "csrd-ssab-2024",
@@ -1517,7 +1557,8 @@
         "revenue_eur_million": 8997.37,
         "fte": 15263
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "SSAB_2024_CSRD.pdf"
     },
     {
       "id": "csrd-publicis-2024",
@@ -1553,7 +1594,8 @@
         "revenue_eur_million": 16030,
         "fte": 108179
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Publicis_2024_CSRD.pdf"
     },
     {
       "id": "csrd-vestas-2024",
@@ -1589,7 +1631,8 @@
         "revenue_eur_million": 17295,
         "fte": 32729
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Vestas_2024_CSRD.pdf"
     },
     {
       "id": "csrd-puma-2024",
@@ -1625,7 +1668,8 @@
         "revenue_eur_million": 8817.2,
         "fte": 18668
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Puma_2024_CSRD.pdf"
     },
     {
       "id": "csrd-postnl-2024",
@@ -1661,7 +1705,8 @@
         "revenue_eur_million": 3252,
         "fte": 20151
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "PostNL_2024_CSRD.pdf"
     },
     {
       "id": "csrd-schneider-electric-2024",
@@ -1697,7 +1742,8 @@
         "revenue_eur_million": 38153,
         "fte": 159002
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Schneider_Electric_2024_CSRD.pdf"
     },
     {
       "id": "csrd-proximus-2024",
@@ -1733,7 +1779,8 @@
         "revenue_eur_million": 6430,
         "fte": 13131
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Proximus_2024_CSRD.pdf"
     },
     {
       "id": "csrd-prosiebensat.1-2024",
@@ -1769,7 +1816,8 @@
         "revenue_eur_million": 3918,
         "fte": 7041
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "ProSiebenSat1_2024_CSRD.pdf"
     },
     {
       "id": "csrd-h&m-group-2024",
@@ -1806,7 +1854,8 @@
         "revenue_eur_million": 20401,
         "fte": 97710
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "HM_Group_2024_CSRD.pdf"
     },
     {
       "id": "csrd-renault-group-2024",
@@ -1842,7 +1891,8 @@
         "revenue_eur_million": 56232,
         "fte": 98636
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Renault_2024_CSRD.pdf"
     },
     {
       "id": "csrd-Orange-2024",
@@ -1879,7 +1929,8 @@
         "revenue_eur_million": 40260,
         "fte": 126909
       },
-      "confidence": "high"
+      "confidence": "high",
+      "document": "Orange_2024_CSRD.pdf"
     }
   ]
 }
