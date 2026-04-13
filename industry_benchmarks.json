@@ -19,17 +19,6 @@
       "CSRD-derived benchmarks use FY2023 or FY2024 data depending on company reporting cycle. All are first-year CSRD disclosures; methodology and coverage may improve in subsequent years.",
       "Proprietary databases (Trucost/S&P Sustainable1, MSCI CarbonMetrics) provide GICS-level benchmarks but require subscription."
     ],
-    "sources_used": [
-      "DHL Group Environment Report 2023",
-      "VW Group Sustainability Report 2023",
-      "Shell Sustainability Report 2022",
-      "TotalEnergies Sustainability Report 2023",
-      "BP ESG Datasheet 2023",
-      "Umweltbundesamt GHG Emission Reports 2022–2023",
-      "EU Commission Regulation 2021/447 (EU ETS Product Benchmarks)",
-      "SBTi Chemicals Sector Pathway",
-      "CSRD ESRS E1-6 disclosures FY2023–FY2024 (see csrd_company_data for individual company sources)"
-    ]
   },
   "eu_ets_product_benchmarks": {
     "description": "EU ETS top-10th-percentile efficiency benchmarks (tCO2e per tonne of product) used for free allowance allocation under EU Reg. 2021/447. These represent best-practice, not sector averages. Average installations emit 2–3x these values. Period: 2021–2025.",
@@ -106,7 +95,7 @@
         "fte": 17503
       },
       "confidence": "high",
-      "document": "Covestro_2025_CSRD.pdf"
+      "document": "https://annualreport.covestro.com/ecomaXL/files/Covestro_2025_GB_EN.pdf"
     },
     {
       "id": "csrd-bpost-sa-2024",
@@ -146,7 +135,7 @@
         "fte": 36527
       },
       "confidence": "high",
-      "document": "BPOST_SA_2024_CSRD.pdf"
+      "document": "https://bpostgroup.com/sites/default/files/2025-03/24099_BPOST_jaarverslag_2024_ENG.pdf"
     },
     {
       "id": "csrd-rubis-2024",
@@ -186,7 +175,7 @@
         "fte": 4375
       },
       "confidence": "high",
-      "document": "Rubis_2024_CSRD.pdf"
+      "document": "https://www.rubis.fr/en/wp-content/uploads/sites/2/2025/05/RUB2024_URD_VA_MEL_25-05-05.pdf"
     },
     {
       "id": "csrd-heineken-2024",
@@ -226,7 +215,7 @@
         "fte": 88497
       },
       "confidence": "high",
-      "document": "Heineken_2024_CSRD.pdf"
+      "document": "https://www.theheinekencompany.com/sites/heineken-corp/files/2026-02/2025_Heineken_NV_Annual_Report_Interactive_100226_FINAL.pdf"
     },
     {
       "id": "csrd-kpn-2024",
@@ -266,7 +255,7 @@
         "fte": 9664
       },
       "confidence": "high",
-      "document": "KPN_2024_CSRD.pdf"
+      "document": "https://www.annualreport2025.kpn/files/KPN-integrated-annual-report-2025.pdf"
     },
     {
       "id": "csrd-adidas-2024",
@@ -306,7 +295,7 @@
         "fte": 62035
       },
       "confidence": "high",
-      "document": "adidas_2024_CSRD.pdf"
+      "document": "https://report.adidas-group.com/2025/en/_assets/downloads/annual-report-adidas-ar25.pdf"
     },
     {
       "id": "csrd-sartorius-2024",
@@ -346,7 +335,7 @@
         "fte": 13528
       },
       "confidence": "high",
-      "document": "Sartorius_2025_CSRD.pdf"
+      "document": "https://www.sartorius.com/download/1796536/fy-2025-download-annual-report-sag-en-data.pdf"
     },
     {
       "id": "csrd-nordex-2024",
@@ -386,7 +375,7 @@
         "fte": 10405
       },
       "confidence": "high",
-      "document": "Nordex_2024_CSRD.pdf"
+      "document": "https://ir.nordex-online.com/media/document/f376db30-1d21-489d-bc10-b82fa287febc/assets/DE000A0D6554-JA-2025-EQ-E-00.pdf?disposition=inline"
     },
     {
       "id": "csrd-ørsted-2024",
@@ -426,7 +415,7 @@
         "fte": 8278
       },
       "confidence": "high",
-      "document": "Ørsted_2024_CSRD.pdf"
+      "document": "https://cdn.orsted.com/-/media/annual-2025/annual-report-2025.pdf?rev=34ff0f324dc1429bac1bc84382c30a9d&hash=D5AF74AEDCCB4EB539AAD875E368374A"
     },
     {
       "id": "csrd-statkraft-2024",
@@ -466,7 +455,7 @@
         "fte": 6915
       },
       "confidence": "high",
-      "document": "Statkraft_2025_CSRD.pdf"
+      "document": "https://www.statkraft.com/globalassets/0/.com/6-investor-relations/reports-and-presentations/2025/q4/annual-report-2025-statkraft-as.pdf"
     },
     {
       "id": "csrd-tf1-2023",
@@ -506,7 +495,7 @@
         "fte": 3640
       },
       "confidence": "high",
-      "document": "TF1_2024_CSRD.pdf"
+      "document": "https://groupe-tf1.fr/sites/default/files//pdf-financiers/TF1%202025%20URD%20English%20version.pdf"
     },
     {
       "id": "csrd-voestalpine-ag-2024",
@@ -546,7 +535,7 @@
         "fte": 49659
       },
       "confidence": "high",
-      "document": "voestalpine_AG_2025_CSRD.pdf"
+      "document": "https://reports.voestalpine.com/2425/ar/_assets/downloads/entire-va-ar2425.pdf"
     },
     {
       "id": "csrd-air-liquide-2023",
@@ -586,7 +575,7 @@
         "fte": 65168
       },
       "confidence": "high",
-      "document": "Air_Liquide_2024_CSRD.pdf"
+      "document": "https://www.airliquide.com/sites/airliquide.com/files/2026-03/air-liquide-2025-universal-registration-document.pdf"
     },
     {
       "id": "csrd-lenzing-2023",
@@ -626,7 +615,7 @@
         "fte": 7738
       },
       "confidence": "high",
-      "document": "Lenzing_2024_CSRD.pdf"
+      "document": "https://reports.lenzing.com/annual-and-sustainability-report/2025/_assets/downloads/entire-lenzing-ar25.pdf?h=gXRhobkm"
     },
     {
       "id": "csrd-alzchem-group-2024",
@@ -666,7 +655,7 @@
         "fte": 1725
       },
       "confidence": "high",
-      "document": "Alzchem_Group_2025_CSRD.pdf"
+      "document": "https://www.alzchem.com/fileadmin/Investor_Relations/Finanzberichte/Alzchem-Annual-Report-2025s.pdf"
     },
     {
       "id": "csrd-evonik-2024",
@@ -706,7 +695,7 @@
         "fte": 31930
       },
       "confidence": "high",
-      "document": "Evonik_2025_CSRD.pdf"
+      "document": "https://www.evonik.com/content/dam/evonik/documents/Evonik_Financial_and_Sustainability_Report_2025.pdf"
     },
     {
       "id": "csrd-arkema-2023",
@@ -746,7 +735,7 @@
         "fte": 20704
       },
       "confidence": "high",
-      "document": "Arkema_2024_CSRD.pdf"
+      "document": "https://www.arkema.com/files/live/sites/shared_arkema/files/downloads/investorrelations/en/finance/ARKEMA_URD_2025_UK_MEL.pdf"
     },
     {
       "id": "csrd-borealis-2023",
@@ -786,7 +775,7 @@
         "fte": 6173
       },
       "confidence": "high",
-      "document": "Borealis_2024_CSRD.pdf"
+      "document": "https://www.borealisgroup.com/storage/Company/About-Borealis/Annual-Report/Borealis-Group-Annual-Report-2024-EN.pdf"
     },
     {
       "id": "csrd-basf-2023",
@@ -826,7 +815,7 @@
         "fte": 108251
       },
       "confidence": "high",
-      "document": "BASF_2024_CSRD.pdf"
+      "document": "https://www.basf.com/dam/jcr:d54ddca4-f9c7-4b4f-b65e-d6ae3188ee24/basf/www/global/documents/en/investor-relations/calendar-and-publications/reports/2026/BASF_Report_2025.pdf?vid=yj4yetYQHDZenmYJh_de7TrtePiXkswC"
     },
     {
       "id": "csrd-lanxess-2023",
@@ -866,7 +855,7 @@
         "fte": 11709
       },
       "confidence": "high",
-      "document": "Lanxess_2024_CSRD.pdf"
+      "document": "https://lanxess.com/-/media/project/lanxess/corporate-internet/investors/reporting/2025/q4/2025-ar-lxs-web.pdf"
     },
     {
       "id": "sr-volkswagen-group-2023",
@@ -1001,7 +990,7 @@
         "fte": 23557
       },
       "confidence": "high",
-      "document": "OMV_2024_CSRD_env.pdf"
+      "document": "https://reports.omv.com/en/annual-report/2024/_assets/downloads/entire-omv-ar24.pdf?h=AXaBFK3e"
     },
     {
       "id": "csrd-rwe-2024",
@@ -1041,7 +1030,7 @@
         "fte": 20985
       },
       "confidence": "high",
-      "document": "RWE_2024_full_CSRD.pdf"
+      "document": "https://www.rwe.com/-/media/RWE/documents/05-investor-relations/finanzkalendar-und-veroeffentlichungen/2025-GJ/RWE-Annual-Report-2025.pdf"
     },
     {
       "id": "csrd-stellantis-2024",
@@ -1081,7 +1070,7 @@
         "fte": 248883
       },
       "confidence": "high",
-      "document": "Stellantis_2024_CSRD.pdf"
+      "document": "https://www.stellantis.com/content/dam/stellantis-corporate/investors/financial-reports/Stellantis-NV-20251231-Annual-Report.pdf"
     },
     {
       "id": "csrd-deutsche-telekom-2024",
@@ -1121,7 +1110,7 @@
         "fte": 198194
       },
       "confidence": "high",
-      "document": "DeutscheTelekom_2024_CSRD.pdf"
+      "document": "https://report.telekom.com/annual-report-2025/_assets/downloads/entire-dtag-ar25.pdf"
     },
     {
       "id": "csrd-thyssenkrupp-2024",
@@ -1161,7 +1150,7 @@
         "fte": 95373
       },
       "confidence": "high",
-      "document": "Thyssenkrupp_2025_CSRD.pdf"
+      "document": "https://www.thyssenkrupp.com/_binary/UCPthyssenkruppAG/f45393e4-83ee-4bef-aa50-4b743d2db1e4/Annual_report_2024_2025_of_thyssenkrupp_AG_WEB.pdf"
     },
     {
       "id": "csrd-siemens-2024",
@@ -1201,7 +1190,7 @@
         "fte": 317562
       },
       "confidence": "high",
-      "document": "Siemens_2024_CSRD.pdf"
+      "document": "https://www.siemens.com/applications/b09c49eb-3a14-73b3-9f71-e30e3c2dfdbd/assets/pdfs/en/Siemens_Report_FY2025.pdf"
     },
     {
       "id": "csrd-eni-2024",
@@ -1241,7 +1230,7 @@
         "fte": 32492
       },
       "confidence": "high",
-      "document": "ENI_2024_CSRD.pdf"
+      "document": "https://www.eni.com/content/dam/enicom/documents/eng/reports/2025/ar-2025/Annual-Report-2025.pdf"
     },
     {
       "id": "csrd-salzgitter-2024",
@@ -1281,7 +1270,7 @@
         "fte": 24473
       },
       "confidence": "high",
-      "document": "Salzgitter_2024_CSRD.pdf"
+      "document": "https://www.salzgitter-ag.com/fileadmin/finanzberichte/2025/gb2025/en/downloads/szag-ar2025-complete.pdf"
     },
     {
       "id": "csrd-hugo-boss-2024",
@@ -1361,7 +1350,7 @@
         "fte": 151751
       },
       "confidence": "high",
-      "document": "DSV_2024_CSRD.pdf"
+      "document": "https://investor.dsv.com/static-files/473ce9ab-291b-42fc-90d0-bff4ee07e4f6#page=41.99"
     },
     {
       "id": "csrd-bmw-group-2024",
@@ -1401,7 +1390,7 @@
         "fte": 154540
       },
       "confidence": "high",
-      "document": "BMW_2024_CSRD.pdf"
+      "document": "https://www.bmwgroup.com/content/dam/grpw/websites/bmwgroup_com/ir/downloads/en/2026/bericht/BMW-Group-Report-2025-en.pdf"
     },
     {
       "id": "csrd-enel-2024",
@@ -1441,7 +1430,7 @@
         "fte": 60359
       },
       "confidence": "high",
-      "document": "Enel_2024_CSRD.pdf"
+      "document": "https://www.enel.com/content/dam/enel-com/documenti/investitori/informazioni-finanziarie/2024/annuali/en/integrated-annual-report_2024.pdf"
     },
     {
       "id": "csrd-totalenergies-2024",
@@ -1481,7 +1470,7 @@
         "fte": 102887
       },
       "confidence": "high",
-      "document": "TotalEnergies_2024_CSRD.pdf"
+      "document": "https://totalenergies.com/system/files/documents/totalenergies_universal-registration-document-2025_2026_en.pdf"
     },
     {
       "id": "csrd-arcelormittal-2024",
@@ -1561,7 +1550,7 @@
         "fte": 89528
       },
       "confidence": "high",
-      "document": "Danone_2024_CSRD.pdf"
+      "document": "https://www.danone.com/content/dam/corp/global/danonecom/investors/en-all-publications/2026/registrationdocuments/urd2025.pdf"
     },
     {
       "id": "csrd-e.on-2024",
@@ -1601,7 +1590,7 @@
         "fte": 76566
       },
       "confidence": "high",
-      "document": "EON_2024_CSRD.pdf"
+      "document": "https://www.eon.com/content/dam/eon/eon-com/eon-com-assets/documents/investor-relations/en/annual-report/GB25-gesamt-EN_final.pdf"
     },
     {
       "id": "csrd-nestlé-2024",
@@ -1675,7 +1664,7 @@
         "fte": 14618
       },
       "confidence": "high",
-      "document": "SSAB_2024_CSRD.pdf"
+      "document": "https://mb.cision.com/Public/980/4322375/82dc4b95e96a55ad.pdf"
     },
     {
       "id": "csrd-publicis-2024",
@@ -1715,7 +1704,7 @@
         "fte": 108179
       },
       "confidence": "high",
-      "document": "Publicis_2024_CSRD.pdf"
+      "document": "https://documents.publicisgroupe.com/urd2024/PBS2024_URD_EN_MEL.pdf"
     },
     {
       "id": "csrd-vestas-2024",
@@ -1755,7 +1744,7 @@
         "fte": 32729
       },
       "confidence": "high",
-      "document": "Vestas_2024_CSRD.pdf"
+      "document": "https://www.vestas.com/content/dam/vestas-com/global/en/investor/reports-and-presentations/financial/2025/fy-2025/Vestas%20Annual%20Report%202025.pdf.coredownload.inline.pdf"
     },
     {
       "id": "csrd-puma-2024",
@@ -1795,7 +1784,7 @@
         "fte": 18668
       },
       "confidence": "high",
-      "document": "Puma_2024_CSRD.pdf"
+      "document": "https://annual-report.puma.com/2025/en/downloads/index.html"
     },
     {
       "id": "csrd-postnl-2024",
@@ -1835,7 +1824,7 @@
         "fte": 20151
       },
       "confidence": "high",
-      "document": "PostNL_2024_CSRD.pdf"
+      "document": "https://annualreport.postnl.nl/app/uploads/2026/02/PostNL-Annual-Report-2025.pdf"
     },
     {
       "id": "csrd-schneider-electric-2024",
@@ -1872,7 +1861,7 @@
         "fte": 159002
       },
       "confidence": "high",
-      "document": "Schneider_Electric_2024_CSRD.pdf"
+      "document": "https://download.schneider-electric.com/files?p_Doc_Ref=2025-URD"
     },
     {
       "id": "csrd-proximus-2024",
@@ -1912,7 +1901,7 @@
         "fte": 13131
       },
       "confidence": "high",
-      "document": "Proximus_2024_CSRD.pdf"
+      "document": "https://www.proximus-cdn.com/dam/jcr:44041fd1-b790-497d-b397-cb03869fab27/proximus-integrated-annual-report-2025-v1.1_en.pdf"
     },
     {
       "id": "csrd-prosiebensat.1-2024",
@@ -1952,7 +1941,7 @@
         "fte": 7041
       },
       "confidence": "high",
-      "document": "ProSiebenSat1_2024_CSRD.pdf"
+      "document": "https://www.prosiebensat1.com/files/2026/03/25/dbfb9a3a-5b28-4996-a2bc-d262e19dcf25.pdf"
     },
     {
       "id": "csrd-h&m-group-2024",
@@ -2029,7 +2018,7 @@
         "fte": 98636
       },
       "confidence": "high",
-      "document": "Renault_2024_CSRD.pdf"
+      "document": "https://assets.renaultgroup.com/uploads/2025/03/Renault_URD_2024_EN-V2.pdf"
     },
     {
       "id": "csrd-Orange-2024",
@@ -2067,7 +2056,7 @@
         "fte": 126909
       },
       "confidence": "high",
-      "document": "Orange_2024_CSRD.pdf"
+      "document": "https://mastermedia.dam-broadcast.com/medias/domain12751/media101349/404740-ke0wtvsost-75.pdf"
     },
     {
       "id": "csrd-orange-2024",
@@ -2107,7 +2096,7 @@
         "fte": 126909
       },
       "confidence": "high",
-      "document": "Orange_2024_CSRD.pdf"
+      "document": "https://mastermedia.dam-broadcast.com/medias/domain12751/media101349/404740-ke0wtvsost-75.pdf"
     },
     {
       "id": "csrd-aperam-2024",
@@ -2147,7 +2136,7 @@
         "fte": 12207
       },
       "confidence": "high",
-      "document": "Aperam_2024_CSRD.pdf"
+      "document": "https://www.aperam.com/sites/default/files/documents/Aperam_CS_Report_2024.pdf"
     },
     {
       "id": "csrd-inditex-2024",
@@ -2187,7 +2176,7 @@
         "fte": 162083
       },
       "confidence": "high",
-      "document": "Inditex_2024_CSRD.pdf"
+      "document": "https://www.inditex.com/itxcomweb/api/media/59f58f71-301d-4a50-85a6-0441fb9f37c5/ENGL-CCAAeIGGrupo2025.pdf?t=1773404712806"
     },
     {
       "id": "csrd-svenska-handelsbanken-2024",
@@ -2227,7 +2216,7 @@
         "fte": 12703
       },
       "confidence": "high",
-      "document": "Svenska_Handelsbanken_2024_CSRD.pdf"
+      "document": "https://vp292.alertir.com/afw/files/press/handelsbanken/202602267127-1.pdf"
     }
   ]
 }

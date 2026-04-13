@@ -50,12 +50,25 @@ https://csrd-benchmarks-mcp.onrender.com/mcp
 
 Connect in Claude Code:
 ```bash
-claude mcp add ccf-benchmarks --url "https://csrd-benchmarks-mcp.onrender.com/mcp?api_key=YOUR_KEY"
+claude mcp add ccf-benchmarks --url "https://csrd-benchmarks-mcp.onrender.com/mcp"
+
+#Attention: add the header to the config file:
+{
+  "mcpServers": {
+    "ccf-benchmarks": {
+    	"type": "http",
+      "url": "https://csrd-benchmarks-mcp.onrender.com/mcp",
+      "headers": {
+      	"Authorization": "Bearer YOUR_TOKEN_HERE"
+    	}
+		}
+	}
+}
 ```
 
 Or add as a custom connector on **claude.ai web** (Settings → Customize → Connectors → + → Add custom connector):
 ```
-https://csrd-benchmarks-mcp.onrender.com/mcp?api_key=YOUR_KEY
+https://csrd-benchmarks-mcp.onrender.com/mcp
 ```
 Once added on web, it syncs to the mobile app automatically.
 
@@ -64,9 +77,13 @@ Or in `claude_desktop_config.json`:
 {
   "mcpServers": {
     "ccf-benchmarks": {
-      "url": "https://csrd-benchmarks-mcp.onrender.com/mcp?api_key=YOUR_KEY"
-    }
-  }
+    	"type": "http",
+      "url": "https://csrd-benchmarks-mcp.onrender.com/mcp",
+      "headers": {
+      	"Authorization": "Bearer YOUR_TOKEN_HERE"
+    	}
+		}
+	}
 }
 ```
 

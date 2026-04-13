@@ -46,11 +46,6 @@ PRIORITY_INDUSTRIES = [
     "Food Processing",
 ]
 
-PREFERRED_COUNTRIES = [
-    "Germany", "France", "Netherlands", "Belgium", "Austria",
-    "Switzerland", "Sweden", "Denmark", "Norway",
-]
-
 OUTPUT_DIR = Path(__file__).parent / "csrd_reports"
 
 HEADERS = {
@@ -153,10 +148,9 @@ def fetch_all_reports() -> list:
 
 def score_document(doc: dict) -> int:
     score = 0
-    company = doc.get("company") or {}
+    company  = doc.get("company") or {}
     sector   = company.get("sector")   or ""
     industry = company.get("industry") or ""
-    country  = company.get("country")  or ""
 
     if sector in TARGET_SECTORS:
         score += 10 + (len(TARGET_SECTORS) - TARGET_SECTORS.index(sector))
@@ -165,9 +159,6 @@ def score_document(doc: dict) -> int:
         if ind.lower() in industry.lower():
             score += 5 + (len(PRIORITY_INDUSTRIES) - i)
             break
-
-    if country in PREFERRED_COUNTRIES:
-        score += 3
 
     if doc.get("csrd_compliant") == "full":
         score += 2
@@ -280,37 +271,64 @@ def download_pdf(doc: dict, output_dir: Path) -> Optional[Path]:
 # METADATA CSV
 # ---------------------------------------------------------------------------
 
-def save_metadata(selected: list, output_dir: Path) -> None:
+# Column order matches csrd_reports/metadata.csv used by extract_kpis.py
+METADATA_FIELDS = [
+    "company_name", "sector", "sub_sector", "country", "year",
+    "pdfpage_sust_start", "pdfpage_sust_end", "local_file",
+    "csrd_compliant", "auditor", "publication_date",
+    "original_link", "lei", "isin",
+]
+
+
+def _load_existing_metadata(output_dir: Path) -> tuple[list[dict], set[tuple[str, str]]]:
+    """Read metadata.csv and return (rows, {(company_lower, year_str)}).
+
+    Skips comment lines (e.g. spreadsheet annotations starting with '#').
+    """
     path = output_dir / "metadata.csv"
-    fields = [
-        "company_name", "sector", "industry", "country", "year",
-        "csrd_compliant", "csrd_report_number", "auditor",
-        "pdfpage_sust_start", "pdfpage_sust_end", "publication_date",
-        "original_link", "lei", "isin", "local_file",
-    ]
+    if not path.exists():
+        return [], set()
+    lines = [l for l in path.read_text(encoding="utf-8").splitlines()
+             if not l.startswith("#")]
+    rows = list(csv.DictReader(lines))
+    seen = {
+        (r["company_name"].strip().lower(), str(r["year"]).strip())
+        for r in rows if r.get("company_name") and r.get("year")
+    }
+    return rows, seen
+
+
+def _doc_to_row(doc: dict) -> dict:
+    """Convert a srnav document dict to a metadata.csv row."""
+    c = doc.get("company") or {}
+    return {
+        "company_name":      c.get("name", ""),
+        "sector":            c.get("sector", ""),
+        "sub_sector":        c.get("industry", ""),  # srnav 'industry' → sub_sector
+        "country":           c.get("country", ""),
+        "year":              doc.get("year", ""),
+        "pdfpage_sust_start": doc.get("pdfpage_sust_start", ""),
+        "pdfpage_sust_end":  doc.get("pdfpage_sust_end", ""),
+        "local_file":        doc.get("_local_path", ""),
+        "csrd_compliant":    doc.get("csrd_compliant", ""),
+        "auditor":           doc.get("auditor", ""),
+        "publication_date":  doc.get("publication_date", ""),
+        "original_link":     doc.get("original_link", ""),
+        "lei":               c.get("lei", ""),
+        "isin":              c.get("isin", ""),
+    }
+
+
+def save_metadata(new_docs: list, output_dir: Path, existing_rows: list[dict]) -> None:
+    """Append new entries to metadata.csv, preserving all existing rows untouched."""
+    path = output_dir / "metadata.csv"
+    new_rows = [_doc_to_row(doc) for doc in new_docs]
+    all_rows = existing_rows + new_rows
     with open(path, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=fields)
+        w = csv.DictWriter(f, fieldnames=METADATA_FIELDS, extrasaction="ignore")
         w.writeheader()
-        for doc in selected:
-            c = doc.get("company") or {}
-            w.writerow({
-                "company_name":       c.get("name", ""),
-                "sector":             c.get("sector", ""),
-                "industry":           c.get("industry", ""),
-                "country":            c.get("country", ""),
-                "year":               doc.get("year", ""),
-                "csrd_compliant":     doc.get("csrd_compliant", ""),
-                "csrd_report_number": doc.get("csrd_report_number", ""),
-                "auditor":            doc.get("auditor", ""),
-                "pdfpage_sust_start": doc.get("pdfpage_sust_start", ""),
-                "pdfpage_sust_end":   doc.get("pdfpage_sust_end", ""),
-                "publication_date":   doc.get("publication_date", ""),
-                "original_link":      doc.get("original_link", ""),
-                "lei":                c.get("lei", ""),
-                "isin":               c.get("isin", ""),
-                "local_file":         doc.get("_local_path", ""),
-            })
-    print(f"[meta] Saved {path}")
+        w.writerows(all_rows)
+    print(f"[meta] {path.name} — {len(existing_rows)} kept + {len(new_rows)} added = {len(all_rows)} total")
 
 
 # ---------------------------------------------------------------------------
@@ -319,13 +337,17 @@ def save_metadata(selected: list, output_dir: Path) -> None:
 
 def main():
     parser = argparse.ArgumentParser(description="Download CSRD reports from srnav.com (no login required)")
-    parser.add_argument("--max",     type=int, default=10,           help="Max companies to download (default: 10)")
+    parser.add_argument("--max",     type=int, default=10,           help="Max new companies to download (default: 10)")
     parser.add_argument("--output",  default=str(OUTPUT_DIR),        help="Output directory for PDFs")
-    parser.add_argument("--dry-run", action="store_true",            help="Show selection without downloading")
+    parser.add_argument("--dry-run", action="store_true",            help="Show selection without downloading or updating metadata")
     args = parser.parse_args()
 
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    existing_rows, seen = _load_existing_metadata(output_dir)
+    if seen:
+        print(f"[meta] {len(seen)} companies already in metadata.csv — skipping those.")
 
     try:
         documents = fetch_all_reports()
@@ -333,7 +355,22 @@ def main():
         print(f"[error] {e}")
         sys.exit(1)
 
-    selected = select_companies(documents, args.max)
+    # Filter to reports not already present (matched by company name + year)
+    new_documents = [
+        d for d in documents
+        if (
+            (d.get("company") or {}).get("name", "").lower(),
+            str(d.get("year", ""))
+        ) not in seen
+    ]
+    already = len(documents) - len(new_documents)
+    print(f"[filter] {len(documents)} available on srnav — {already} already present, {len(new_documents)} new candidates.")
+
+    if not new_documents:
+        print("[done] All reports already downloaded — nothing to do.")
+        return
+
+    selected = select_companies(new_documents, args.max)
 
     print(f"\n{'#':<3} {'Company':<35} {'Sector':<32} {'Industry':<32} {'Country':<12} Year")
     print("─" * 120)
@@ -342,21 +379,21 @@ def main():
         print(f"{i:<3} {c.get('name',''):<35} {c.get('sector',''):<32} {c.get('industry',''):<32} {c.get('country',''):<12} {doc.get('year','')}")
 
     if args.dry_run:
-        print("\n[dry-run] No files downloaded.")
-        save_metadata(selected, output_dir)
+        print(f"\n[dry-run] Would download {len(selected)} new reports — metadata not updated.")
         return
 
-    print(f"\n[download] {len(selected)} PDFs → {output_dir}/")
+    print(f"\n[download] {len(selected)} new PDFs → {output_dir}/")
     downloaded = []
     for doc in selected:
         fp = download_pdf(doc, output_dir)
         if fp:
-            doc["_local_path"] = str(fp)
+            doc["_local_path"] = fp.name   # filename only, matching metadata.csv convention
             downloaded.append(doc)
         time.sleep(1.0)
 
-    save_metadata(selected, output_dir)
-    print(f"\n[done] {len(downloaded)}/{len(selected)} reports downloaded to {output_dir}/")
+    if downloaded:
+        save_metadata(downloaded, output_dir, existing_rows)
+    print(f"\n[done] {len(downloaded)}/{len(selected)} new reports downloaded to {output_dir}/")
 
 
 if __name__ == "__main__":

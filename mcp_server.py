@@ -2,11 +2,11 @@
 """
 CCF Industry Benchmark MCP Server
 
-Exposes CSRD-derived GHG emission intensity data collected from company
-sustainability reports. Use this to benchmark a customer's carbon footprint
+Exposes CSRD-derived GHG emission and intensity data collected from company
+sustainability reports. Use this to get emission data from companies and/or benchmark a customer's carbon footprint
 against peers in the same sector.
 
-Run locally via Claude Code MCP config (stdio) or deploy to Render (streamable-http).
+Run and deploy to Render (streamable-http).
 """
 
 import json
@@ -55,6 +55,7 @@ def get_benchmarks_by_sector(sector: str = "", sub_sector: str = "") -> list[dic
     - intensity_s12_per_eur_m: Scope 1+2 emissions per EUR million revenue
     - intensity_s123_per_eur_m: Full value chain emissions per EUR million revenue
     - intensity_s12_per_fte: Scope 1+2 emissions per employee
+    - intensity_s123_per_fte: Scope 1+2 emissions per employee
     """
     results = []
     for e in DATA["csrd_company_data"]:
@@ -71,6 +72,7 @@ def get_benchmarks_by_sector(sector: str = "", sub_sector: str = "") -> list[dic
             "source":     e.get("source_type"),
             "confidence": e.get("confidence"),
             "intensities": e["intensities"],
+            "data_source":   e["document"]
         })
     results.sort(key=lambda x: x["company"])
     return results
@@ -105,7 +107,7 @@ def get_raw_kpis(sector: str = "", sub_sector: str = "", company: str = "") -> l
     - scope3_by_category: Cat 1 purchased goods / Cat 11 use of sold products
     - revenue_eur_million, revenue_currency_original, revenue_original_value
     - fte: Total headcount or FTE
-    - reporting_year, notes
+    - reporting_year, notes, document
     """
     results = []
     for e in DATA["csrd_company_data"]:
@@ -124,6 +126,7 @@ def get_raw_kpis(sector: str = "", sub_sector: str = "", company: str = "") -> l
             "source":     e.get("source_type"),
             "confidence": e.get("confidence"),
             "raw_kpis":   e["raw_kpis"],
+            "data_source":   e["document"]
         })
     results.sort(key=lambda x: x["company"])
     return results
