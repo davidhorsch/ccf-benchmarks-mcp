@@ -4,19 +4,25 @@ GHG emission intensity benchmarks extracted from EU company CSRD reports, expose
 
 ## What's in the dataset
 
-- **55 companies** across Manufacturing, Logistics, Energy, and Other sectors
-- **12 European countries** — FY2023 and FY2024 data
-- **Source**: First-year CSRD sustainability disclosures (company-published PDFs)
+- **117 companies** across 15 sectors and 30+ sub-sectors
+- **15 European countries** — FY2023, FY2024, and FY2025 data
+- **Source**: CSRD sustainability disclosures (company-published PDFs via srnav.com)
 - **5 EU ETS product benchmarks** (top-10th-percentile efficiency standards)
 
 Sectors and sub-sectors covered:
 
 | Sector | Sub-sectors |
 | --- | --- |
-| Manufacturing | Chemical Industry, Automotive OEM, Iron & Steel, Food & Beverage, Industrial Machinery & Equipment, Consumer Goods / Apparel |
-| Energy | Oil & Gas, Utilities (Electricity & Renewables) |
+| Resource Transformation | Chemicals, Electrical & Electronic Equipment, Industrial Machinery & Equipment, Building Products & Furnishings |
+| Manufacturing | Chemical Industry, Iron & Steel, Automotive OEM, Industrial Machinery & Equipment, Consumer Goods / Apparel |
+| Energy | Oil & Gas, Utilities (Electricity & Renewables), Oil & Gas - Refining & Marketing |
+| Transportation | Auto Parts, Automobiles, Air Freight & Logistics |
+| Technology & Communications | Semiconductors, Telecommunications, Software & IT Services |
+| Consumer Goods | Apparel & Footwear, Household & Personal Products |
+| Food & Beverage | Processed Foods, Food & Beverage |
 | Logistics | Integrated Logistics & Parcel |
-| Other | Telecommunications, Media & Entertainment, Financial Services |
+| Extractives & Minerals Processing | Metals & Mining |
+| Other | Media & Entertainment, Financial Services, Biotechnology & Pharmaceuticals |
 
 Key metrics per company:
 | Metric | Description |
@@ -106,7 +112,7 @@ Add to `~/.claude.json` under `mcpServers`:
 
 | Tool | Description |
 | --- | --- |
-| `list_companies()` | All 55 companies in the dataset |
+| `list_companies()` | All 117 companies in the dataset |
 | `list_sectors()` | Sectors and sub-sectors |
 | `get_benchmarks_by_sector(sector, sub_sector)` | Intensity benchmarks filtered by sector — partial, case-insensitive |
 | `get_raw_kpis(sector, sub_sector, company)` | Absolute Scope 1/2/3 figures, revenue, and FTE — not intensity ratios |
