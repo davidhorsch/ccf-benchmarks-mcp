@@ -10,6 +10,9 @@ Usage:
     python srnav_downloader.py
     python srnav_downloader.py --max 10 --dry-run
     python srnav_downloader.py --output /path/to/output
+
+Example Run Command from terminal for 20 reports:
+cd "/Users/davidhorsch/Claude/0.1 GitRepo/ccf-benchmarks-mcp" && .venv/bin/python srnav_downloader.py --max 20 2>&1)
 """
 
 import argparse
